@@ -1,0 +1,27 @@
+{
+  "topic": "秋招雷达 AI",
+  "audience": "黑客松评委、技术面试官和潜在测试用户",
+  "objective": "在 3–5 分钟内证明产品闭环、工程完整性和诚实的评测边界",
+  "thesis": "把硬规则、语义相似和证据约束组合起来，才能得到可解释、可评测且不鼓励简历造假的求职 Agent。",
+  "narrative_arc": [
+    {"act": "问题", "purpose": "说明为什么直接把简历和 JD 发给大模型不够", "slides": ["s1", "s2"]},
+    {"act": "产品", "purpose": "展示完整闭环与可信评分机制", "slides": ["s3", "s4", "s5"]},
+    {"act": "证据", "purpose": "证明工程可运行并主动披露评测限制", "slides": ["s6", "s7"]},
+    {"act": "下一步", "purpose": "给出从 Demo 到公开产品的克制路线", "slides": ["s8"]}
+  ],
+  "slide_plan": [
+    {"slide_id": "s1", "role": "title", "message": "上海 AI 秋招的一站式可解释求职 Agent", "variant": "title", "visual_strategy": "network motif opener", "evidence_needs": [], "asset_needs": []},
+    {"slide_id": "s2", "role": "context", "message": "传统做法在排序、解释和求职诚信上同时失真", "variant": "comparison-2col", "visual_strategy": "problem versus design response", "evidence_needs": [], "asset_needs": []},
+    {"slide_id": "s3", "role": "mechanism", "message": "一次上传贯通解析、匹配、优化和面试准备", "variant": "flow", "visual_strategy": "four-stage product flow", "evidence_needs": ["ev_features"], "asset_needs": []},
+    {"slide_id": "s4", "role": "mechanism", "message": "六维评分将可验证约束和语义信号分开", "variant": "table", "visual_strategy": "weighted scoring table", "evidence_needs": ["ev_weights"], "asset_needs": []},
+    {"slide_id": "s5", "role": "evidence", "message": "产品已经是可运行、可测试、可复现的完整 MVP", "variant": "stats", "visual_strategy": "feature-left proof metrics", "evidence_needs": ["ev_tests", "ev_jobs", "ev_runtime"], "asset_needs": []},
+    {"slide_id": "s6", "role": "comparison", "message": "证据约束把直接改写和未来学习明确分开", "variant": "comparison-2col", "visual_strategy": "safe rewrite versus learning-only", "evidence_needs": ["ev_integrity"], "asset_needs": []},
+    {"slide_id": "s7", "role": "evidence", "message": "合成集验证管线，不冒充真实招聘效果", "variant": "table", "visual_strategy": "ablation result table plus caveat", "evidence_needs": ["ev_eval"], "asset_needs": []},
+    {"slide_id": "s8", "role": "implication", "message": "先稳住开源工程，再扩展真实评测与云端多用户", "variant": "cards-3", "visual_strategy": "three-phase roadmap", "evidence_needs": ["ev_ci"], "asset_needs": []}
+  ],
+  "design_notes": {
+    "style_preset_reason": "深色产品开场与橙色强调符合黑客松路演，浅色证据页保持数据可读性。",
+    "rhythm_break": "第 5 页使用大数字，第 7 页回到克制表格，避免全程卡片化。",
+    "visual_motif": "从散乱 JD 信号汇聚到可解释排名的网络节点。"
+  }
+}

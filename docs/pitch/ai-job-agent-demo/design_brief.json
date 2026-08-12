@@ -1,0 +1,56 @@
+{
+  "topic": "秋招雷达 AI",
+  "content_maturity": "release-ready hackathon pitch",
+  "audience_posture": "judges and technical interviewers",
+  "emotional_register": "confident, evidence-first, honest about limitations",
+  "format_promise": "A concise editable pitch deck that demonstrates a working system, measurable engineering, and candidate-integrity safeguards.",
+  "anti_format": [
+    "repeated equal card grids",
+    "unsupported market-size claims",
+    "synthetic metrics presented as production performance",
+    "dense architecture diagrams with unreadable labels"
+  ],
+  "canvas_and_grid": {
+    "aspect": "16:9",
+    "margin_x_in": 0.65,
+    "footer_reserve_in": 0.32,
+    "header_policy": "short measured Chinese titles with body below the reserved header",
+    "column_policy": "two-column evidence compositions with consistent gutters"
+  },
+  "visual_system": {
+    "style_preset": "bold-startup-narrative",
+    "dominant_color": "0B1220",
+    "accent_primary": "FF6B35",
+    "accent_secondary": "22C55E",
+    "palette_role_map": {
+      "background": "navy opener and pale blue content fields",
+      "accent": "orange for product moments, green for verified outcomes",
+      "muted": "captions, limitations, and provenance"
+    }
+  },
+  "title_page_concept": {
+    "chosen_archetype": "split hero",
+    "dominant_element": "秋招雷达 AI product name and one-line value proposition",
+    "supporting_element": "three compact proof points: explainable, grounded, reproducible",
+    "why_this_could_only_be_this_deck": "The opener connects Shanghai graduate recruiting, hybrid ranking, and resume integrity in one product promise."
+  },
+  "structure_strategy": {
+    "primary_scaffold": "product reveal with evidence-first technical slides",
+    "repeated_elements": ["shared margins", "orange step markers", "source-line footer", "synthetic-data disclosure"],
+    "allowed_variations": ["split", "cards-3 with one promoted card", "flow", "stats", "comparison-2col", "table"],
+    "container_policy": "Use cards only for distinct product outputs or roadmap phases; use open layouts for argument and evidence.",
+    "rhythm_break_plan": "Slide 5 uses a KPI-oriented stats layout; slide 8 closes with a three-phase roadmap instead of another metric hero."
+  },
+  "design_dna": "product/investor reveal",
+  "renderer_treatments": {
+    "header_mode": "eyebrow",
+    "title_layout": "split-hero",
+    "title_motif": "network",
+    "section_motif": "none",
+    "timeline_mode": "staggered",
+    "matrix_mode": "open-quadrants",
+    "stats_mode": "feature-left",
+    "footer_mode": "source-line",
+    "summary_callout_mode": "default"
+  }
+}

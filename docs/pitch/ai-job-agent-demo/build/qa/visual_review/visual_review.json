@@ -1,0 +1,112 @@
+{
+  "input": "C:\\Users\\cc\\Desktop\\\u9ed1\u5ba2\u677e\u9879\u76ee\\docs\\pitch\\ai-job-agent-demo\\build\\ai.pptx",
+  "outline": "C:\\Users\\cc\\Desktop\\\u9ed1\u5ba2\u677e\u9879\u76ee\\docs\\pitch\\ai-job-agent-demo\\outline.json",
+  "outdir": "C:\\Users\\cc\\Desktop\\\u9ed1\u5ba2\u677e\u9879\u76ee\\docs\\pitch\\ai-job-agent-demo\\build\\qa\\visual_review",
+  "renders_dir": "C:\\Users\\cc\\Desktop\\\u9ed1\u5ba2\u677e\u9879\u76ee\\docs\\pitch\\ai-job-agent-demo\\build\\qa\\renders",
+  "render_status": "Error: Required binary not found in PATH: soffice\n",
+  "rendered_slide_count": 0,
+  "contact_sheet": "",
+  "warning_count": 1,
+  "info_count": 10,
+  "issue_count": 11,
+  "issues": [
+    {
+      "slide": 3,
+      "type": "body_font_small",
+      "severity": "info",
+      "message": "Body-like text is 9.4pt.",
+      "shape_id": "shape-13",
+      "suggestion": "Check readability; use larger text or split dense content if this is not a table/caption.",
+      "font_pt": 9.4
+    },
+    {
+      "slide": 3,
+      "type": "body_font_small",
+      "severity": "info",
+      "message": "Body-like text is 9.4pt.",
+      "shape_id": "shape-18",
+      "suggestion": "Check readability; use larger text or split dense content if this is not a table/caption.",
+      "font_pt": 9.4
+    },
+    {
+      "slide": 4,
+      "type": "body_font_small",
+      "severity": "info",
+      "message": "Body-like text is 9.0pt.",
+      "shape_id": "shape-5",
+      "suggestion": "Check readability; use larger text or split dense content if this is not a table/caption.",
+      "font_pt": 9.0
+    },
+    {
+      "slide": 5,
+      "type": "text_box_tight",
+      "severity": "info",
+      "message": "Estimated text height uses 94% of its box.",
+      "shape_id": "shape-6",
+      "suggestion": "Check the rendered slide for clipping or awkward wrap.",
+      "estimated_height_in": 0.89,
+      "box_height_in": 0.95
+    },
+    {
+      "slide": 5,
+      "type": "body_font_small",
+      "severity": "info",
+      "message": "Body-like text is 8.8pt.",
+      "shape_id": "shape-13",
+      "suggestion": "Check readability; use larger text or split dense content if this is not a table/caption.",
+      "font_pt": 8.8
+    },
+    {
+      "slide": 5,
+      "type": "body_font_small",
+      "severity": "info",
+      "message": "Body-like text is 8.8pt.",
+      "shape_id": "shape-18",
+      "suggestion": "Check readability; use larger text or split dense content if this is not a table/caption.",
+      "font_pt": 8.8
+    },
+    {
+      "slide": 7,
+      "type": "body_font_small",
+      "severity": "info",
+      "message": "Body-like text is 9.0pt.",
+      "shape_id": "shape-5",
+      "suggestion": "Check readability; use larger text or split dense content if this is not a table/caption.",
+      "font_pt": 9.0
+    },
+    {
+      "slide": 8,
+      "type": "body_font_small",
+      "severity": "info",
+      "message": "Body-like text is 9.4pt.",
+      "shape_id": "shape-13",
+      "suggestion": "Check readability; use larger text or split dense content if this is not a table/caption.",
+      "font_pt": 9.4
+    },
+    {
+      "slide": 8,
+      "type": "body_font_small",
+      "severity": "info",
+      "message": "Body-like text is 9.4pt.",
+      "shape_id": "shape-18",
+      "suggestion": "Check readability; use larger text or split dense content if this is not a table/caption.",
+      "font_pt": 9.4
+    },
+    {
+      "slide": 0,
+      "type": "source_image_absent",
+      "severity": "info",
+      "message": "No content slide uses a photographic/source-backed image or figure.",
+      "suggestion": "For public-topic decks, consider one image-sidebar or scientific-figure slide with attribution rather than relying only on cards, tables, or synthetic charts."
+    },
+    {
+      "slide": 0,
+      "type": "render_unavailable",
+      "severity": "warning",
+      "message": "Slides could not be rendered for visual contact-sheet review.",
+      "suggestion": "Install LibreOffice/Poppler or rerun with a valid --renders-dir.",
+      "render_output": "Error: Required binary not found in PATH: soffice\n"
+    }
+  ],
+  "passed": false
+}

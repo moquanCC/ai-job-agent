@@ -1,0 +1,16 @@
+{
+  "topic": "秋招雷达 AI",
+  "source_policy": "Only repository code, tests, generated evaluation artifacts, and successful GitHub Actions are treated as evidence.",
+  "items": [
+    {"id": "ev_features", "claim": "The demo supports four resume formats and a five-page workflow.", "value": "4 formats / 5 pages", "unit": "count", "date_or_period": "2026-08-12", "source_title": "README and app.py", "source_url": "", "source_note": "README 功能；app.py 页面路由", "used_on_slides": ["s3"], "visual_use": "flow"},
+    {"id": "ev_weights", "claim": "The final score uses six explicit weighted subscores.", "value": "6", "unit": "subscores", "date_or_period": "2026-08-12", "source_title": "configs/scoring.yaml", "source_url": "", "source_note": "weights section", "used_on_slides": ["s4"], "visual_use": "table"},
+    {"id": "ev_tests", "claim": "All automated tests pass locally and in GitHub Actions.", "value": "21/21", "unit": "tests", "date_or_period": "2026-08-12", "source_title": "pytest and GitHub Actions run 31552427632", "source_url": "https://github.com/moquanCC/ai-job-agent/actions/runs/31552427632", "source_note": "CI completed successfully", "used_on_slides": ["s5", "s8"], "visual_use": "kpi"},
+    {"id": "ev_jobs", "claim": "The synthetic evaluation fixture contains 36 jobs and 3 resumes.", "value": "36 / 3", "unit": "jobs / resumes", "date_or_period": "2026-08-12", "source_title": "data/evaluation/results.json", "source_url": "", "source_note": "dataset field; explicitly synthetic", "used_on_slides": ["s5", "s7"], "visual_use": "kpi"},
+    {"id": "ev_runtime", "claim": "The reproducible local evaluation completed in approximately 0.17 seconds on the development machine.", "value": "0.17", "unit": "seconds", "date_or_period": "2026-08-12", "source_title": "data/evaluation/results.json", "source_url": "", "source_note": "runtime_seconds; environment-specific", "used_on_slides": ["s5"], "visual_use": "kpi"},
+    {"id": "ev_integrity", "claim": "Advice output separates evidence-backed edits from skills that may only be added after real work.", "value": "2", "unit": "action classes", "date_or_period": "2026-08-12", "source_title": "src/agents/resume_advisor.py", "source_url": "", "source_note": "可直接修改 / 完成相关工作后才能加入", "used_on_slides": ["s6"], "visual_use": "comparison"},
+    {"id": "ev_eval", "claim": "The synthetic evaluation reports perfect extraction F1 and nDCG@5, while Recall@5 is 0.2778 because relevance labels are dense and templated.", "value": "1.0 / 0.2778", "unit": "F1 / Recall@5", "date_or_period": "2026-08-12", "source_title": "data/evaluation/results.json and docs/evaluation.md", "source_url": "", "source_note": "Synthetic pipeline validation only", "used_on_slides": ["s7"], "visual_use": "table"},
+    {"id": "ev_ci", "claim": "The private GitHub baseline and v0.1.0-demo tag are published with green CI.", "value": "success", "unit": "CI conclusion", "date_or_period": "2026-08-12", "source_title": "GitHub Actions run 31552427632", "source_url": "https://github.com/moquanCC/ai-job-agent/actions/runs/31552427632", "source_note": "main at f546d92", "used_on_slides": ["s8"], "visual_use": "footer-source"}
+  ],
+  "chart_candidates": [],
+  "open_questions": ["Replace synthetic fixtures with 30–50 verified public JDs and independently labeled relevance judgments before claiming real-world quality."]
+}

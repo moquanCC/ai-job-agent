@@ -1,0 +1,103 @@
+{
+  "input": "C:\\Users\\cc\\Desktop\\\u9ed1\u5ba2\u677e\u9879\u76ee\\docs\\pitch\\ai-job-agent-demo\\build\\ai.pptx",
+  "style_preset": "bold-startup-narrative",
+  "renderer_detected": "pptxgenjs",
+  "summary": {
+    "slide_count": 8,
+    "violation_count": 0,
+    "error_count": 0,
+    "warning_count": 0,
+    "density_score_by_slide": [
+      {
+        "slide_index": 0,
+        "density_score": 0.401
+      },
+      {
+        "slide_index": 1,
+        "density_score": 0.6096
+      },
+      {
+        "slide_index": 2,
+        "density_score": 0.8305
+      },
+      {
+        "slide_index": 3,
+        "density_score": 0.6189
+      },
+      {
+        "slide_index": 4,
+        "density_score": 0.8811
+      },
+      {
+        "slide_index": 5,
+        "density_score": 0.6539
+      },
+      {
+        "slide_index": 6,
+        "density_score": 0.6023
+      },
+      {
+        "slide_index": 7,
+        "density_score": 0.5869
+      }
+    ]
+  },
+  "slides": [
+    {
+      "slide_index": 0,
+      "slide_type": "title",
+      "violations": [],
+      "density_score": 0.401,
+      "empty_ratio": 0.599
+    },
+    {
+      "slide_index": 1,
+      "slide_type": "content",
+      "violations": [],
+      "density_score": 0.6096,
+      "empty_ratio": 0.3904
+    },
+    {
+      "slide_index": 2,
+      "slide_type": "content",
+      "violations": [],
+      "density_score": 0.8305,
+      "empty_ratio": 0.1695
+    },
+    {
+      "slide_index": 3,
+      "slide_type": "content",
+      "violations": [],
+      "density_score": 0.6189,
+      "empty_ratio": 0.3811
+    },
+    {
+      "slide_index": 4,
+      "slide_type": "content",
+      "violations": [],
+      "density_score": 0.8811,
+      "empty_ratio": 0.1189
+    },
+    {
+      "slide_index": 5,
+      "slide_type": "content",
+      "violations": [],
+      "density_score": 0.6539,
+      "empty_ratio": 0.3461
+    },
+    {
+      "slide_index": 6,
+      "slide_type": "content",
+      "violations": [],
+      "density_score": 0.6023,
+      "empty_ratio": 0.3977
+    },
+    {
+      "slide_index": 7,
+      "slide_type": "content",
+      "violations": [],
+      "density_score": 0.5869,
+      "empty_ratio": 0.4131
+    }
+  ]
+}

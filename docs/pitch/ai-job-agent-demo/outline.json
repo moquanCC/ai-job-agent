@@ -1,0 +1,129 @@
+{
+  "title": "秋招雷达 AI",
+  "subtitle": "可解释的上海 AI 校招岗位匹配与简历优化 Agent",
+  "deck_style": {
+    "font_pair": "clean_modern_v1",
+    "visual_density": "medium",
+    "emoji_mode": "selective",
+    "research_visual_mode": false,
+    "header_mode": "eyebrow",
+    "title_layout": "split-hero",
+    "title_motif": "network",
+    "stats_mode": "feature-left",
+    "footer_mode": "source-line",
+    "footer_page_numbers": true
+  },
+  "slides": [
+    {
+      "type": "title",
+      "title": "秋招雷达 AI",
+      "subtitle": "可解释的上海 AI 校招岗位匹配与简历优化 Agent\nExplainable · Grounded · Reproducible"
+    },
+    {
+      "type": "content",
+      "variant": "comparison-2col",
+      "title": "直接把简历和 JD 发给大模型，还不够",
+      "subtitle": "真正的求职决策需要稳定规则、证据和可复现实验",
+      "left": {
+        "title": "常见做法",
+        "body": ["一次提示词输出一个总分", "地点、学历与技能混在语义判断里", "建议容易越过真实经历边界", "效果好坏缺少可复现指标"]
+      },
+      "right": {
+        "title": "我们的设计",
+        "body": ["上海、校招与截止状态先硬过滤", "六项分数逐项展示并附证据", "缺失经历只给学习建议", "F1、Recall、MRR、nDCG 统一评测"]
+      },
+      "verdict": "不是让模型替用户决定，而是把决定依据组织得更清楚。"
+    },
+    {
+      "type": "content",
+      "variant": "cards-3",
+      "promote_card": 0,
+      "title": "一次上传，贯通求职准备全流程",
+      "subtitle": "离线可运行；配置模型后可继续增强提取与项目相关性判断",
+      "assets": {"icons": ["fa6:FaFileArrowUp", "fa6:FaRankingStar", "fa6:FaComments"]},
+      "cards": [
+        {"title": "解析与确认", "body": "PDF / DOCX / TXT / MD → 教育、技能、项目、证据；用户可人工修正。", "accent": "accent_primary"},
+        {"title": "过滤与排名", "body": "上海校招硬过滤 → Top-K → 六维分项、命中技能与缺口。"},
+        {"title": "行动与训练", "body": "真实简历建议 → 五类面试题 → Markdown 报告导出。"}
+      ],
+      "sources": ["README.md；app.py；src/services/analysis_service.py"]
+    },
+    {
+      "type": "content",
+      "variant": "table",
+      "title": "六维评分：把硬约束与语义信号分开",
+      "subtitle": "大模型只能辅助项目相关性，不独立决定最终总分",
+      "headers": ["分项", "权重", "信号来源", "解释"],
+      "rows": [
+        ["必需技能", "30%", "标准化技能覆盖", "岗位硬能力的核心信号"],
+        ["项目匹配", "20%", "项目技术与职责", "候选人是否做过相近工作"],
+        ["语义相似", "20%", "离线字符向量", "补充关键词表达差异"],
+        ["加分技能", "10%", "标准化技能覆盖", "有帮助但非必要"],
+        ["学历", "10%", "结构化规则", "不满足明确门槛时扣分"],
+        ["地点", "10%", "结构化规则", "非上海岗位在评分前过滤"]
+      ],
+      "column_weights": [1.1, 0.7, 1.5, 2.3],
+      "caption": "来源：configs/scoring.yaml；src/matching/score_fusion.py"
+    },
+    {
+      "type": "content",
+      "variant": "stats",
+      "title": "不是拼接 Prompt，而是一套可运行的 MVP",
+      "subtitle": "所有数字来自当前仓库与 2026-08-12 成功运行记录",
+      "facts": [
+        {"value": "21/21", "label": "自动化测试通过", "detail": "单元 + 端到端；本地与 GitHub Actions 一致", "source": "pytest / CI run 31552427632", "accent": "accent_secondary"},
+        {"value": "36", "label": "合成岗位", "detail": "覆盖 6 类上海 AI / 算法 / 数据岗位", "source": "data/evaluation/jobs.json"},
+        {"value": "4", "label": "简历格式", "detail": "PDF、DOCX、TXT、Markdown", "source": "src/parsers/file_parser.py"},
+        {"value": "5", "label": "完整页面", "detail": "解析、岗位库、推荐、优化、面试", "source": "app.py"}
+      ],
+      "bullets": ["SQLite 去重持久化", "离线向量索引", "Docker 与 CI", "Markdown 报告导出"],
+      "sources": ["GitHub Actions run 31552427632；仓库测试与评测数据"]
+    },
+    {
+      "type": "content",
+      "variant": "comparison-2col",
+      "title": "最重要的产品约束：不替用户编造经历",
+      "subtitle": "建议必须能追溯到简历证据",
+      "left": {
+        "title": "可直接修改",
+        "body": ["重排已有项目的“问题—行动—结果”", "前置展示已命中的真实技能", "只保留原文已经出现的量化指标", "每条建议展示对应证据片段"]
+      },
+      "right": {
+        "title": "完成相关工作后才能加入",
+        "body": ["简历没有 FAISS：先完成最小项目验证", "缺少硬技能：输出学习与实践计划", "不生成虚假实习、论文或比赛", "不把建议目标写成既有成果"]
+      },
+      "verdict": "系统优化表达，但不改变事实边界。",
+      "sources": ["src/agents/resume_advisor.py；tests/unit/test_agents.py"]
+    },
+    {
+      "type": "content",
+      "variant": "table",
+      "title": "评测诚实：合成集验证的是管线，不是真实招聘效果",
+      "subtitle": "36 条合成岗位 · 3 份合成简历 · 5 种方法",
+      "headers": ["方法", "Recall@5", "Recall@10", "MRR", "nDCG@5"],
+      "rows": [
+        ["关键词", "0.2778", "0.5556", "1.0000", "1.0000"],
+        ["仅语义", "0.2778", "0.4630", "1.0000", "1.0000"],
+        ["关键词 + 语义", "0.2778", "0.5556", "1.0000", "1.0000"],
+        ["规则融合", "0.2778", "0.5556", "1.0000", "1.0000"],
+        ["完整方法", "0.2778", "0.5556", "1.0000", "1.0000"]
+      ],
+      "column_weights": [1.8, 1, 1, 1, 1],
+      "caption": "技能提取 F1=1.0。重复模板与密集相关标签让排序差异不明显；下一步必须换成真实公开 JD 和多人标注。",
+      "sources": ["data/evaluation/results.json；docs/evaluation.md"]
+    },
+    {
+      "type": "content",
+      "variant": "timeline",
+      "title": "下一步：从稳定 Demo 到可信在线产品",
+      "subtitle": "按风险递增，不把云服务复杂度提前带进演示主线",
+      "assets": {"icons": ["fa6:FaGithub", "fa6:FaFlask", "fa6:FaCloudArrowUp"]},
+      "milestones": [
+        {"label": "NOW", "title": "工程基线", "body": "私有仓库 · v0.1.0-demo · 绿色 CI"},
+        {"label": "NEXT", "title": "真实评测", "body": "公开 JD · 多人标注 · BGE-M3 精排"},
+        {"label": "LATER", "title": "云端版本", "body": "Supabase Auth · RLS"}
+      ],
+      "sources": ["GitHub Actions run 31552427632；docs/superpowers/plans/2026-08-12-github-ci-and-cloud-roadmap.md"]
+    }
+  ]
+}
