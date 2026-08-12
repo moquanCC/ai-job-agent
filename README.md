@@ -71,6 +71,14 @@ docs/                          架构、评测和演示材料
 
 详细设计见 [系统架构](docs/architecture.md)，合成评测解释见 [评测说明](docs/evaluation.md)，真实 JD 实验口径见 [真实 JD 评测说明](docs/evaluation_real.md)。
 
+## 真人金标准 readiness
+
+仓库已生成 30 个合成候选人（11 个方向）、每人 25 条 eligible 官方 JD，共 750 个 pair，并按候选人冻结为 18/6/6 train/validation/blind test。三份盲标模板位于 `outputs/human_gold/annotator_A.xlsx`、`annotator_B.xlsx` 和 `adjudicator.xlsx`；12 个 sheet 已完成视觉与公式 QA，0 个公式错误，裁决 QC bug 已修复。
+
+当前模板仍为空白，状态是 `human_gold=false`、`status=template_not_completed`。这表示收集、导入、裁决和 production gate 的 readiness 闭环已经具备，但真人标注环节尚未完成；项目不能声称已有真人金标准或已满足正式上线条件。填写、CSV 导入、第三人裁决和晋级阈值见 [真人标注协议](docs/human_annotation_protocol.md)。
+
+真人裁决构建出的 gold 会直接包含 gate 所需的 status、split/fingerprint 和 agreement。之后使用 `scripts/run_human_gold_evaluation.py`：先在 18 个 train 候选人上生成短名单，以 6 个 validation 候选人选定权重，再对 6 个 blind-test 候选人只评测一次，最后把 blind evaluation 交给 `scripts/check_production_promotion.py`。当前模板为空白，所以这条真实闭环尚未运行。
+
 ## 岗位数据格式
 
 CSV 最低字段：

@@ -87,3 +87,11 @@ LOCO mean Recall@10 为 0.5882353、nDCG@5 为 0.7536770、nDCG@10 为 0.7409596
 promotion 因而明确拒绝，默认配置没有变化。location 已在评分前硬过滤，所有 eligible 岗位的 location 分项均为常数；搜索中去掉它不会改变排序，但把 `location=0` 权重直接写入部署配置会改变 0–100 绝对分和推荐阈值。未来只有在新增异质候选人和独立真人标注 holdout 后，才可重新考虑部署；届时应保留 `location=0.10`，并把五个搜索权重整体乘以 0.90。
 
 本实验仍为 `human_gold=false`：只有 3 个合成候选人，相关性来自双模型裁决。指标改善不能解释为真实求职或招聘效果，也不能将该 medoid 称为生产最优权重。
+
+## 真人评测 readiness
+
+为后续真人验证，仓库已冻结 30 个合成候选人、11 个岗位方向、每人 25 条 eligible 官方 JD，共 750 个 pair；按候选人划分为 18 train、6 validation、6 blind test。A/B 独立盲标和第三人裁决模板位于 `outputs/human_gold/`。三份工作簿共 12 个 sheet 已通过视觉与公式 QA，公式错误为 0，裁决 QC bug 已修复。
+
+但三份工作簿目前仍是空白模板，明确标注 `human_gold=false`、`status=template_not_completed`。因此只完成了工具链 readiness，没有形成真人标签，更没有满足正式上线条件。真人完成 A/B 独立身份盲标、第三人裁决后，还必须通过完整的 promotion gate：30/750、fingerprint 与 18/6/6 无泄漏、exact agreement ≥0.70、quadratic weighted κ ≥0.60、blind nDCG@5 gain ≥0.02、Recall@5 不降、Recall@10 降幅 ≤0.01、至少 70% 候选人 nDCG@5 不降，以及 engineering audit passed。完整操作见 `docs/human_annotation_protocol.md`。
+
+`build_human_gold.py` 的完整输出直接携带 status、split/fingerprint、30/750 计数和 agreement。`run_human_gold_evaluation.py` 随后严格按 train → validation → blind 执行：18 个 train 只负责形成短名单，6 个 validation 负责最终选择，冻结的 6 个 blind test 在选择后只打开并评测一次。该 blind evaluation 才能传给 production gate；当前因为工作簿仍为空白，此评测没有运行，也没有真人 blind-test 结果。

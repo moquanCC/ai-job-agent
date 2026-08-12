@@ -1,0 +1,49 @@
+{
+  "passed": false,
+  "failures": [
+    "human_labels_incomplete",
+    "human_gold_required",
+    "split_fingerprint_mismatch",
+    "exact_agreement_below_threshold",
+    "quadratic_kappa_below_threshold",
+    "blind_ndcg5_gain_below_threshold",
+    "blind_recall5_regression",
+    "blind_recall10_regression",
+    "candidate_direction_stability_below_threshold"
+  ],
+  "configuration_write_allowed": false,
+  "evidence": {
+    "readiness_status": "template_not_completed",
+    "human_gold": false,
+    "candidate_count": 30,
+    "pair_count": 750,
+    "split_counts": {
+      "train": 18,
+      "validation": 6,
+      "blind_test": 6
+    },
+    "split_fingerprint_match": false,
+    "exact_agreement": null,
+    "quadratic_weighted_kappa": null,
+    "blind_ndcg5_gain": null,
+    "blind_recall5_change": null,
+    "blind_recall10_drop": null,
+    "candidate_ndcg5_non_decrease_fraction": null,
+    "engineering_audit_passed": true
+  },
+  "thresholds": {
+    "candidates": 30,
+    "pairs": 750,
+    "split_counts": {
+      "train": 18,
+      "validation": 6,
+      "blind_test": 6
+    },
+    "exact_agreement_min": 0.7,
+    "quadratic_weighted_kappa_min": 0.6,
+    "blind_ndcg5_gain_min": 0.02,
+    "blind_recall5_min_change": 0.0,
+    "blind_recall10_max_drop": 0.01,
+    "candidate_ndcg5_non_decrease_fraction_min": 0.7
+  }
+}

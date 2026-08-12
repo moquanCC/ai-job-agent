@@ -18,3 +18,4 @@ reports/
 *.log
 .firecrawl/
 ai_job_agent.egg-info/
+.artifact-work/

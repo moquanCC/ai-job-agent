@@ -1,0 +1,782 @@
+[
+  {
+    "candidate_id": "synthetic_01_llm_rag",
+    "synthetic": true,
+    "role_family": "llm_rag",
+    "role_family_label": "大语言模型与RAG",
+    "education": {
+      "degree": "硕士",
+      "major": "计算机相关专业"
+    },
+    "skills": [
+      "Python",
+      "PyTorch",
+      "LLM",
+      "RAG",
+      "FAISS",
+      "Git"
+    ],
+    "evidence": {
+      "strength": "medium",
+      "items": [
+        "大语言模型与RAG项目变体1：完成课程或实验室项目并记录可复现实验结果",
+        "使用Python与PyTorch完成核心模块，保留代码和实验记录"
+      ]
+    },
+    "text": "合成候选人 synthetic_01_llm_rag\n教育：硕士，计算机相关专业\n目标方向：大语言模型与RAG\n技能：Python、PyTorch、LLM、RAG、FAISS、Git\n项目证据：大语言模型与RAG项目变体1：完成课程或实验室项目并记录可复现实验结果；使用Python与PyTorch完成核心模块，保留代码和实验记录\n声明：该画像为评测用途的合成候选人，不对应任何真实个人。"
+  },
+  {
+    "candidate_id": "synthetic_02_nlp",
+    "synthetic": true,
+    "role_family": "nlp",
+    "role_family_label": "自然语言处理",
+    "education": {
+      "degree": "本科",
+      "major": "计算机相关专业"
+    },
+    "skills": [
+      "Python",
+      "PyTorch",
+      "NLP",
+      "Transformer",
+      "文本分类",
+      "Git"
+    ],
+    "evidence": {
+      "strength": "limited",
+      "items": [
+        "自然语言处理项目变体1：完成基础原型和公开数据集练习，暂无实习或论文证据",
+        "使用Python与PyTorch完成核心模块，保留代码和实验记录"
+      ]
+    },
+    "text": "合成候选人 synthetic_02_nlp\n教育：本科，计算机相关专业\n目标方向：自然语言处理\n技能：Python、PyTorch、NLP、Transformer、文本分类、Git\n项目证据：自然语言处理项目变体1：完成基础原型和公开数据集练习，暂无实习或论文证据；使用Python与PyTorch完成核心模块，保留代码和实验记录\n声明：该画像为评测用途的合成候选人，不对应任何真实个人。"
+  },
+  {
+    "candidate_id": "synthetic_03_computer_vision",
+    "synthetic": true,
+    "role_family": "computer_vision",
+    "role_family_label": "计算机视觉",
+    "education": {
+      "degree": "博士",
+      "major": "计算机相关专业"
+    },
+    "skills": [
+      "Python",
+      "PyTorch",
+      "OpenCV",
+      "目标检测",
+      "图像分割",
+      "Git"
+    ],
+    "evidence": {
+      "strength": "strong",
+      "items": [
+        "计算机视觉项目变体1：完成端到端系统并在冻结测试集上取得明确量化提升",
+        "使用Python与PyTorch完成核心模块，保留代码和实验记录"
+      ]
+    },
+    "text": "合成候选人 synthetic_03_computer_vision\n教育：博士，计算机相关专业\n目标方向：计算机视觉\n技能：Python、PyTorch、OpenCV、目标检测、图像分割、Git\n项目证据：计算机视觉项目变体1：完成端到端系统并在冻结测试集上取得明确量化提升；使用Python与PyTorch完成核心模块，保留代码和实验记录\n声明：该画像为评测用途的合成候选人，不对应任何真实个人。"
+  },
+  {
+    "candidate_id": "synthetic_04_multimodal",
+    "synthetic": true,
+    "role_family": "multimodal",
+    "role_family_label": "多模态",
+    "education": {
+      "degree": "硕士",
+      "major": "计算机相关专业"
+    },
+    "skills": [
+      "Python",
+      "PyTorch",
+      "CLIP",
+      "VLM",
+      "图文检索",
+      "Git"
+    ],
+    "evidence": {
+      "strength": "medium",
+      "items": [
+        "多模态项目变体1：完成课程或实验室项目并记录可复现实验结果",
+        "使用Python与PyTorch完成核心模块，保留代码和实验记录"
+      ]
+    },
+    "text": "合成候选人 synthetic_04_multimodal\n教育：硕士，计算机相关专业\n目标方向：多模态\n技能：Python、PyTorch、CLIP、VLM、图文检索、Git\n项目证据：多模态项目变体1：完成课程或实验室项目并记录可复现实验结果；使用Python与PyTorch完成核心模块，保留代码和实验记录\n声明：该画像为评测用途的合成候选人，不对应任何真实个人。"
+  },
+  {
+    "candidate_id": "synthetic_05_recommendation",
+    "synthetic": true,
+    "role_family": "recommendation",
+    "role_family_label": "推荐系统",
+    "education": {
+      "degree": "本科",
+      "major": "计算机相关专业"
+    },
+    "skills": [
+      "Python",
+      "SQL",
+      "推荐系统",
+      "特征工程",
+      "召回排序",
+      "Git"
+    ],
+    "evidence": {
+      "strength": "limited",
+      "items": [
+        "推荐系统项目变体1：完成基础原型和公开数据集练习，暂无实习或论文证据",
+        "使用Python与SQL完成核心模块，保留代码和实验记录"
+      ]
+    },
+    "text": "合成候选人 synthetic_05_recommendation\n教育：本科，计算机相关专业\n目标方向：推荐系统\n技能：Python、SQL、推荐系统、特征工程、召回排序、Git\n项目证据：推荐系统项目变体1：完成基础原型和公开数据集练习，暂无实习或论文证据；使用Python与SQL完成核心模块，保留代码和实验记录\n声明：该画像为评测用途的合成候选人，不对应任何真实个人。"
+  },
+  {
+    "candidate_id": "synthetic_06_data_mining",
+    "synthetic": true,
+    "role_family": "data_mining",
+    "role_family_label": "数据挖掘",
+    "education": {
+      "degree": "博士",
+      "major": "计算机相关专业"
+    },
+    "skills": [
+      "Python",
+      "SQL",
+      "机器学习",
+      "数据挖掘",
+      "XGBoost",
+      "Git"
+    ],
+    "evidence": {
+      "strength": "strong",
+      "items": [
+        "数据挖掘项目变体1：完成端到端系统并在冻结测试集上取得明确量化提升",
+        "使用Python与SQL完成核心模块，保留代码和实验记录"
+      ]
+    },
+    "text": "合成候选人 synthetic_06_data_mining\n教育：博士，计算机相关专业\n目标方向：数据挖掘\n技能：Python、SQL、机器学习、数据挖掘、XGBoost、Git\n项目证据：数据挖掘项目变体1：完成端到端系统并在冻结测试集上取得明确量化提升；使用Python与SQL完成核心模块，保留代码和实验记录\n声明：该画像为评测用途的合成候选人，不对应任何真实个人。"
+  },
+  {
+    "candidate_id": "synthetic_07_search_ads",
+    "synthetic": true,
+    "role_family": "search_ads",
+    "role_family_label": "搜索与广告",
+    "education": {
+      "degree": "硕士",
+      "major": "计算机相关专业"
+    },
+    "skills": [
+      "Python",
+      "C++",
+      "搜索排序",
+      "广告CTR",
+      "Learning to Rank",
+      "Git"
+    ],
+    "evidence": {
+      "strength": "medium",
+      "items": [
+        "搜索与广告项目变体1：完成课程或实验室项目并记录可复现实验结果",
+        "使用Python与C++完成核心模块，保留代码和实验记录"
+      ]
+    },
+    "text": "合成候选人 synthetic_07_search_ads\n教育：硕士，计算机相关专业\n目标方向：搜索与广告\n技能：Python、C++、搜索排序、广告CTR、Learning to Rank、Git\n项目证据：搜索与广告项目变体1：完成课程或实验室项目并记录可复现实验结果；使用Python与C++完成核心模块，保留代码和实验记录\n声明：该画像为评测用途的合成候选人，不对应任何真实个人。"
+  },
+  {
+    "candidate_id": "synthetic_08_ai_infra",
+    "synthetic": true,
+    "role_family": "ai_infra",
+    "role_family_label": "AI基础设施",
+    "education": {
+      "degree": "本科",
+      "major": "计算机相关专业"
+    },
+    "skills": [
+      "Python",
+      "C++",
+      "CUDA",
+      "分布式训练",
+      "Docker",
+      "Git"
+    ],
+    "evidence": {
+      "strength": "limited",
+      "items": [
+        "AI基础设施项目变体1：完成基础原型和公开数据集练习，暂无实习或论文证据",
+        "使用Python与C++完成核心模块，保留代码和实验记录"
+      ]
+    },
+    "text": "合成候选人 synthetic_08_ai_infra\n教育：本科，计算机相关专业\n目标方向：AI基础设施\n技能：Python、C++、CUDA、分布式训练、Docker、Git\n项目证据：AI基础设施项目变体1：完成基础原型和公开数据集练习，暂无实习或论文证据；使用Python与C++完成核心模块，保留代码和实验记录\n声明：该画像为评测用途的合成候选人，不对应任何真实个人。"
+  },
+  {
+    "candidate_id": "synthetic_09_agents",
+    "synthetic": true,
+    "role_family": "agents",
+    "role_family_label": "智能体",
+    "education": {
+      "degree": "博士",
+      "major": "计算机相关专业"
+    },
+    "skills": [
+      "Python",
+      "Agent",
+      "工具调用",
+      "工作流编排",
+      "FastAPI",
+      "Git"
+    ],
+    "evidence": {
+      "strength": "strong",
+      "items": [
+        "智能体项目变体1：完成端到端系统并在冻结测试集上取得明确量化提升",
+        "使用Python与Agent完成核心模块，保留代码和实验记录"
+      ]
+    },
+    "text": "合成候选人 synthetic_09_agents\n教育：博士，计算机相关专业\n目标方向：智能体\n技能：Python、Agent、工具调用、工作流编排、FastAPI、Git\n项目证据：智能体项目变体1：完成端到端系统并在冻结测试集上取得明确量化提升；使用Python与Agent完成核心模块，保留代码和实验记录\n声明：该画像为评测用途的合成候选人，不对应任何真实个人。"
+  },
+  {
+    "candidate_id": "synthetic_10_autonomous_driving",
+    "synthetic": true,
+    "role_family": "autonomous_driving",
+    "role_family_label": "自动驾驶",
+    "education": {
+      "degree": "硕士",
+      "major": "计算机相关专业"
+    },
+    "skills": [
+      "Python",
+      "C++",
+      "感知",
+      "规划控制",
+      "点云",
+      "Git"
+    ],
+    "evidence": {
+      "strength": "medium",
+      "items": [
+        "自动驾驶项目变体1：完成课程或实验室项目并记录可复现实验结果",
+        "使用Python与C++完成核心模块，保留代码和实验记录"
+      ]
+    },
+    "text": "合成候选人 synthetic_10_autonomous_driving\n教育：硕士，计算机相关专业\n目标方向：自动驾驶\n技能：Python、C++、感知、规划控制、点云、Git\n项目证据：自动驾驶项目变体1：完成课程或实验室项目并记录可复现实验结果；使用Python与C++完成核心模块，保留代码和实验记录\n声明：该画像为评测用途的合成候选人，不对应任何真实个人。"
+  },
+  {
+    "candidate_id": "synthetic_11_ai_testing",
+    "synthetic": true,
+    "role_family": "ai_testing",
+    "role_family_label": "AI评测与测试",
+    "education": {
+      "degree": "本科",
+      "major": "计算机相关专业"
+    },
+    "skills": [
+      "Python",
+      "模型评测",
+      "测试自动化",
+      "数据质量",
+      "安全评测",
+      "Git"
+    ],
+    "evidence": {
+      "strength": "limited",
+      "items": [
+        "AI评测与测试项目变体1：完成基础原型和公开数据集练习，暂无实习或论文证据",
+        "使用Python与模型评测完成核心模块，保留代码和实验记录"
+      ]
+    },
+    "text": "合成候选人 synthetic_11_ai_testing\n教育：本科，计算机相关专业\n目标方向：AI评测与测试\n技能：Python、模型评测、测试自动化、数据质量、安全评测、Git\n项目证据：AI评测与测试项目变体1：完成基础原型和公开数据集练习，暂无实习或论文证据；使用Python与模型评测完成核心模块，保留代码和实验记录\n声明：该画像为评测用途的合成候选人，不对应任何真实个人。"
+  },
+  {
+    "candidate_id": "synthetic_12_llm_rag",
+    "synthetic": true,
+    "role_family": "llm_rag",
+    "role_family_label": "大语言模型与RAG",
+    "education": {
+      "degree": "本科",
+      "major": "计算机相关专业"
+    },
+    "skills": [
+      "Python",
+      "PyTorch",
+      "LLM",
+      "RAG",
+      "FAISS",
+      "Linux"
+    ],
+    "evidence": {
+      "strength": "medium",
+      "items": [
+        "大语言模型与RAG项目变体2：完成课程或实验室项目并记录可复现实验结果",
+        "使用Python与PyTorch完成核心模块，保留代码和实验记录"
+      ]
+    },
+    "text": "合成候选人 synthetic_12_llm_rag\n教育：本科，计算机相关专业\n目标方向：大语言模型与RAG\n技能：Python、PyTorch、LLM、RAG、FAISS、Linux\n项目证据：大语言模型与RAG项目变体2：完成课程或实验室项目并记录可复现实验结果；使用Python与PyTorch完成核心模块，保留代码和实验记录\n声明：该画像为评测用途的合成候选人，不对应任何真实个人。"
+  },
+  {
+    "candidate_id": "synthetic_13_nlp",
+    "synthetic": true,
+    "role_family": "nlp",
+    "role_family_label": "自然语言处理",
+    "education": {
+      "degree": "博士",
+      "major": "计算机相关专业"
+    },
+    "skills": [
+      "Python",
+      "PyTorch",
+      "NLP",
+      "Transformer",
+      "文本分类",
+      "Linux"
+    ],
+    "evidence": {
+      "strength": "limited",
+      "items": [
+        "自然语言处理项目变体2：完成基础原型和公开数据集练习，暂无实习或论文证据",
+        "使用Python与PyTorch完成核心模块，保留代码和实验记录"
+      ]
+    },
+    "text": "合成候选人 synthetic_13_nlp\n教育：博士，计算机相关专业\n目标方向：自然语言处理\n技能：Python、PyTorch、NLP、Transformer、文本分类、Linux\n项目证据：自然语言处理项目变体2：完成基础原型和公开数据集练习，暂无实习或论文证据；使用Python与PyTorch完成核心模块，保留代码和实验记录\n声明：该画像为评测用途的合成候选人，不对应任何真实个人。"
+  },
+  {
+    "candidate_id": "synthetic_14_computer_vision",
+    "synthetic": true,
+    "role_family": "computer_vision",
+    "role_family_label": "计算机视觉",
+    "education": {
+      "degree": "硕士",
+      "major": "计算机相关专业"
+    },
+    "skills": [
+      "Python",
+      "PyTorch",
+      "OpenCV",
+      "目标检测",
+      "图像分割",
+      "Linux"
+    ],
+    "evidence": {
+      "strength": "strong",
+      "items": [
+        "计算机视觉项目变体2：完成端到端系统并在冻结测试集上取得明确量化提升",
+        "使用Python与PyTorch完成核心模块，保留代码和实验记录"
+      ]
+    },
+    "text": "合成候选人 synthetic_14_computer_vision\n教育：硕士，计算机相关专业\n目标方向：计算机视觉\n技能：Python、PyTorch、OpenCV、目标检测、图像分割、Linux\n项目证据：计算机视觉项目变体2：完成端到端系统并在冻结测试集上取得明确量化提升；使用Python与PyTorch完成核心模块，保留代码和实验记录\n声明：该画像为评测用途的合成候选人，不对应任何真实个人。"
+  },
+  {
+    "candidate_id": "synthetic_15_multimodal",
+    "synthetic": true,
+    "role_family": "multimodal",
+    "role_family_label": "多模态",
+    "education": {
+      "degree": "本科",
+      "major": "计算机相关专业"
+    },
+    "skills": [
+      "Python",
+      "PyTorch",
+      "CLIP",
+      "VLM",
+      "图文检索",
+      "Linux"
+    ],
+    "evidence": {
+      "strength": "medium",
+      "items": [
+        "多模态项目变体2：完成课程或实验室项目并记录可复现实验结果",
+        "使用Python与PyTorch完成核心模块，保留代码和实验记录"
+      ]
+    },
+    "text": "合成候选人 synthetic_15_multimodal\n教育：本科，计算机相关专业\n目标方向：多模态\n技能：Python、PyTorch、CLIP、VLM、图文检索、Linux\n项目证据：多模态项目变体2：完成课程或实验室项目并记录可复现实验结果；使用Python与PyTorch完成核心模块，保留代码和实验记录\n声明：该画像为评测用途的合成候选人，不对应任何真实个人。"
+  },
+  {
+    "candidate_id": "synthetic_16_recommendation",
+    "synthetic": true,
+    "role_family": "recommendation",
+    "role_family_label": "推荐系统",
+    "education": {
+      "degree": "博士",
+      "major": "计算机相关专业"
+    },
+    "skills": [
+      "Python",
+      "SQL",
+      "推荐系统",
+      "特征工程",
+      "召回排序",
+      "Linux"
+    ],
+    "evidence": {
+      "strength": "limited",
+      "items": [
+        "推荐系统项目变体2：完成基础原型和公开数据集练习，暂无实习或论文证据",
+        "使用Python与SQL完成核心模块，保留代码和实验记录"
+      ]
+    },
+    "text": "合成候选人 synthetic_16_recommendation\n教育：博士，计算机相关专业\n目标方向：推荐系统\n技能：Python、SQL、推荐系统、特征工程、召回排序、Linux\n项目证据：推荐系统项目变体2：完成基础原型和公开数据集练习，暂无实习或论文证据；使用Python与SQL完成核心模块，保留代码和实验记录\n声明：该画像为评测用途的合成候选人，不对应任何真实个人。"
+  },
+  {
+    "candidate_id": "synthetic_17_data_mining",
+    "synthetic": true,
+    "role_family": "data_mining",
+    "role_family_label": "数据挖掘",
+    "education": {
+      "degree": "硕士",
+      "major": "计算机相关专业"
+    },
+    "skills": [
+      "Python",
+      "SQL",
+      "机器学习",
+      "数据挖掘",
+      "XGBoost",
+      "Linux"
+    ],
+    "evidence": {
+      "strength": "strong",
+      "items": [
+        "数据挖掘项目变体2：完成端到端系统并在冻结测试集上取得明确量化提升",
+        "使用Python与SQL完成核心模块，保留代码和实验记录"
+      ]
+    },
+    "text": "合成候选人 synthetic_17_data_mining\n教育：硕士，计算机相关专业\n目标方向：数据挖掘\n技能：Python、SQL、机器学习、数据挖掘、XGBoost、Linux\n项目证据：数据挖掘项目变体2：完成端到端系统并在冻结测试集上取得明确量化提升；使用Python与SQL完成核心模块，保留代码和实验记录\n声明：该画像为评测用途的合成候选人，不对应任何真实个人。"
+  },
+  {
+    "candidate_id": "synthetic_18_search_ads",
+    "synthetic": true,
+    "role_family": "search_ads",
+    "role_family_label": "搜索与广告",
+    "education": {
+      "degree": "本科",
+      "major": "计算机相关专业"
+    },
+    "skills": [
+      "Python",
+      "C++",
+      "搜索排序",
+      "广告CTR",
+      "Learning to Rank",
+      "Linux"
+    ],
+    "evidence": {
+      "strength": "medium",
+      "items": [
+        "搜索与广告项目变体2：完成课程或实验室项目并记录可复现实验结果",
+        "使用Python与C++完成核心模块，保留代码和实验记录"
+      ]
+    },
+    "text": "合成候选人 synthetic_18_search_ads\n教育：本科，计算机相关专业\n目标方向：搜索与广告\n技能：Python、C++、搜索排序、广告CTR、Learning to Rank、Linux\n项目证据：搜索与广告项目变体2：完成课程或实验室项目并记录可复现实验结果；使用Python与C++完成核心模块，保留代码和实验记录\n声明：该画像为评测用途的合成候选人，不对应任何真实个人。"
+  },
+  {
+    "candidate_id": "synthetic_19_ai_infra",
+    "synthetic": true,
+    "role_family": "ai_infra",
+    "role_family_label": "AI基础设施",
+    "education": {
+      "degree": "博士",
+      "major": "计算机相关专业"
+    },
+    "skills": [
+      "Python",
+      "C++",
+      "CUDA",
+      "分布式训练",
+      "Docker",
+      "Linux"
+    ],
+    "evidence": {
+      "strength": "limited",
+      "items": [
+        "AI基础设施项目变体2：完成基础原型和公开数据集练习，暂无实习或论文证据",
+        "使用Python与C++完成核心模块，保留代码和实验记录"
+      ]
+    },
+    "text": "合成候选人 synthetic_19_ai_infra\n教育：博士，计算机相关专业\n目标方向：AI基础设施\n技能：Python、C++、CUDA、分布式训练、Docker、Linux\n项目证据：AI基础设施项目变体2：完成基础原型和公开数据集练习，暂无实习或论文证据；使用Python与C++完成核心模块，保留代码和实验记录\n声明：该画像为评测用途的合成候选人，不对应任何真实个人。"
+  },
+  {
+    "candidate_id": "synthetic_20_agents",
+    "synthetic": true,
+    "role_family": "agents",
+    "role_family_label": "智能体",
+    "education": {
+      "degree": "硕士",
+      "major": "计算机相关专业"
+    },
+    "skills": [
+      "Python",
+      "Agent",
+      "工具调用",
+      "工作流编排",
+      "FastAPI",
+      "Linux"
+    ],
+    "evidence": {
+      "strength": "strong",
+      "items": [
+        "智能体项目变体2：完成端到端系统并在冻结测试集上取得明确量化提升",
+        "使用Python与Agent完成核心模块，保留代码和实验记录"
+      ]
+    },
+    "text": "合成候选人 synthetic_20_agents\n教育：硕士，计算机相关专业\n目标方向：智能体\n技能：Python、Agent、工具调用、工作流编排、FastAPI、Linux\n项目证据：智能体项目变体2：完成端到端系统并在冻结测试集上取得明确量化提升；使用Python与Agent完成核心模块，保留代码和实验记录\n声明：该画像为评测用途的合成候选人，不对应任何真实个人。"
+  },
+  {
+    "candidate_id": "synthetic_21_autonomous_driving",
+    "synthetic": true,
+    "role_family": "autonomous_driving",
+    "role_family_label": "自动驾驶",
+    "education": {
+      "degree": "本科",
+      "major": "计算机相关专业"
+    },
+    "skills": [
+      "Python",
+      "C++",
+      "感知",
+      "规划控制",
+      "点云",
+      "Linux"
+    ],
+    "evidence": {
+      "strength": "medium",
+      "items": [
+        "自动驾驶项目变体2：完成课程或实验室项目并记录可复现实验结果",
+        "使用Python与C++完成核心模块，保留代码和实验记录"
+      ]
+    },
+    "text": "合成候选人 synthetic_21_autonomous_driving\n教育：本科，计算机相关专业\n目标方向：自动驾驶\n技能：Python、C++、感知、规划控制、点云、Linux\n项目证据：自动驾驶项目变体2：完成课程或实验室项目并记录可复现实验结果；使用Python与C++完成核心模块，保留代码和实验记录\n声明：该画像为评测用途的合成候选人，不对应任何真实个人。"
+  },
+  {
+    "candidate_id": "synthetic_22_ai_testing",
+    "synthetic": true,
+    "role_family": "ai_testing",
+    "role_family_label": "AI评测与测试",
+    "education": {
+      "degree": "博士",
+      "major": "计算机相关专业"
+    },
+    "skills": [
+      "Python",
+      "模型评测",
+      "测试自动化",
+      "数据质量",
+      "安全评测",
+      "Linux"
+    ],
+    "evidence": {
+      "strength": "limited",
+      "items": [
+        "AI评测与测试项目变体2：完成基础原型和公开数据集练习，暂无实习或论文证据",
+        "使用Python与模型评测完成核心模块，保留代码和实验记录"
+      ]
+    },
+    "text": "合成候选人 synthetic_22_ai_testing\n教育：博士，计算机相关专业\n目标方向：AI评测与测试\n技能：Python、模型评测、测试自动化、数据质量、安全评测、Linux\n项目证据：AI评测与测试项目变体2：完成基础原型和公开数据集练习，暂无实习或论文证据；使用Python与模型评测完成核心模块，保留代码和实验记录\n声明：该画像为评测用途的合成候选人，不对应任何真实个人。"
+  },
+  {
+    "candidate_id": "synthetic_23_llm_rag",
+    "synthetic": true,
+    "role_family": "llm_rag",
+    "role_family_label": "大语言模型与RAG",
+    "education": {
+      "degree": "博士",
+      "major": "计算机相关专业"
+    },
+    "skills": [
+      "Python",
+      "PyTorch",
+      "LLM",
+      "RAG",
+      "FAISS",
+      "Git"
+    ],
+    "evidence": {
+      "strength": "medium",
+      "items": [
+        "大语言模型与RAG项目变体3：完成课程或实验室项目并记录可复现实验结果",
+        "使用Python与PyTorch完成核心模块，保留代码和实验记录"
+      ]
+    },
+    "text": "合成候选人 synthetic_23_llm_rag\n教育：博士，计算机相关专业\n目标方向：大语言模型与RAG\n技能：Python、PyTorch、LLM、RAG、FAISS、Git\n项目证据：大语言模型与RAG项目变体3：完成课程或实验室项目并记录可复现实验结果；使用Python与PyTorch完成核心模块，保留代码和实验记录\n声明：该画像为评测用途的合成候选人，不对应任何真实个人。"
+  },
+  {
+    "candidate_id": "synthetic_24_nlp",
+    "synthetic": true,
+    "role_family": "nlp",
+    "role_family_label": "自然语言处理",
+    "education": {
+      "degree": "硕士",
+      "major": "计算机相关专业"
+    },
+    "skills": [
+      "Python",
+      "PyTorch",
+      "NLP",
+      "Transformer",
+      "文本分类",
+      "Git"
+    ],
+    "evidence": {
+      "strength": "limited",
+      "items": [
+        "自然语言处理项目变体3：完成基础原型和公开数据集练习，暂无实习或论文证据",
+        "使用Python与PyTorch完成核心模块，保留代码和实验记录"
+      ]
+    },
+    "text": "合成候选人 synthetic_24_nlp\n教育：硕士，计算机相关专业\n目标方向：自然语言处理\n技能：Python、PyTorch、NLP、Transformer、文本分类、Git\n项目证据：自然语言处理项目变体3：完成基础原型和公开数据集练习，暂无实习或论文证据；使用Python与PyTorch完成核心模块，保留代码和实验记录\n声明：该画像为评测用途的合成候选人，不对应任何真实个人。"
+  },
+  {
+    "candidate_id": "synthetic_25_computer_vision",
+    "synthetic": true,
+    "role_family": "computer_vision",
+    "role_family_label": "计算机视觉",
+    "education": {
+      "degree": "本科",
+      "major": "计算机相关专业"
+    },
+    "skills": [
+      "Python",
+      "PyTorch",
+      "OpenCV",
+      "目标检测",
+      "图像分割",
+      "Git"
+    ],
+    "evidence": {
+      "strength": "strong",
+      "items": [
+        "计算机视觉项目变体3：完成端到端系统并在冻结测试集上取得明确量化提升",
+        "使用Python与PyTorch完成核心模块，保留代码和实验记录"
+      ]
+    },
+    "text": "合成候选人 synthetic_25_computer_vision\n教育：本科，计算机相关专业\n目标方向：计算机视觉\n技能：Python、PyTorch、OpenCV、目标检测、图像分割、Git\n项目证据：计算机视觉项目变体3：完成端到端系统并在冻结测试集上取得明确量化提升；使用Python与PyTorch完成核心模块，保留代码和实验记录\n声明：该画像为评测用途的合成候选人，不对应任何真实个人。"
+  },
+  {
+    "candidate_id": "synthetic_26_multimodal",
+    "synthetic": true,
+    "role_family": "multimodal",
+    "role_family_label": "多模态",
+    "education": {
+      "degree": "博士",
+      "major": "计算机相关专业"
+    },
+    "skills": [
+      "Python",
+      "PyTorch",
+      "CLIP",
+      "VLM",
+      "图文检索",
+      "Git"
+    ],
+    "evidence": {
+      "strength": "medium",
+      "items": [
+        "多模态项目变体3：完成课程或实验室项目并记录可复现实验结果",
+        "使用Python与PyTorch完成核心模块，保留代码和实验记录"
+      ]
+    },
+    "text": "合成候选人 synthetic_26_multimodal\n教育：博士，计算机相关专业\n目标方向：多模态\n技能：Python、PyTorch、CLIP、VLM、图文检索、Git\n项目证据：多模态项目变体3：完成课程或实验室项目并记录可复现实验结果；使用Python与PyTorch完成核心模块，保留代码和实验记录\n声明：该画像为评测用途的合成候选人，不对应任何真实个人。"
+  },
+  {
+    "candidate_id": "synthetic_27_recommendation",
+    "synthetic": true,
+    "role_family": "recommendation",
+    "role_family_label": "推荐系统",
+    "education": {
+      "degree": "硕士",
+      "major": "计算机相关专业"
+    },
+    "skills": [
+      "Python",
+      "SQL",
+      "推荐系统",
+      "特征工程",
+      "召回排序",
+      "Git"
+    ],
+    "evidence": {
+      "strength": "limited",
+      "items": [
+        "推荐系统项目变体3：完成基础原型和公开数据集练习，暂无实习或论文证据",
+        "使用Python与SQL完成核心模块，保留代码和实验记录"
+      ]
+    },
+    "text": "合成候选人 synthetic_27_recommendation\n教育：硕士，计算机相关专业\n目标方向：推荐系统\n技能：Python、SQL、推荐系统、特征工程、召回排序、Git\n项目证据：推荐系统项目变体3：完成基础原型和公开数据集练习，暂无实习或论文证据；使用Python与SQL完成核心模块，保留代码和实验记录\n声明：该画像为评测用途的合成候选人，不对应任何真实个人。"
+  },
+  {
+    "candidate_id": "synthetic_28_data_mining",
+    "synthetic": true,
+    "role_family": "data_mining",
+    "role_family_label": "数据挖掘",
+    "education": {
+      "degree": "本科",
+      "major": "计算机相关专业"
+    },
+    "skills": [
+      "Python",
+      "SQL",
+      "机器学习",
+      "数据挖掘",
+      "XGBoost",
+      "Git"
+    ],
+    "evidence": {
+      "strength": "strong",
+      "items": [
+        "数据挖掘项目变体3：完成端到端系统并在冻结测试集上取得明确量化提升",
+        "使用Python与SQL完成核心模块，保留代码和实验记录"
+      ]
+    },
+    "text": "合成候选人 synthetic_28_data_mining\n教育：本科，计算机相关专业\n目标方向：数据挖掘\n技能：Python、SQL、机器学习、数据挖掘、XGBoost、Git\n项目证据：数据挖掘项目变体3：完成端到端系统并在冻结测试集上取得明确量化提升；使用Python与SQL完成核心模块，保留代码和实验记录\n声明：该画像为评测用途的合成候选人，不对应任何真实个人。"
+  },
+  {
+    "candidate_id": "synthetic_29_search_ads",
+    "synthetic": true,
+    "role_family": "search_ads",
+    "role_family_label": "搜索与广告",
+    "education": {
+      "degree": "博士",
+      "major": "计算机相关专业"
+    },
+    "skills": [
+      "Python",
+      "C++",
+      "搜索排序",
+      "广告CTR",
+      "Learning to Rank",
+      "Git"
+    ],
+    "evidence": {
+      "strength": "medium",
+      "items": [
+        "搜索与广告项目变体3：完成课程或实验室项目并记录可复现实验结果",
+        "使用Python与C++完成核心模块，保留代码和实验记录"
+      ]
+    },
+    "text": "合成候选人 synthetic_29_search_ads\n教育：博士，计算机相关专业\n目标方向：搜索与广告\n技能：Python、C++、搜索排序、广告CTR、Learning to Rank、Git\n项目证据：搜索与广告项目变体3：完成课程或实验室项目并记录可复现实验结果；使用Python与C++完成核心模块，保留代码和实验记录\n声明：该画像为评测用途的合成候选人，不对应任何真实个人。"
+  },
+  {
+    "candidate_id": "synthetic_30_ai_infra",
+    "synthetic": true,
+    "role_family": "ai_infra",
+    "role_family_label": "AI基础设施",
+    "education": {
+      "degree": "硕士",
+      "major": "计算机相关专业"
+    },
+    "skills": [
+      "Python",
+      "C++",
+      "CUDA",
+      "分布式训练",
+      "Docker",
+      "Git"
+    ],
+    "evidence": {
+      "strength": "limited",
+      "items": [
+        "AI基础设施项目变体3：完成基础原型和公开数据集练习，暂无实习或论文证据",
+        "使用Python与C++完成核心模块，保留代码和实验记录"
+      ]
+    },
+    "text": "合成候选人 synthetic_30_ai_infra\n教育：硕士，计算机相关专业\n目标方向：AI基础设施\n技能：Python、C++、CUDA、分布式训练、Docker、Git\n项目证据：AI基础设施项目变体3：完成基础原型和公开数据集练习，暂无实习或论文证据；使用Python与C++完成核心模块，保留代码和实验记录\n声明：该画像为评测用途的合成候选人，不对应任何真实个人。"
+  }
+]

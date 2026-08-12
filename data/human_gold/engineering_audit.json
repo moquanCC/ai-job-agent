@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "checks": {
+    "task_generation_deterministic": true,
+    "candidate_split_frozen": true,
+    "annotation_import_strict": true,
+    "workbook_formula_error_scan": "0 errors",
+    "workbook_visual_reviewed_sheets": 12,
+    "automatic_configuration_write": false
+  }
+}

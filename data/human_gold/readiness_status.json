@@ -1,0 +1,55 @@
+{
+  "status": "template_not_completed",
+  "human_gold": false,
+  "candidate_count": 30,
+  "pair_count": 750,
+  "task_fingerprint": "cbccbbe0ff9273490739485195e1be46365afa93160a5963843172c6da51f722",
+  "workbooks": {
+    "annotator_A": "outputs/human_gold/annotator_A.xlsx",
+    "annotator_B": "outputs/human_gold/annotator_B.xlsx",
+    "adjudicator": "outputs/human_gold/adjudicator.xlsx"
+  },
+  "failures": [
+    "human_labels_incomplete",
+    "human_gold_required"
+  ],
+  "split": {
+    "fingerprint": "cbccbbe0ff9273490739485195e1be46365afa93160a5963843172c6da51f722",
+    "train_candidates": [
+      "synthetic_01_llm_rag",
+      "synthetic_04_multimodal",
+      "synthetic_05_recommendation",
+      "synthetic_06_data_mining",
+      "synthetic_07_search_ads",
+      "synthetic_09_agents",
+      "synthetic_11_ai_testing",
+      "synthetic_12_llm_rag",
+      "synthetic_13_nlp",
+      "synthetic_15_multimodal",
+      "synthetic_16_recommendation",
+      "synthetic_17_data_mining",
+      "synthetic_18_search_ads",
+      "synthetic_22_ai_testing",
+      "synthetic_24_nlp",
+      "synthetic_26_multimodal",
+      "synthetic_27_recommendation",
+      "synthetic_29_search_ads"
+    ],
+    "validation_candidates": [
+      "synthetic_08_ai_infra",
+      "synthetic_14_computer_vision",
+      "synthetic_19_ai_infra",
+      "synthetic_23_llm_rag",
+      "synthetic_28_data_mining",
+      "synthetic_30_ai_infra"
+    ],
+    "blind_test_candidates": [
+      "synthetic_02_nlp",
+      "synthetic_03_computer_vision",
+      "synthetic_10_autonomous_driving",
+      "synthetic_20_agents",
+      "synthetic_21_autonomous_driving",
+      "synthetic_25_computer_vision"
+    ]
+  }
+}

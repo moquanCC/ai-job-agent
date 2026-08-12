@@ -6,6 +6,7 @@ from .fusion_tuning import (
     passes_guardrails,
 )
 from .ranking_metrics import mrr, ndcg_at_k, recall_at_k
+from .human_gold import build_human_gold, compute_human_agreement, prepare_task_spec, validate_annotation
 
 __all__ = [
     "evaluate_weights",
@@ -16,4 +17,8 @@ __all__ = [
     "passes_guardrails",
     "precision_recall_f1",
     "recall_at_k",
+    "build_human_gold",
+    "compute_human_agreement",
+    "validate_annotation",
+    "prepare_task_spec",
 ]
