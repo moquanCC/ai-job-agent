@@ -46,5 +46,7 @@ def parse_job(record: dict) -> JobProfile:
         raw_text=raw,
         expired=expired,
         status="expired" if expired else str(record.get("status") or "unknown"),
-        last_checked_at=str(record.get("last_checked_at") or ""),
+        checked_at=str(record.get("checked_at") or record.get("last_checked_at") or ""),
+        source_evidence=_list_value(record.get("source_evidence")),
+        last_checked_at=str(record.get("last_checked_at") or record.get("checked_at") or ""),
     )

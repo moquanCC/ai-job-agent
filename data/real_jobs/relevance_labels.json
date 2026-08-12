@@ -1,0 +1,362 @@
+[
+  {
+    "candidate_id": "eval_llm",
+    "job_id": "real_baidu_001",
+    "grade": 2,
+    "annotator": "codex-rule-assisted-v1",
+    "rationale": "LLM/RAG 工程画像与岗位的视觉语言方向部分匹配。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_llm",
+    "job_id": "real_baidu_002",
+    "grade": 2,
+    "annotator": "codex-rule-assisted-v1",
+    "rationale": "LLM/RAG 工程画像与岗位的多模态方向部分匹配。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_llm",
+    "job_id": "real_baidu_003",
+    "grade": 2,
+    "annotator": "codex-rule-assisted-v1",
+    "rationale": "LLM/RAG 工程画像与岗位的infra方向部分匹配。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_llm",
+    "job_id": "real_baidu_004",
+    "grade": 2,
+    "annotator": "codex-rule-assisted-v1",
+    "rationale": "LLM/RAG 工程画像与岗位的infra方向部分匹配。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_llm",
+    "job_id": "real_baidu_005",
+    "grade": 2,
+    "annotator": "codex-rule-assisted-v1",
+    "rationale": "LLM/RAG 工程画像与岗位的agent方向部分匹配。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_llm",
+    "job_id": "real_baidu_006",
+    "grade": 2,
+    "annotator": "codex-rule-assisted-v1",
+    "rationale": "LLM/RAG 工程画像与岗位的agent方向部分匹配。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_llm",
+    "job_id": "real_baidu_007",
+    "grade": 2,
+    "annotator": "codex-rule-assisted-v1",
+    "rationale": "LLM/RAG 工程画像与岗位的infra、强化学习方向部分匹配。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_llm",
+    "job_id": "real_baidu_008",
+    "grade": 2,
+    "annotator": "codex-rule-assisted-v1",
+    "rationale": "LLM/RAG 工程画像与岗位的视觉语言方向部分匹配。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_llm",
+    "job_id": "real_baidu_009",
+    "grade": 2,
+    "annotator": "codex-rule-assisted-v1",
+    "rationale": "LLM/RAG 工程画像与岗位的强化学习方向部分匹配。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_llm",
+    "job_id": "real_baidu_010",
+    "grade": 2,
+    "annotator": "codex-rule-assisted-v1",
+    "rationale": "LLM/RAG 工程画像与岗位的测试方向部分匹配。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_llm",
+    "job_id": "real_baidu_011",
+    "grade": 2,
+    "annotator": "codex-rule-assisted-v1",
+    "rationale": "LLM/RAG 工程画像与岗位的多模态方向部分匹配。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_llm",
+    "job_id": "real_baidu_012",
+    "grade": 1,
+    "annotator": "codex-rule-assisted-v1",
+    "rationale": "LLM/RAG 工程画像与岗位的异构方向弱匹配。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_llm",
+    "job_id": "real_baidu_013",
+    "grade": 2,
+    "annotator": "codex-rule-assisted-v1",
+    "rationale": "LLM/RAG 工程画像与岗位的多模态方向部分匹配。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_llm",
+    "job_id": "real_baidu_014",
+    "grade": 1,
+    "annotator": "codex-rule-assisted-v1",
+    "rationale": "LLM/RAG 工程画像与岗位的异构方向弱匹配。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_llm",
+    "job_id": "real_baidu_015",
+    "grade": 0,
+    "annotator": "codex-rule-assisted-v1",
+    "rationale": "LLM/RAG 工程画像与该岗位核心方向缺少直接交集。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_mining",
+    "job_id": "real_baidu_001",
+    "grade": 1,
+    "annotator": "codex-rule-assisted-v1",
+    "rationale": "数据挖掘/推荐画像与岗位的计算机视觉方向弱匹配。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_mining",
+    "job_id": "real_baidu_002",
+    "grade": 1,
+    "annotator": "codex-rule-assisted-v1",
+    "rationale": "数据挖掘/推荐画像与岗位的多模态方向弱匹配。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_mining",
+    "job_id": "real_baidu_003",
+    "grade": 0,
+    "annotator": "codex-rule-assisted-v1",
+    "rationale": "数据挖掘/推荐画像与该岗位核心方向缺少直接交集。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_mining",
+    "job_id": "real_baidu_004",
+    "grade": 0,
+    "annotator": "codex-rule-assisted-v1",
+    "rationale": "数据挖掘/推荐画像与该岗位核心方向缺少直接交集。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_mining",
+    "job_id": "real_baidu_005",
+    "grade": 3,
+    "annotator": "codex-rule-assisted-v1",
+    "rationale": "数据挖掘/推荐画像与岗位的搜广推方向高度匹配。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_mining",
+    "job_id": "real_baidu_006",
+    "grade": 0,
+    "annotator": "codex-rule-assisted-v1",
+    "rationale": "数据挖掘/推荐画像与该岗位核心方向缺少直接交集。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_mining",
+    "job_id": "real_baidu_007",
+    "grade": 0,
+    "annotator": "codex-rule-assisted-v1",
+    "rationale": "数据挖掘/推荐画像与该岗位核心方向缺少直接交集。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_mining",
+    "job_id": "real_baidu_008",
+    "grade": 0,
+    "annotator": "codex-rule-assisted-v1",
+    "rationale": "数据挖掘/推荐画像与该岗位核心方向缺少直接交集。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_mining",
+    "job_id": "real_baidu_009",
+    "grade": 1,
+    "annotator": "codex-rule-assisted-v1",
+    "rationale": "数据挖掘/推荐画像与岗位的决策规划方向弱匹配。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_mining",
+    "job_id": "real_baidu_010",
+    "grade": 1,
+    "annotator": "codex-rule-assisted-v1",
+    "rationale": "数据挖掘/推荐画像与岗位的测试方向弱匹配。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_mining",
+    "job_id": "real_baidu_011",
+    "grade": 1,
+    "annotator": "codex-rule-assisted-v1",
+    "rationale": "数据挖掘/推荐画像与岗位的多模态方向弱匹配。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_mining",
+    "job_id": "real_baidu_012",
+    "grade": 0,
+    "annotator": "codex-rule-assisted-v1",
+    "rationale": "数据挖掘/推荐画像与该岗位核心方向缺少直接交集。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_mining",
+    "job_id": "real_baidu_013",
+    "grade": 1,
+    "annotator": "codex-rule-assisted-v1",
+    "rationale": "数据挖掘/推荐画像与岗位的多模态方向弱匹配。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_mining",
+    "job_id": "real_baidu_014",
+    "grade": 0,
+    "annotator": "codex-rule-assisted-v1",
+    "rationale": "数据挖掘/推荐画像与该岗位核心方向缺少直接交集。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_mining",
+    "job_id": "real_baidu_015",
+    "grade": 0,
+    "annotator": "codex-rule-assisted-v1",
+    "rationale": "数据挖掘/推荐画像与该岗位核心方向缺少直接交集。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_nlp",
+    "job_id": "real_baidu_001",
+    "grade": 2,
+    "annotator": "codex-rule-assisted-v1",
+    "rationale": "NLP/深度学习画像与岗位的视觉语言方向部分匹配。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_nlp",
+    "job_id": "real_baidu_002",
+    "grade": 2,
+    "annotator": "codex-rule-assisted-v1",
+    "rationale": "NLP/深度学习画像与岗位的多模态方向部分匹配。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_nlp",
+    "job_id": "real_baidu_003",
+    "grade": 1,
+    "annotator": "codex-rule-assisted-v1",
+    "rationale": "NLP/深度学习画像与岗位的infra、异构方向弱匹配。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_nlp",
+    "job_id": "real_baidu_004",
+    "grade": 1,
+    "annotator": "codex-rule-assisted-v1",
+    "rationale": "NLP/深度学习画像与岗位的infra方向弱匹配。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_nlp",
+    "job_id": "real_baidu_005",
+    "grade": 2,
+    "annotator": "codex-rule-assisted-v1",
+    "rationale": "NLP/深度学习画像与岗位的agent方向部分匹配。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_nlp",
+    "job_id": "real_baidu_006",
+    "grade": 2,
+    "annotator": "codex-rule-assisted-v1",
+    "rationale": "NLP/深度学习画像与岗位的agent方向部分匹配。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_nlp",
+    "job_id": "real_baidu_007",
+    "grade": 1,
+    "annotator": "codex-rule-assisted-v1",
+    "rationale": "NLP/深度学习画像与岗位的infra、强化学习方向弱匹配。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_nlp",
+    "job_id": "real_baidu_008",
+    "grade": 2,
+    "annotator": "codex-rule-assisted-v1",
+    "rationale": "NLP/深度学习画像与岗位的视觉语言方向部分匹配。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_nlp",
+    "job_id": "real_baidu_009",
+    "grade": 1,
+    "annotator": "codex-rule-assisted-v1",
+    "rationale": "NLP/深度学习画像与岗位的强化学习方向弱匹配。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_nlp",
+    "job_id": "real_baidu_010",
+    "grade": 1,
+    "annotator": "codex-rule-assisted-v1",
+    "rationale": "NLP/深度学习画像与岗位的测试方向弱匹配。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_nlp",
+    "job_id": "real_baidu_011",
+    "grade": 2,
+    "annotator": "codex-rule-assisted-v1",
+    "rationale": "NLP/深度学习画像与岗位的多模态方向部分匹配。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_nlp",
+    "job_id": "real_baidu_012",
+    "grade": 1,
+    "annotator": "codex-rule-assisted-v1",
+    "rationale": "NLP/深度学习画像与岗位的异构方向弱匹配。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_nlp",
+    "job_id": "real_baidu_013",
+    "grade": 2,
+    "annotator": "codex-rule-assisted-v1",
+    "rationale": "NLP/深度学习画像与岗位的多模态方向部分匹配。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_nlp",
+    "job_id": "real_baidu_014",
+    "grade": 1,
+    "annotator": "codex-rule-assisted-v1",
+    "rationale": "NLP/深度学习画像与岗位的异构方向弱匹配。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_nlp",
+    "job_id": "real_baidu_015",
+    "grade": 0,
+    "annotator": "codex-rule-assisted-v1",
+    "rationale": "NLP/深度学习画像与该岗位核心方向缺少直接交集。",
+    "labeled_at": "2026-08-12"
+  }
+]

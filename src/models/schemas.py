@@ -67,6 +67,8 @@ class JobProfile(BaseModel):
     raw_text: str = ""
     expired: bool = False
     status: Literal["active", "expired", "unknown"] = "unknown"
+    checked_at: str = ""
+    source_evidence: list[str] = Field(default_factory=list)
     last_checked_at: str = ""
 
     @field_validator("required_skills", "preferred_skills", "keywords")

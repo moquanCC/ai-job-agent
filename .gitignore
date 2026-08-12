@@ -16,3 +16,4 @@ data/uploads/
 data/real_resumes/
 reports/
 *.log
+.firecrawl/

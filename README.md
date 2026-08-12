@@ -55,6 +55,7 @@ src/agents/                    简历建议、面试题、报告
 src/evaluation/                F1、Recall、MRR、nDCG
 scripts/                       样本、导入、索引和实验脚本
 data/evaluation/               明确标注为合成的评测数据与结果
+data/real_jobs/                官方公开 JD 与规则辅助相关性初标
 tests/                         单元测试与完整流程测试
 docs/                          架构、评测和演示材料
 ```
@@ -70,6 +71,14 @@ job_id,company,title,location,description,source_url,published_at,deadline
 ```
 
 JSON 是相同字段对象组成的数组。推荐额外提供 `employment_type`、`required_skills`、`preferred_skills`、`education_requirement`、`responsibilities` 和 `status`。无法确认的状态应使用 `unknown`，不要标为正在招聘。
+
+首批真实数据位于 `data/real_jobs/jobs.json`：15 条均来自企业官方职位详情，包含来源证据和 2026-08-12 核验日期。`relevance_labels.json` 提供 3 类匿名候选人画像与这些岗位组成的 45 个 0～3 级规则辅助初标；它们还不是多人复标后的金标准。收集口径、证据及样本偏差见 `docs/research/official-shanghai-ai-jobs.md`。
+
+研究文档更新后可重新生成并校验结构化数据：
+
+```powershell
+python scripts/compile_real_jobs.py
+```
 
 ## 匹配评分
 
@@ -92,7 +101,7 @@ python scripts/run_evaluation.py
 python scripts/build_index.py --db data/app.db --output data/faiss_index
 ```
 
-GitHub Actions 会在每次推送和 Pull Request 时使用 Python 3.11 执行源码编译、21 项测试、合成数据再生成、完整评测和 SQLite 导入冒烟测试，并保留 14 天的评测结果 artifact。
+GitHub Actions 会在每次推送和 Pull Request 时使用 Python 3.11 执行源码编译、测试、合成数据再生成、完整评测和 SQLite 导入冒烟测试，并保留 14 天的评测结果 artifact。
 
 最新仓库内结果由 `data/evaluation/results.json` 给出。合成集用于验证管线和指标实现，不应用于宣称真实招聘效果；真实验收应替换为脱敏简历、真实公开 JD 和人工多标注者相关性标签。
 
@@ -109,14 +118,14 @@ GitHub Actions 会在每次推送和 Pull Request 时使用 Python 3.11 执行�
 - 默认提取器是确定性规则，复杂版式、表格简历和模糊标题可能需要人工修正。
 - 扫描 PDF 未集成 OCR；请改用可复制 PDF 或 DOCX。
 - 离线字符向量不是 BGE-M3，语义泛化能力有限；生产化时应替换 Embedding 后重建索引。
-- 示例岗位和实验数据均为合成，不代表真实岗位仍在招聘。
+- 默认演示岗位和当前指标结果仍来自合成数据；真实 JD 已单独入库，但尚未形成多人复标评测结果。
 - 当前为单机 Demo，没有账户、权限、多租户和高并发能力。
 
 ## 后续计划
 
 1. 接入带 JSON Schema 的 OpenAI 兼容提取器，并保留证据与最多两次重试。
 2. 使用 BGE-M3 + FAISS 召回和 Cross-Encoder 精排。
-3. 建立 30～50 条真实公开 JD 的多人标注评测集。
+3. 将当前 15 条官方 JD 扩展至 30～50 条、多公司覆盖，并完成双人独立复标。
 4. 增加简历版本对比、回答反馈和岗位截止提醒。
 
 ## 演示与项目表达
