@@ -62,3 +62,28 @@ python scripts/run_real_evaluation.py --embedding-backend bge-m3 --embedding-mod
 首次运行会下载模型到 Hugging Face 缓存。Windows 未启用开发者模式或缺少 symlink 权限时可能出现缓存警告，通常不影响正确性但可能增加磁盘占用。GitHub Actions 始终显式使用 hashing，不触发 BGE 下载。
 
 最重要的效度限制不因换用 BGE-M3 而消失：3 个候选人画像仍为合成数据，相关性仍是双模型独立盲标与裁决形成的模型辅助基准，`human_gold=false`，并非真人金标准。
+
+## 探索性融合权重搜索
+
+权重搜索先复用与线上排名相同的 eligibility 过滤。30 条公开 JD 中，26 条实际进入本次搜索；3 个候选人共形成 78 个有效候选人—岗位对。每位候选人的 BGE-M3 语义分项只计算一次，随后在缓存的五个可调分项上枚举步长 0.05 的约束 simplex：`required_skill >= 0.25`、`0.10 <= semantic <= 0.35`、`location=0`，其余五项之和为 1。
+
+最终一致性修复后的搜索共枚举 2050 组权重，得到 208 种唯一岗位排序，1842 组是等价并列。三个 leave-one-candidate-out 折只产生 2 个不同 winner，而不是稳定一致的权重。由折 winner 的中位目标选择出的合法 medoid 为；此前阶段性统计均以 `data/real_jobs/fusion_weight_search_bge_m3.json` 的最终值为准：
+
+```text
+required_skill 0.25   preferred_skill 0.10   project 0.15
+semantic       0.35   education       0.15   location 0.00
+```
+
+| 指标 | BGE baseline | 描述性 medoid |
+|---|---:|---:|
+| Recall@5 | 0.4901961 | 0.4901961 |
+| Recall@10 | 0.6078431 | 0.5882353 |
+| MRR | 0.7777778 | 0.8333333 |
+| nDCG@5 | 0.6939607 | 0.7559514 |
+| nDCG@10 | 0.7213242 | 0.7426167 |
+
+LOCO mean Recall@10 为 0.5882353、nDCG@5 为 0.7536770、nDCG@10 为 0.7409596；held-out nDCG@5 跨折范围为 0.6215484–0.8869466。LOCO 在这里估计的是“在另外两个候选人上选择权重”的流程，不是对最终 medoid 的独立验证；medoid 的全数据指标也是调参后的描述性结果。Recall@10 从 baseline 的 0.6078431 降低，大量等价排序、2 个不同 fold winner 和较宽的 held-out 范围共同说明结果不稳定且并非全面改善。
+
+promotion 因而明确拒绝，默认配置没有变化。location 已在评分前硬过滤，所有 eligible 岗位的 location 分项均为常数；搜索中去掉它不会改变排序，但把 `location=0` 权重直接写入部署配置会改变 0–100 绝对分和推荐阈值。未来只有在新增异质候选人和独立真人标注 holdout 后，才可重新考虑部署；届时应保留 `location=0.10`，并把五个搜索权重整体乘以 0.90。
+
+本实验仍为 `human_gold=false`：只有 3 个合成候选人，相关性来自双模型裁决。指标改善不能解释为真实求职或招聘效果，也不能将该 medoid 称为生产最优权重。

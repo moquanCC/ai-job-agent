@@ -12,6 +12,8 @@ from src.services import AnalysisService
 from src.ui.demo_presenters import (
     embedding_benchmark_rows,
     embedding_status_rows,
+    fusion_tuning_rows,
+    fusion_tuning_summary,
     job_status_summary,
     job_table_rows,
     is_official_source,
@@ -269,6 +271,25 @@ def page_evaluation(api: AnalysisService) -> None:
             st.caption("仅呈现当前数据集的实测差值；结果不代表 BGE-M3 在所有任务上全面提升。")
         except (OSError, ValueError, KeyError, TypeError, json.JSONDecodeError) as exc:
             st.caption(f"BGE-M3 对比结果暂不可用：{exc}")
+
+        st.markdown("#### 融合权重探索")
+        tuning_path = ROOT / "data" / "real_jobs" / "fusion_weight_search_bge_m3.json"
+        try:
+            tuning_result = json.loads(tuning_path.read_text(encoding="utf-8"))
+            tuning_rows = fusion_tuning_rows(tuning_result)
+            tuning_summary = fusion_tuning_summary(tuning_result)
+            st.dataframe(pd.DataFrame(tuning_rows), use_container_width=True, hide_index=True)
+            summary_columns = st.columns(3)
+            fold_range = tuning_summary["fold_ndcg5_range"]
+            summary_columns[0].metric("配置更新决定", tuning_summary["promotion"])
+            summary_columns[1].metric("三折 nDCG@5 范围", f"{fold_range[0]:.4f}–{fold_range[1]:.4f}")
+            summary_columns[2].metric("不同折权重方案数", tuning_summary["unique_fold_winners"])
+            stability = "稳定" if tuning_summary["stable_across_all_folds"] else "不稳定"
+            st.caption(f"折间权重稳定性：{stability}")
+            for reason in tuning_summary["failure_reasons"]:
+                st.warning(f"配置更新拒绝原因：{reason}")
+        except (OSError, ValueError, KeyError, TypeError, json.JSONDecodeError) as exc:
+            st.caption(f"融合权重探索结果暂不可用：{exc}")
 
         st.markdown("#### 局限性")
         limitations = result.get("limitations", [])

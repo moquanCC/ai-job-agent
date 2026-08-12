@@ -2,12 +2,62 @@ from src.models.schemas import JobProfile
 from src.ui.demo_presenters import (
     embedding_benchmark_rows,
     embedding_status_rows,
+    fusion_tuning_rows,
+    fusion_tuning_summary,
     job_status_summary,
     job_table_rows,
     is_official_source,
     ranking_comparison_rows,
     source_badge,
 )
+
+
+def _fusion_result():
+    return {
+        "baseline": {"metrics": {"recall@5": 0.49, "ndcg@5": 0.69, "ndcg@10": 0.72}},
+        "deployment_candidate": {
+            "metrics": {"recall@5": 0.49, "ndcg@5": 0.76, "ndcg@10": 0.78},
+            "metrics_scope": "descriptive_only",
+        },
+        "loco": {
+            "mean_metrics": {"recall@5": 0.49, "ndcg@5": 0.75, "ndcg@10": 0.77},
+            "folds": [
+                {"held_out_metrics": {"ndcg@5": 0.62}},
+                {"held_out_metrics": {"ndcg@5": 0.75}},
+                {"held_out_metrics": {"ndcg@5": 0.89}},
+            ],
+            "winner_diagnostics": {"unique_winner_count": 2},
+        },
+        "search": {"fold_winner_stability": {"stable_across_all_folds": False}},
+        "guardrails": {
+            "passed": False,
+            "failures": ["exploratory_insufficient_candidates", "human_gold_false"],
+        },
+    }
+
+
+def test_fusion_tuning_rows_label_validation_scope_honestly():
+    rows = fusion_tuning_rows(_fusion_result())
+
+    assert [row["评估口径"] for row in rows] == [
+        "固定基线",
+        "描述性（调参后）",
+        "留一候选人验证",
+    ]
+    assert rows[2]["nDCG@5"] == 0.75
+    assert all("最佳" not in key for row in rows for key in row)
+
+
+def test_fusion_tuning_summary_discloses_range_instability_and_rejection():
+    summary = fusion_tuning_summary(_fusion_result())
+
+    assert summary == {
+        "promotion": "拒绝",
+        "failure_reasons": ["样本仅含 3 个合成候选人", "human_gold=false"],
+        "fold_ndcg5_range": [0.62, 0.89],
+        "unique_fold_winners": 2,
+        "stable_across_all_folds": False,
+    }
 
 
 def test_embedding_status_rows_discloses_unselected_auto_backend():

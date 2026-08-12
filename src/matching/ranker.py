@@ -28,26 +28,23 @@ def _job_text(job: JobProfile) -> str:
     )
 
 
-def score_job(
+def raw_subscores(
     resume: ResumeProfile,
     job: JobProfile,
-    custom_weights: dict[str, float] | None = None,
     semantic_score: float | None = None,
-) -> MatchResult:
+) -> dict[str, float]:
+    """Compute fusion inputs without display rounding."""
+
     candidate = set(resume.skills)
-    required, matched_required, missing_required = skill_coverage(
-        candidate, job.required_skills
-    )
-    preferred, matched_preferred, missing_preferred = skill_coverage(
-        candidate, job.preferred_skills
-    )
-    project, project_hits = project_overlap(resume, job)
+    required, _, _ = skill_coverage(candidate, job.required_skills)
+    preferred, _, _ = skill_coverage(candidate, job.preferred_skills)
+    project, _ = project_overlap(resume, job)
     semantic = (
         semantic_similarity(_resume_text(resume), _job_text(job))
         if semantic_score is None
         else float(semantic_score)
     )
-    values = {
+    return {
         "required_skill": required,
         "preferred_skill": preferred,
         "project": project,
@@ -55,6 +52,23 @@ def score_job(
         "education": education_score(resume, job),
         "location": 100.0 if "上海" in job.location else 0.0,
     }
+
+
+def score_job(
+    resume: ResumeProfile,
+    job: JobProfile,
+    custom_weights: dict[str, float] | None = None,
+    semantic_score: float | None = None,
+) -> MatchResult:
+    candidate = set(resume.skills)
+    _, matched_required, missing_required = skill_coverage(
+        candidate, job.required_skills
+    )
+    _, matched_preferred, missing_preferred = skill_coverage(
+        candidate, job.preferred_skills
+    )
+    _, project_hits = project_overlap(resume, job)
+    values = raw_subscores(resume, job, semantic_score=semantic_score)
     total = fuse(values, custom_weights)
     evidence = []
     if matched_required:

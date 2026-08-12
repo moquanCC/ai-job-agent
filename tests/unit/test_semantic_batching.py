@@ -2,7 +2,8 @@ from __future__ import annotations
 
 import numpy as np
 
-from src.matching.ranker import rank_jobs, score_job
+from src.matching.ranker import rank_jobs, raw_subscores, score_job
+from src.matching.score_fusion import fuse
 from src.matching.semantic_matcher import semantic_scores
 from src.models.schemas import Education, JobProfile, ResumeProfile
 
@@ -77,3 +78,27 @@ def test_score_job_uses_precomputed_semantic_score() -> None:
     result = score_job(_resume(), _job("job"), semantic_score=37.5)
 
     assert result.subscores.semantic == 37.5
+
+
+def test_raw_subscores_preserve_precision_used_by_fusion() -> None:
+    resume = _resume()
+    job = _job("fractional")
+    job.required_skills = ["Python", "SQL", "PyTorch"]
+    weights = {
+        "required_skill": 0.37,
+        "preferred_skill": 0.0,
+        "project": 0.0,
+        "semantic": 0.63,
+        "education": 0.0,
+        "location": 0.0,
+    }
+
+    components = raw_subscores(resume, job, semantic_score=12.34567)
+    result = score_job(resume, job, custom_weights=weights, semantic_score=12.34567)
+
+    assert components["required_skill"] == 100 / 3
+    assert components["semantic"] == 12.34567
+    assert result.total_score == fuse(components, weights)
+    assert result.subscores.required_skill == 33.33
+    assert result.subscores.semantic == 12.35
+    assert components != result.subscores.model_dump()

@@ -1,0 +1,405 @@
+{
+  "dataset": {
+    "synthetic": false,
+    "annotation": "adjudicated-model-panel-v1",
+    "human_gold": false,
+    "candidates": 3,
+    "candidate_ids": [
+      "eval_llm",
+      "eval_mining",
+      "eval_nlp"
+    ],
+    "active_jobs": 27,
+    "eligible_jobs": 26,
+    "eligible_job_ids": [
+      "real_baidu_001",
+      "real_baidu_002",
+      "real_baidu_003",
+      "real_baidu_004",
+      "real_baidu_005",
+      "real_baidu_006",
+      "real_baidu_007",
+      "real_baidu_008",
+      "real_baidu_009",
+      "real_baidu_010",
+      "real_baidu_011",
+      "real_baidu_012",
+      "real_shlab_001",
+      "real_shlab_002",
+      "real_shlab_003",
+      "real_shlab_004",
+      "real_shlab_005",
+      "real_shlab_006",
+      "real_shlab_007",
+      "real_shlab_008",
+      "real_shlab_009",
+      "real_shlab_010",
+      "real_bilibili_011",
+      "real_bilibili_012",
+      "real_bilibili_014",
+      "real_bilibili_015"
+    ],
+    "pairs": 78
+  },
+  "embedding": {
+    "requested_backend": "bge-m3",
+    "actual_backend": "bge-m3",
+    "model": "BAAI/bge-m3",
+    "dimensions": 1024,
+    "batch_size": 8,
+    "max_length": 1024,
+    "fallback_occurred": false
+  },
+  "search": {
+    "step": 0.05,
+    "candidate_count": 2050,
+    "unique_rankings": 208,
+    "ranking_tie_count": 1842,
+    "fold_winner_stability": {
+      "unique_winners": 2,
+      "stable_across_all_folds": false
+    },
+    "constraints": {
+      "sum": 1.0,
+      "required_skill_min": 0.25,
+      "semantic_range": [
+        0.1,
+        0.35
+      ],
+      "location": 0.0
+    },
+    "objective": "LOCO mean nDCG@5 with deterministic tie-breaks",
+    "tie_breakers": [
+      "mean_ndcg@5",
+      "worst_candidate_ndcg@5",
+      "baseline_l1_distance",
+      "lexicographic_weights"
+    ],
+    "seed": null,
+    "grid_uses_cached_subscores": true
+  },
+  "baseline": {
+    "weights": {
+      "required_skill": 0.3333333333333333,
+      "preferred_skill": 0.1111111111111111,
+      "project": 0.2222222222222222,
+      "semantic": 0.2222222222222222,
+      "education": 0.1111111111111111,
+      "location": 0.0
+    },
+    "metrics": {
+      "recall@5": 0.4901960784313726,
+      "recall@10": 0.6078431372549019,
+      "mrr": 0.7777777777777778,
+      "ndcg@5": 0.6939606650024038,
+      "ndcg@10": 0.7213242305070061
+    },
+    "by_candidate": {
+      "eval_llm": {
+        "ranked_job_ids": [
+          "real_shlab_001",
+          "real_shlab_008",
+          "real_shlab_004",
+          "real_baidu_001",
+          "real_baidu_002",
+          "real_baidu_005",
+          "real_baidu_007",
+          "real_bilibili_014",
+          "real_baidu_004",
+          "real_bilibili_015",
+          "real_baidu_012",
+          "real_shlab_009",
+          "real_bilibili_012",
+          "real_shlab_005",
+          "real_shlab_002",
+          "real_shlab_007",
+          "real_baidu_003",
+          "real_bilibili_011",
+          "real_baidu_008",
+          "real_baidu_006",
+          "real_baidu_011",
+          "real_shlab_010",
+          "real_baidu_009",
+          "real_baidu_010",
+          "real_shlab_003",
+          "real_shlab_006"
+        ],
+        "metrics": {
+          "recall@5": 0.23529411764705882,
+          "recall@10": 0.35294117647058826,
+          "mrr": 1.0,
+          "ndcg@5": 0.6215484386969327,
+          "ndcg@10": 0.6821024002646693
+        }
+      },
+      "eval_mining": {
+        "ranked_job_ids": [
+          "real_baidu_001",
+          "real_baidu_002",
+          "real_baidu_005",
+          "real_shlab_008",
+          "real_shlab_001",
+          "real_shlab_004",
+          "real_shlab_002",
+          "real_baidu_003",
+          "real_baidu_007",
+          "real_bilibili_015",
+          "real_baidu_012",
+          "real_bilibili_011",
+          "real_baidu_004",
+          "real_shlab_009",
+          "real_bilibili_014",
+          "real_bilibili_012",
+          "real_baidu_006",
+          "real_baidu_010",
+          "real_shlab_006",
+          "real_shlab_010",
+          "real_shlab_007",
+          "real_shlab_005",
+          "real_baidu_008",
+          "real_baidu_009",
+          "real_baidu_011",
+          "real_shlab_003"
+        ],
+        "metrics": {
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "mrr": 0.3333333333333333,
+          "ndcg@5": 0.5733869580681507,
+          "ndcg@10": 0.6041434947552827
+        }
+      },
+      "eval_nlp": {
+        "ranked_job_ids": [
+          "real_shlab_008",
+          "real_shlab_001",
+          "real_baidu_001",
+          "real_shlab_004",
+          "real_baidu_002",
+          "real_baidu_005",
+          "real_shlab_009",
+          "real_shlab_002",
+          "real_bilibili_011",
+          "real_baidu_008",
+          "real_baidu_011",
+          "real_baidu_012",
+          "real_bilibili_014",
+          "real_baidu_007",
+          "real_baidu_004",
+          "real_bilibili_012",
+          "real_shlab_007",
+          "real_shlab_005",
+          "real_baidu_003",
+          "real_baidu_010",
+          "real_baidu_009",
+          "real_bilibili_015",
+          "real_shlab_010",
+          "real_shlab_003",
+          "real_baidu_006",
+          "real_shlab_006"
+        ],
+        "metrics": {
+          "recall@5": 0.23529411764705882,
+          "recall@10": 0.47058823529411764,
+          "mrr": 1.0,
+          "ndcg@5": 0.8869465982421281,
+          "ndcg@10": 0.8777267965010667
+        }
+      }
+    },
+    "candidate_count": 3
+  },
+  "loco": {
+    "folds": [
+      {
+        "held_out_candidate": "eval_llm",
+        "selected_weights": {
+          "required_skill": 0.25,
+          "preferred_skill": 0.1,
+          "project": 0.25,
+          "semantic": 0.25,
+          "education": 0.15,
+          "location": 0.0
+        },
+        "selected_l1_from_baseline": 0.18888888888888888,
+        "selection_tie_count": 1,
+        "unique_training_rankings": 92,
+        "training_metrics": {
+          "recall@5": 0.6176470588235294,
+          "recall@10": 0.7352941176470589,
+          "mrr": 0.75,
+          "ndcg@5": 0.8197412996140604,
+          "ndcg@10": 0.833850403702681
+        },
+        "held_out_metrics": {
+          "recall@5": 0.23529411764705882,
+          "recall@10": 0.29411764705882354,
+          "mrr": 1.0,
+          "ndcg@5": 0.6215484386969327,
+          "ndcg@10": 0.5837290446566757
+        }
+      },
+      {
+        "held_out_candidate": "eval_mining",
+        "selected_weights": {
+          "required_skill": 0.25,
+          "preferred_skill": 0.1,
+          "project": 0.15,
+          "semantic": 0.35,
+          "education": 0.15,
+          "location": 0.0
+        },
+        "selected_l1_from_baseline": 0.33333333333333326,
+        "selection_tie_count": 2,
+        "unique_training_rankings": 14,
+        "training_metrics": {
+          "recall@5": 0.23529411764705882,
+          "recall@10": 0.38235294117647056,
+          "mrr": 1.0,
+          "ndcg@5": 0.757659154392877,
+          "ndcg@10": 0.7332135737570074
+        },
+        "held_out_metrics": {
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "mrr": 0.5,
+          "ndcg@5": 0.7525360009859927,
+          "ndcg@10": 0.761422931898507
+        }
+      },
+      {
+        "held_out_candidate": "eval_nlp",
+        "selected_weights": {
+          "required_skill": 0.25,
+          "preferred_skill": 0.1,
+          "project": 0.15,
+          "semantic": 0.35,
+          "education": 0.15,
+          "location": 0.0
+        },
+        "selected_l1_from_baseline": 0.33333333333333326,
+        "selection_tie_count": 1,
+        "unique_training_rankings": 193,
+        "training_metrics": {
+          "recall@5": 0.6176470588235294,
+          "recall@10": 0.6470588235294118,
+          "mrr": 0.75,
+          "ndcg@5": 0.6904538557648094,
+          "ndcg@10": 0.6750616414557274
+        },
+        "held_out_metrics": {
+          "recall@5": 0.23529411764705882,
+          "recall@10": 0.47058823529411764,
+          "mrr": 1.0,
+          "ndcg@5": 0.8869465982421281,
+          "ndcg@10": 0.8777267965010667
+        }
+      }
+    ],
+    "mean_metrics": {
+      "recall@5": 0.4901960784313726,
+      "recall@10": 0.5882352941176471,
+      "mrr": 0.8333333333333334,
+      "ndcg@5": 0.7536770126416844,
+      "ndcg@10": 0.7409595910187498
+    },
+    "deployment_candidate": {
+      "weights": {
+        "required_skill": 0.25,
+        "preferred_skill": 0.1,
+        "project": 0.15,
+        "semantic": 0.35,
+        "education": 0.15,
+        "location": 0.0
+      },
+      "median_vector": {
+        "required_skill": 0.25,
+        "preferred_skill": 0.1,
+        "project": 0.15,
+        "semantic": 0.35,
+        "education": 0.15,
+        "location": 0.0
+      },
+      "selection": "nearest_legal_candidate_to_fold_winner_median",
+      "l1_from_median": 0.0,
+      "metrics": {
+        "recall@5": 0.4901960784313726,
+        "recall@10": 0.5882352941176471,
+        "mrr": 0.8333333333333334,
+        "ndcg@5": 0.7559514365905823,
+        "ndcg@10": 0.7426166931375072
+      },
+      "validation_scope": "descriptive_only"
+    },
+    "winner_diagnostics": {
+      "unique_winner_count": 2,
+      "component_ranges": {
+        "required_skill": {
+          "min": 0.25,
+          "max": 0.25
+        },
+        "preferred_skill": {
+          "min": 0.1,
+          "max": 0.1
+        },
+        "project": {
+          "min": 0.15,
+          "max": 0.25
+        },
+        "semantic": {
+          "min": 0.25,
+          "max": 0.35
+        },
+        "education": {
+          "min": 0.15,
+          "max": 0.15
+        },
+        "location": {
+          "min": 0.0,
+          "max": 0.0
+        }
+      }
+    }
+  },
+  "deployment_candidate": {
+    "weights": {
+      "required_skill": 0.25,
+      "preferred_skill": 0.1,
+      "project": 0.15,
+      "semantic": 0.35,
+      "education": 0.15,
+      "location": 0.0
+    },
+    "median_vector": {
+      "required_skill": 0.25,
+      "preferred_skill": 0.1,
+      "project": 0.15,
+      "semantic": 0.35,
+      "education": 0.15,
+      "location": 0.0
+    },
+    "selection": "nearest_legal_candidate_to_fold_winner_median",
+    "l1_from_median": 0.0,
+    "metrics": {
+      "recall@5": 0.4901960784313726,
+      "recall@10": 0.5882352941176471,
+      "mrr": 0.8333333333333334,
+      "ndcg@5": 0.7559514365905823,
+      "ndcg@10": 0.7426166931375072
+    },
+    "validation_scope": "descriptive_only",
+    "metrics_scope": "descriptive_only"
+  },
+  "guardrails": {
+    "passed": false,
+    "failures": [
+      "exploratory_insufficient_candidates",
+      "human_gold_false"
+    ]
+  },
+  "limitations": [
+    "Only three synthetic candidate profiles are available; uncertainty is high.",
+    "Labels and adjudication are model-assisted and are not human gold.",
+    "All-data deployment metrics are descriptive after tuning, not held-out performance."
+  ]
+}

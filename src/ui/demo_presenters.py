@@ -115,3 +115,44 @@ def embedding_benchmark_rows(hashing_result: dict, bge_result: dict) -> list[dic
         }
         for key, label in (("recall@5", "Recall@5"), ("mrr", "MRR"), ("ndcg@10", "nDCG@10"))
     ]
+
+
+def fusion_tuning_rows(result: dict) -> list[dict]:
+    """Expose fixed, descriptive and held-out metrics as distinct scopes."""
+    entries = (
+        ("固定基线", result["baseline"]["metrics"]),
+        ("描述性（调参后）", result["deployment_candidate"]["metrics"]),
+        ("留一候选人验证", result["loco"]["mean_metrics"]),
+    )
+    return [
+        {
+            "评估口径": scope,
+            "Recall@5": metrics["recall@5"],
+            "nDCG@5": metrics["ndcg@5"],
+            "nDCG@10": metrics["ndcg@10"],
+        }
+        for scope, metrics in entries
+    ]
+
+
+def fusion_tuning_summary(result: dict) -> dict:
+    """Summarize fold uncertainty and a non-promotional guardrail decision."""
+    failure_labels = {
+        "exploratory_insufficient_candidates": "样本仅含 3 个合成候选人",
+        "human_gold_false": "human_gold=false",
+        "descriptive_ndcg5_gain_below_0_005": "描述性 nDCG@5 提升不足 0.005",
+        "descriptive_recall5_below_baseline": "描述性 Recall@5 低于基线",
+        "descriptive_recall10_drop_over_0_02": "描述性 Recall@10 降幅超过 0.02",
+        "loco_mean_ndcg5_below_baseline": "LOCO 平均 nDCG@5 低于基线",
+    }
+    fold_values = [fold["held_out_metrics"]["ndcg@5"] for fold in result["loco"]["folds"]]
+    stable = result["search"]["fold_winner_stability"]["stable_across_all_folds"]
+    return {
+        "promotion": "未拒绝" if result["guardrails"]["passed"] else "拒绝",
+        "failure_reasons": [
+            failure_labels.get(reason, reason) for reason in result["guardrails"].get("failures", [])
+        ],
+        "fold_ndcg5_range": [min(fold_values), max(fold_values)],
+        "unique_fold_winners": result["loco"]["winner_diagnostics"]["unique_winner_count"],
+        "stable_across_all_folds": bool(stable),
+    }
