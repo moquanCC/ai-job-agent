@@ -339,7 +339,7 @@ python scripts/run_real_evaluation.py --embedding-backend bge-m3 --output data/r
 
 Expected: all tests pass, both result files declare their actual backend, and the app launches with backend disclosure.
 
-- [ ] **Step 7: Commit, push and verify CI**（待根任务提交、推送并验证 CI）
+- [x] **Step 7: Commit, push and verify CI**（远端提交 `69d2174`，CI run `31560055693` 已通过）
 
 ```powershell
 git add app.py README.md docs data/real_jobs/evaluation_results_bge_m3.json
