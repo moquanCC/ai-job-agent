@@ -1,0 +1,11 @@
+services:
+  app:
+    build: .
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./data:/app/data
+    environment:
+      DATABASE_URL: sqlite:///data/app.db
+      DEFAULT_LOCATION: 上海
+      TOP_K: "10"

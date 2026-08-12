@@ -1,0 +1,4 @@
+default_location: 上海
+top_k: 10
+database_url: sqlite:///data/app.db
+embedding_model: local-hashing-v1

@@ -1,0 +1,1298 @@
+[
+  {
+    "job_id": "job_001",
+    "company": "星海科技",
+    "title": "大模型应用工程师（2027届校招）",
+    "location": "上海",
+    "employment_type": "校园招聘",
+    "graduation_window": "2026-09至2027-08",
+    "responsibilities": [
+      "负责大模型应用相关系统研发",
+      "完成离线评测、性能优化和工程落地"
+    ],
+    "required_skills": [
+      "Python",
+      "大语言模型",
+      "检索增强生成",
+      "FAISS"
+    ],
+    "preferred_skills": [
+      "FastAPI",
+      "Docker"
+    ],
+    "education_requirement": "硕士及以上",
+    "keywords": [
+      "Python",
+      "大语言模型",
+      "检索增强生成",
+      "FAISS",
+      "FastAPI",
+      "Docker"
+    ],
+    "source_url": "https://example.com/campus/1",
+    "published_at": "2026-08-01",
+    "deadline": "2027-01-31",
+    "status": "active",
+    "raw_text": "2027届校园招聘，工作地点上海。负责大模型应用工程师研发，要求 Python、大语言模型、检索增强生成、FAISS，掌握 FastAPI、Docker 优先。"
+  },
+  {
+    "job_id": "job_002",
+    "company": "星海科技",
+    "title": "机器学习算法工程师（2027届校招）",
+    "location": "上海",
+    "employment_type": "校园招聘",
+    "graduation_window": "2026-09至2027-08",
+    "responsibilities": [
+      "负责机器学习算法相关系统研发",
+      "完成离线评测、性能优化和工程落地"
+    ],
+    "required_skills": [
+      "Python",
+      "机器学习",
+      "PyTorch",
+      "深度学习"
+    ],
+    "preferred_skills": [
+      "SQL",
+      "Docker"
+    ],
+    "education_requirement": "本科及以上",
+    "keywords": [
+      "Python",
+      "机器学习",
+      "PyTorch",
+      "深度学习",
+      "SQL",
+      "Docker"
+    ],
+    "source_url": "https://example.com/campus/2",
+    "published_at": "2026-08-01",
+    "deadline": "2027-01-31",
+    "status": "active",
+    "raw_text": "2027届校园招聘，工作地点上海。负责机器学习算法工程师研发，要求 Python、机器学习、PyTorch、深度学习，掌握 SQL、Docker 优先。"
+  },
+  {
+    "job_id": "job_003",
+    "company": "星海科技",
+    "title": "数据挖掘工程师（2027届校招）",
+    "location": "上海",
+    "employment_type": "校园招聘",
+    "graduation_window": "2026-09至2027-08",
+    "responsibilities": [
+      "负责数据挖掘相关系统研发",
+      "完成离线评测、性能优化和工程落地"
+    ],
+    "required_skills": [
+      "Python",
+      "数据挖掘",
+      "机器学习",
+      "SQL"
+    ],
+    "preferred_skills": [
+      "推荐系统",
+      "PyTorch"
+    ],
+    "education_requirement": "本科及以上",
+    "keywords": [
+      "Python",
+      "数据挖掘",
+      "机器学习",
+      "SQL",
+      "推荐系统",
+      "PyTorch"
+    ],
+    "source_url": "https://example.com/campus/3",
+    "published_at": "2026-08-01",
+    "deadline": "2027-01-31",
+    "status": "active",
+    "raw_text": "2027届校园招聘，工作地点上海。负责数据挖掘工程师研发，要求 Python、数据挖掘、机器学习、SQL，掌握 推荐系统、PyTorch 优先。"
+  },
+  {
+    "job_id": "job_004",
+    "company": "星海科技",
+    "title": "搜索推荐算法工程师（2027届校招）",
+    "location": "上海",
+    "employment_type": "校园招聘",
+    "graduation_window": "2026-09至2027-08",
+    "responsibilities": [
+      "负责搜索推荐算法相关系统研发",
+      "完成离线评测、性能优化和工程落地"
+    ],
+    "required_skills": [
+      "Python",
+      "推荐系统",
+      "机器学习",
+      "PyTorch"
+    ],
+    "preferred_skills": [
+      "大语言模型",
+      "SQL"
+    ],
+    "education_requirement": "本科及以上",
+    "keywords": [
+      "Python",
+      "推荐系统",
+      "机器学习",
+      "PyTorch",
+      "大语言模型",
+      "SQL"
+    ],
+    "source_url": "https://example.com/campus/4",
+    "published_at": "2026-08-01",
+    "deadline": "2027-01-31",
+    "status": "active",
+    "raw_text": "2027届校园招聘，工作地点上海。负责搜索推荐算法工程师研发，要求 Python、推荐系统、机器学习、PyTorch，掌握 大语言模型、SQL 优先。"
+  },
+  {
+    "job_id": "job_005",
+    "company": "星海科技",
+    "title": "NLP算法工程师（2027届校招）",
+    "location": "上海",
+    "employment_type": "校园招聘",
+    "graduation_window": "2026-09至2027-08",
+    "responsibilities": [
+      "负责NLP算法相关系统研发",
+      "完成离线评测、性能优化和工程落地"
+    ],
+    "required_skills": [
+      "Python",
+      "自然语言处理",
+      "PyTorch",
+      "大语言模型"
+    ],
+    "preferred_skills": [
+      "检索增强生成",
+      "Docker"
+    ],
+    "education_requirement": "硕士及以上",
+    "keywords": [
+      "Python",
+      "自然语言处理",
+      "PyTorch",
+      "大语言模型",
+      "检索增强生成",
+      "Docker"
+    ],
+    "source_url": "https://example.com/campus/5",
+    "published_at": "2026-08-01",
+    "deadline": "2027-01-31",
+    "status": "active",
+    "raw_text": "2027届校园招聘，工作地点上海。负责NLP算法工程师研发，要求 Python、自然语言处理、PyTorch、大语言模型，掌握 检索增强生成、Docker 优先。"
+  },
+  {
+    "job_id": "job_006",
+    "company": "星海科技",
+    "title": "AI应用开发工程师（2027届校招）",
+    "location": "上海",
+    "employment_type": "校园招聘",
+    "graduation_window": "2026-09至2027-08",
+    "responsibilities": [
+      "负责AI应用开发相关系统研发",
+      "完成离线评测、性能优化和工程落地"
+    ],
+    "required_skills": [
+      "Python",
+      "FastAPI",
+      "大语言模型",
+      "Docker"
+    ],
+    "preferred_skills": [
+      "Streamlit",
+      "向量数据库"
+    ],
+    "education_requirement": "本科及以上",
+    "keywords": [
+      "Python",
+      "FastAPI",
+      "大语言模型",
+      "Docker",
+      "Streamlit",
+      "向量数据库"
+    ],
+    "source_url": "https://example.com/campus/6",
+    "published_at": "2026-08-01",
+    "deadline": "2027-01-31",
+    "status": "active",
+    "raw_text": "2027届校园招聘，工作地点上海。负责AI应用开发工程师研发，要求 Python、FastAPI、大语言模型、Docker，掌握 Streamlit、向量数据库 优先。"
+  },
+  {
+    "job_id": "job_007",
+    "company": "浦江智能",
+    "title": "大模型应用工程师（2027届校招）",
+    "location": "上海",
+    "employment_type": "校园招聘",
+    "graduation_window": "2026-09至2027-08",
+    "responsibilities": [
+      "负责大模型应用相关系统研发",
+      "完成离线评测、性能优化和工程落地"
+    ],
+    "required_skills": [
+      "Python",
+      "大语言模型",
+      "检索增强生成",
+      "FAISS"
+    ],
+    "preferred_skills": [
+      "FastAPI",
+      "Docker"
+    ],
+    "education_requirement": "本科及以上",
+    "keywords": [
+      "Python",
+      "大语言模型",
+      "检索增强生成",
+      "FAISS",
+      "FastAPI",
+      "Docker"
+    ],
+    "source_url": "https://example.com/campus/7",
+    "published_at": "2026-08-01",
+    "deadline": "2027-01-31",
+    "status": "active",
+    "raw_text": "2027届校园招聘，工作地点上海。负责大模型应用工程师研发，要求 Python、大语言模型、检索增强生成、FAISS，掌握 FastAPI、Docker 优先。"
+  },
+  {
+    "job_id": "job_008",
+    "company": "浦江智能",
+    "title": "机器学习算法工程师（2027届校招）",
+    "location": "上海",
+    "employment_type": "校园招聘",
+    "graduation_window": "2026-09至2027-08",
+    "responsibilities": [
+      "负责机器学习算法相关系统研发",
+      "完成离线评测、性能优化和工程落地"
+    ],
+    "required_skills": [
+      "Python",
+      "机器学习",
+      "PyTorch",
+      "深度学习"
+    ],
+    "preferred_skills": [
+      "SQL",
+      "Docker"
+    ],
+    "education_requirement": "本科及以上",
+    "keywords": [
+      "Python",
+      "机器学习",
+      "PyTorch",
+      "深度学习",
+      "SQL",
+      "Docker"
+    ],
+    "source_url": "https://example.com/campus/8",
+    "published_at": "2026-08-01",
+    "deadline": "2027-01-31",
+    "status": "active",
+    "raw_text": "2027届校园招聘，工作地点上海。负责机器学习算法工程师研发，要求 Python、机器学习、PyTorch、深度学习，掌握 SQL、Docker 优先。"
+  },
+  {
+    "job_id": "job_009",
+    "company": "浦江智能",
+    "title": "数据挖掘工程师（2027届校招）",
+    "location": "上海",
+    "employment_type": "校园招聘",
+    "graduation_window": "2026-09至2027-08",
+    "responsibilities": [
+      "负责数据挖掘相关系统研发",
+      "完成离线评测、性能优化和工程落地"
+    ],
+    "required_skills": [
+      "Python",
+      "数据挖掘",
+      "机器学习",
+      "SQL"
+    ],
+    "preferred_skills": [
+      "推荐系统",
+      "PyTorch"
+    ],
+    "education_requirement": "硕士及以上",
+    "keywords": [
+      "Python",
+      "数据挖掘",
+      "机器学习",
+      "SQL",
+      "推荐系统",
+      "PyTorch"
+    ],
+    "source_url": "https://example.com/campus/9",
+    "published_at": "2026-08-01",
+    "deadline": "2027-01-31",
+    "status": "active",
+    "raw_text": "2027届校园招聘，工作地点上海。负责数据挖掘工程师研发，要求 Python、数据挖掘、机器学习、SQL，掌握 推荐系统、PyTorch 优先。"
+  },
+  {
+    "job_id": "job_010",
+    "company": "浦江智能",
+    "title": "搜索推荐算法工程师（2027届校招）",
+    "location": "上海",
+    "employment_type": "校园招聘",
+    "graduation_window": "2026-09至2027-08",
+    "responsibilities": [
+      "负责搜索推荐算法相关系统研发",
+      "完成离线评测、性能优化和工程落地"
+    ],
+    "required_skills": [
+      "Python",
+      "推荐系统",
+      "机器学习",
+      "PyTorch"
+    ],
+    "preferred_skills": [
+      "大语言模型",
+      "SQL"
+    ],
+    "education_requirement": "本科及以上",
+    "keywords": [
+      "Python",
+      "推荐系统",
+      "机器学习",
+      "PyTorch",
+      "大语言模型",
+      "SQL"
+    ],
+    "source_url": "https://example.com/campus/10",
+    "published_at": "2026-08-01",
+    "deadline": "2027-01-31",
+    "status": "active",
+    "raw_text": "2027届校园招聘，工作地点上海。负责搜索推荐算法工程师研发，要求 Python、推荐系统、机器学习、PyTorch，掌握 大语言模型、SQL 优先。"
+  },
+  {
+    "job_id": "job_011",
+    "company": "浦江智能",
+    "title": "NLP算法工程师（2027届校招）",
+    "location": "上海",
+    "employment_type": "校园招聘",
+    "graduation_window": "2026-09至2027-08",
+    "responsibilities": [
+      "负责NLP算法相关系统研发",
+      "完成离线评测、性能优化和工程落地"
+    ],
+    "required_skills": [
+      "Python",
+      "自然语言处理",
+      "PyTorch",
+      "大语言模型"
+    ],
+    "preferred_skills": [
+      "检索增强生成",
+      "Docker"
+    ],
+    "education_requirement": "本科及以上",
+    "keywords": [
+      "Python",
+      "自然语言处理",
+      "PyTorch",
+      "大语言模型",
+      "检索增强生成",
+      "Docker"
+    ],
+    "source_url": "https://example.com/campus/11",
+    "published_at": "2026-08-01",
+    "deadline": "2027-01-31",
+    "status": "active",
+    "raw_text": "2027届校园招聘，工作地点上海。负责NLP算法工程师研发，要求 Python、自然语言处理、PyTorch、大语言模型，掌握 检索增强生成、Docker 优先。"
+  },
+  {
+    "job_id": "job_012",
+    "company": "浦江智能",
+    "title": "AI应用开发工程师（2027届校招）",
+    "location": "上海",
+    "employment_type": "校园招聘",
+    "graduation_window": "2026-09至2027-08",
+    "responsibilities": [
+      "负责AI应用开发相关系统研发",
+      "完成离线评测、性能优化和工程落地"
+    ],
+    "required_skills": [
+      "Python",
+      "FastAPI",
+      "大语言模型",
+      "Docker"
+    ],
+    "preferred_skills": [
+      "Streamlit",
+      "向量数据库"
+    ],
+    "education_requirement": "本科及以上",
+    "keywords": [
+      "Python",
+      "FastAPI",
+      "大语言模型",
+      "Docker",
+      "Streamlit",
+      "向量数据库"
+    ],
+    "source_url": "https://example.com/campus/12",
+    "published_at": "2026-08-01",
+    "deadline": "2027-01-31",
+    "status": "active",
+    "raw_text": "2027届校园招聘，工作地点上海。负责AI应用开发工程师研发，要求 Python、FastAPI、大语言模型、Docker，掌握 Streamlit、向量数据库 优先。"
+  },
+  {
+    "job_id": "job_013",
+    "company": "云帆数据",
+    "title": "大模型应用工程师（2027届校招）",
+    "location": "上海",
+    "employment_type": "校园招聘",
+    "graduation_window": "2026-09至2027-08",
+    "responsibilities": [
+      "负责大模型应用相关系统研发",
+      "完成离线评测、性能优化和工程落地"
+    ],
+    "required_skills": [
+      "Python",
+      "大语言模型",
+      "检索增强生成",
+      "FAISS"
+    ],
+    "preferred_skills": [
+      "FastAPI",
+      "Docker"
+    ],
+    "education_requirement": "硕士及以上",
+    "keywords": [
+      "Python",
+      "大语言模型",
+      "检索增强生成",
+      "FAISS",
+      "FastAPI",
+      "Docker"
+    ],
+    "source_url": "https://example.com/campus/13",
+    "published_at": "2026-08-01",
+    "deadline": "2027-01-31",
+    "status": "active",
+    "raw_text": "2027届校园招聘，工作地点上海。负责大模型应用工程师研发，要求 Python、大语言模型、检索增强生成、FAISS，掌握 FastAPI、Docker 优先。"
+  },
+  {
+    "job_id": "job_014",
+    "company": "云帆数据",
+    "title": "机器学习算法工程师（2027届校招）",
+    "location": "上海",
+    "employment_type": "校园招聘",
+    "graduation_window": "2026-09至2027-08",
+    "responsibilities": [
+      "负责机器学习算法相关系统研发",
+      "完成离线评测、性能优化和工程落地"
+    ],
+    "required_skills": [
+      "Python",
+      "机器学习",
+      "PyTorch",
+      "深度学习"
+    ],
+    "preferred_skills": [
+      "SQL",
+      "Docker"
+    ],
+    "education_requirement": "本科及以上",
+    "keywords": [
+      "Python",
+      "机器学习",
+      "PyTorch",
+      "深度学习",
+      "SQL",
+      "Docker"
+    ],
+    "source_url": "https://example.com/campus/14",
+    "published_at": "2026-08-01",
+    "deadline": "2027-01-31",
+    "status": "active",
+    "raw_text": "2027届校园招聘，工作地点上海。负责机器学习算法工程师研发，要求 Python、机器学习、PyTorch、深度学习，掌握 SQL、Docker 优先。"
+  },
+  {
+    "job_id": "job_015",
+    "company": "云帆数据",
+    "title": "数据挖掘工程师（2027届校招）",
+    "location": "上海",
+    "employment_type": "校园招聘",
+    "graduation_window": "2026-09至2027-08",
+    "responsibilities": [
+      "负责数据挖掘相关系统研发",
+      "完成离线评测、性能优化和工程落地"
+    ],
+    "required_skills": [
+      "Python",
+      "数据挖掘",
+      "机器学习",
+      "SQL"
+    ],
+    "preferred_skills": [
+      "推荐系统",
+      "PyTorch"
+    ],
+    "education_requirement": "本科及以上",
+    "keywords": [
+      "Python",
+      "数据挖掘",
+      "机器学习",
+      "SQL",
+      "推荐系统",
+      "PyTorch"
+    ],
+    "source_url": "https://example.com/campus/15",
+    "published_at": "2026-08-01",
+    "deadline": "2027-01-31",
+    "status": "active",
+    "raw_text": "2027届校园招聘，工作地点上海。负责数据挖掘工程师研发，要求 Python、数据挖掘、机器学习、SQL，掌握 推荐系统、PyTorch 优先。"
+  },
+  {
+    "job_id": "job_016",
+    "company": "云帆数据",
+    "title": "搜索推荐算法工程师（2027届校招）",
+    "location": "上海",
+    "employment_type": "校园招聘",
+    "graduation_window": "2026-09至2027-08",
+    "responsibilities": [
+      "负责搜索推荐算法相关系统研发",
+      "完成离线评测、性能优化和工程落地"
+    ],
+    "required_skills": [
+      "Python",
+      "推荐系统",
+      "机器学习",
+      "PyTorch"
+    ],
+    "preferred_skills": [
+      "大语言模型",
+      "SQL"
+    ],
+    "education_requirement": "本科及以上",
+    "keywords": [
+      "Python",
+      "推荐系统",
+      "机器学习",
+      "PyTorch",
+      "大语言模型",
+      "SQL"
+    ],
+    "source_url": "https://example.com/campus/16",
+    "published_at": "2026-08-01",
+    "deadline": "2027-01-31",
+    "status": "active",
+    "raw_text": "2027届校园招聘，工作地点上海。负责搜索推荐算法工程师研发，要求 Python、推荐系统、机器学习、PyTorch，掌握 大语言模型、SQL 优先。"
+  },
+  {
+    "job_id": "job_017",
+    "company": "云帆数据",
+    "title": "NLP算法工程师（2027届校招）",
+    "location": "上海",
+    "employment_type": "校园招聘",
+    "graduation_window": "2026-09至2027-08",
+    "responsibilities": [
+      "负责NLP算法相关系统研发",
+      "完成离线评测、性能优化和工程落地"
+    ],
+    "required_skills": [
+      "Python",
+      "自然语言处理",
+      "PyTorch",
+      "大语言模型"
+    ],
+    "preferred_skills": [
+      "检索增强生成",
+      "Docker"
+    ],
+    "education_requirement": "硕士及以上",
+    "keywords": [
+      "Python",
+      "自然语言处理",
+      "PyTorch",
+      "大语言模型",
+      "检索增强生成",
+      "Docker"
+    ],
+    "source_url": "https://example.com/campus/17",
+    "published_at": "2026-08-01",
+    "deadline": "2027-01-31",
+    "status": "active",
+    "raw_text": "2027届校园招聘，工作地点上海。负责NLP算法工程师研发，要求 Python、自然语言处理、PyTorch、大语言模型，掌握 检索增强生成、Docker 优先。"
+  },
+  {
+    "job_id": "job_018",
+    "company": "云帆数据",
+    "title": "AI应用开发工程师（2027届校招）",
+    "location": "上海",
+    "employment_type": "校园招聘",
+    "graduation_window": "2026-09至2027-08",
+    "responsibilities": [
+      "负责AI应用开发相关系统研发",
+      "完成离线评测、性能优化和工程落地"
+    ],
+    "required_skills": [
+      "Python",
+      "FastAPI",
+      "大语言模型",
+      "Docker"
+    ],
+    "preferred_skills": [
+      "Streamlit",
+      "向量数据库"
+    ],
+    "education_requirement": "本科及以上",
+    "keywords": [
+      "Python",
+      "FastAPI",
+      "大语言模型",
+      "Docker",
+      "Streamlit",
+      "向量数据库"
+    ],
+    "source_url": "https://example.com/campus/18",
+    "published_at": "2026-08-01",
+    "deadline": "2027-01-31",
+    "status": "active",
+    "raw_text": "2027届校园招聘，工作地点上海。负责AI应用开发工程师研发，要求 Python、FastAPI、大语言模型、Docker，掌握 Streamlit、向量数据库 优先。"
+  },
+  {
+    "job_id": "job_019",
+    "company": "申城算法",
+    "title": "大模型应用工程师（2027届校招）",
+    "location": "上海",
+    "employment_type": "校园招聘",
+    "graduation_window": "2026-09至2027-08",
+    "responsibilities": [
+      "负责大模型应用相关系统研发",
+      "完成离线评测、性能优化和工程落地"
+    ],
+    "required_skills": [
+      "Python",
+      "大语言模型",
+      "检索增强生成",
+      "FAISS"
+    ],
+    "preferred_skills": [
+      "FastAPI",
+      "Docker"
+    ],
+    "education_requirement": "本科及以上",
+    "keywords": [
+      "Python",
+      "大语言模型",
+      "检索增强生成",
+      "FAISS",
+      "FastAPI",
+      "Docker"
+    ],
+    "source_url": "https://example.com/campus/19",
+    "published_at": "2026-08-01",
+    "deadline": "2027-01-31",
+    "status": "active",
+    "raw_text": "2027届校园招聘，工作地点上海。负责大模型应用工程师研发，要求 Python、大语言模型、检索增强生成、FAISS，掌握 FastAPI、Docker 优先。"
+  },
+  {
+    "job_id": "job_020",
+    "company": "申城算法",
+    "title": "机器学习算法工程师（2027届校招）",
+    "location": "上海",
+    "employment_type": "校园招聘",
+    "graduation_window": "2026-09至2027-08",
+    "responsibilities": [
+      "负责机器学习算法相关系统研发",
+      "完成离线评测、性能优化和工程落地"
+    ],
+    "required_skills": [
+      "Python",
+      "机器学习",
+      "PyTorch",
+      "深度学习"
+    ],
+    "preferred_skills": [
+      "SQL",
+      "Docker"
+    ],
+    "education_requirement": "本科及以上",
+    "keywords": [
+      "Python",
+      "机器学习",
+      "PyTorch",
+      "深度学习",
+      "SQL",
+      "Docker"
+    ],
+    "source_url": "https://example.com/campus/20",
+    "published_at": "2026-08-01",
+    "deadline": "2027-01-31",
+    "status": "active",
+    "raw_text": "2027届校园招聘，工作地点上海。负责机器学习算法工程师研发，要求 Python、机器学习、PyTorch、深度学习，掌握 SQL、Docker 优先。"
+  },
+  {
+    "job_id": "job_021",
+    "company": "申城算法",
+    "title": "数据挖掘工程师（2027届校招）",
+    "location": "上海",
+    "employment_type": "校园招聘",
+    "graduation_window": "2026-09至2027-08",
+    "responsibilities": [
+      "负责数据挖掘相关系统研发",
+      "完成离线评测、性能优化和工程落地"
+    ],
+    "required_skills": [
+      "Python",
+      "数据挖掘",
+      "机器学习",
+      "SQL"
+    ],
+    "preferred_skills": [
+      "推荐系统",
+      "PyTorch"
+    ],
+    "education_requirement": "硕士及以上",
+    "keywords": [
+      "Python",
+      "数据挖掘",
+      "机器学习",
+      "SQL",
+      "推荐系统",
+      "PyTorch"
+    ],
+    "source_url": "https://example.com/campus/21",
+    "published_at": "2026-08-01",
+    "deadline": "2027-01-31",
+    "status": "active",
+    "raw_text": "2027届校园招聘，工作地点上海。负责数据挖掘工程师研发，要求 Python、数据挖掘、机器学习、SQL，掌握 推荐系统、PyTorch 优先。"
+  },
+  {
+    "job_id": "job_022",
+    "company": "申城算法",
+    "title": "搜索推荐算法工程师（2027届校招）",
+    "location": "上海",
+    "employment_type": "校园招聘",
+    "graduation_window": "2026-09至2027-08",
+    "responsibilities": [
+      "负责搜索推荐算法相关系统研发",
+      "完成离线评测、性能优化和工程落地"
+    ],
+    "required_skills": [
+      "Python",
+      "推荐系统",
+      "机器学习",
+      "PyTorch"
+    ],
+    "preferred_skills": [
+      "大语言模型",
+      "SQL"
+    ],
+    "education_requirement": "本科及以上",
+    "keywords": [
+      "Python",
+      "推荐系统",
+      "机器学习",
+      "PyTorch",
+      "大语言模型",
+      "SQL"
+    ],
+    "source_url": "https://example.com/campus/22",
+    "published_at": "2026-08-01",
+    "deadline": "2027-01-31",
+    "status": "active",
+    "raw_text": "2027届校园招聘，工作地点上海。负责搜索推荐算法工程师研发，要求 Python、推荐系统、机器学习、PyTorch，掌握 大语言模型、SQL 优先。"
+  },
+  {
+    "job_id": "job_023",
+    "company": "申城算法",
+    "title": "NLP算法工程师（2027届校招）",
+    "location": "上海",
+    "employment_type": "校园招聘",
+    "graduation_window": "2026-09至2027-08",
+    "responsibilities": [
+      "负责NLP算法相关系统研发",
+      "完成离线评测、性能优化和工程落地"
+    ],
+    "required_skills": [
+      "Python",
+      "自然语言处理",
+      "PyTorch",
+      "大语言模型"
+    ],
+    "preferred_skills": [
+      "检索增强生成",
+      "Docker"
+    ],
+    "education_requirement": "本科及以上",
+    "keywords": [
+      "Python",
+      "自然语言处理",
+      "PyTorch",
+      "大语言模型",
+      "检索增强生成",
+      "Docker"
+    ],
+    "source_url": "https://example.com/campus/23",
+    "published_at": "2026-08-01",
+    "deadline": "2027-01-31",
+    "status": "active",
+    "raw_text": "2027届校园招聘，工作地点上海。负责NLP算法工程师研发，要求 Python、自然语言处理、PyTorch、大语言模型，掌握 检索增强生成、Docker 优先。"
+  },
+  {
+    "job_id": "job_024",
+    "company": "申城算法",
+    "title": "AI应用开发工程师（2027届校招）",
+    "location": "上海",
+    "employment_type": "校园招聘",
+    "graduation_window": "2026-09至2027-08",
+    "responsibilities": [
+      "负责AI应用开发相关系统研发",
+      "完成离线评测、性能优化和工程落地"
+    ],
+    "required_skills": [
+      "Python",
+      "FastAPI",
+      "大语言模型",
+      "Docker"
+    ],
+    "preferred_skills": [
+      "Streamlit",
+      "向量数据库"
+    ],
+    "education_requirement": "本科及以上",
+    "keywords": [
+      "Python",
+      "FastAPI",
+      "大语言模型",
+      "Docker",
+      "Streamlit",
+      "向量数据库"
+    ],
+    "source_url": "https://example.com/campus/24",
+    "published_at": "2026-08-01",
+    "deadline": "2027-01-31",
+    "status": "active",
+    "raw_text": "2027届校园招聘，工作地点上海。负责AI应用开发工程师研发，要求 Python、FastAPI、大语言模型、Docker，掌握 Streamlit、向量数据库 优先。"
+  },
+  {
+    "job_id": "job_025",
+    "company": "启明信息",
+    "title": "大模型应用工程师（2027届校招）",
+    "location": "上海",
+    "employment_type": "校园招聘",
+    "graduation_window": "2026-09至2027-08",
+    "responsibilities": [
+      "负责大模型应用相关系统研发",
+      "完成离线评测、性能优化和工程落地"
+    ],
+    "required_skills": [
+      "Python",
+      "大语言模型",
+      "检索增强生成",
+      "FAISS"
+    ],
+    "preferred_skills": [
+      "FastAPI",
+      "Docker"
+    ],
+    "education_requirement": "硕士及以上",
+    "keywords": [
+      "Python",
+      "大语言模型",
+      "检索增强生成",
+      "FAISS",
+      "FastAPI",
+      "Docker"
+    ],
+    "source_url": "https://example.com/campus/25",
+    "published_at": "2026-08-01",
+    "deadline": "2027-01-31",
+    "status": "active",
+    "raw_text": "2027届校园招聘，工作地点上海。负责大模型应用工程师研发，要求 Python、大语言模型、检索增强生成、FAISS，掌握 FastAPI、Docker 优先。"
+  },
+  {
+    "job_id": "job_026",
+    "company": "启明信息",
+    "title": "机器学习算法工程师（2027届校招）",
+    "location": "上海",
+    "employment_type": "校园招聘",
+    "graduation_window": "2026-09至2027-08",
+    "responsibilities": [
+      "负责机器学习算法相关系统研发",
+      "完成离线评测、性能优化和工程落地"
+    ],
+    "required_skills": [
+      "Python",
+      "机器学习",
+      "PyTorch",
+      "深度学习"
+    ],
+    "preferred_skills": [
+      "SQL",
+      "Docker"
+    ],
+    "education_requirement": "本科及以上",
+    "keywords": [
+      "Python",
+      "机器学习",
+      "PyTorch",
+      "深度学习",
+      "SQL",
+      "Docker"
+    ],
+    "source_url": "https://example.com/campus/26",
+    "published_at": "2026-08-01",
+    "deadline": "2027-01-31",
+    "status": "active",
+    "raw_text": "2027届校园招聘，工作地点上海。负责机器学习算法工程师研发，要求 Python、机器学习、PyTorch、深度学习，掌握 SQL、Docker 优先。"
+  },
+  {
+    "job_id": "job_027",
+    "company": "启明信息",
+    "title": "数据挖掘工程师（2027届校招）",
+    "location": "上海",
+    "employment_type": "校园招聘",
+    "graduation_window": "2026-09至2027-08",
+    "responsibilities": [
+      "负责数据挖掘相关系统研发",
+      "完成离线评测、性能优化和工程落地"
+    ],
+    "required_skills": [
+      "Python",
+      "数据挖掘",
+      "机器学习",
+      "SQL"
+    ],
+    "preferred_skills": [
+      "推荐系统",
+      "PyTorch"
+    ],
+    "education_requirement": "本科及以上",
+    "keywords": [
+      "Python",
+      "数据挖掘",
+      "机器学习",
+      "SQL",
+      "推荐系统",
+      "PyTorch"
+    ],
+    "source_url": "https://example.com/campus/27",
+    "published_at": "2026-08-01",
+    "deadline": "2027-01-31",
+    "status": "active",
+    "raw_text": "2027届校园招聘，工作地点上海。负责数据挖掘工程师研发，要求 Python、数据挖掘、机器学习、SQL，掌握 推荐系统、PyTorch 优先。"
+  },
+  {
+    "job_id": "job_028",
+    "company": "启明信息",
+    "title": "搜索推荐算法工程师（2027届校招）",
+    "location": "上海",
+    "employment_type": "校园招聘",
+    "graduation_window": "2026-09至2027-08",
+    "responsibilities": [
+      "负责搜索推荐算法相关系统研发",
+      "完成离线评测、性能优化和工程落地"
+    ],
+    "required_skills": [
+      "Python",
+      "推荐系统",
+      "机器学习",
+      "PyTorch"
+    ],
+    "preferred_skills": [
+      "大语言模型",
+      "SQL"
+    ],
+    "education_requirement": "本科及以上",
+    "keywords": [
+      "Python",
+      "推荐系统",
+      "机器学习",
+      "PyTorch",
+      "大语言模型",
+      "SQL"
+    ],
+    "source_url": "https://example.com/campus/28",
+    "published_at": "2026-08-01",
+    "deadline": "2027-01-31",
+    "status": "active",
+    "raw_text": "2027届校园招聘，工作地点上海。负责搜索推荐算法工程师研发，要求 Python、推荐系统、机器学习、PyTorch，掌握 大语言模型、SQL 优先。"
+  },
+  {
+    "job_id": "job_029",
+    "company": "启明信息",
+    "title": "NLP算法工程师（2027届校招）",
+    "location": "上海",
+    "employment_type": "校园招聘",
+    "graduation_window": "2026-09至2027-08",
+    "responsibilities": [
+      "负责NLP算法相关系统研发",
+      "完成离线评测、性能优化和工程落地"
+    ],
+    "required_skills": [
+      "Python",
+      "自然语言处理",
+      "PyTorch",
+      "大语言模型"
+    ],
+    "preferred_skills": [
+      "检索增强生成",
+      "Docker"
+    ],
+    "education_requirement": "硕士及以上",
+    "keywords": [
+      "Python",
+      "自然语言处理",
+      "PyTorch",
+      "大语言模型",
+      "检索增强生成",
+      "Docker"
+    ],
+    "source_url": "https://example.com/campus/29",
+    "published_at": "2026-08-01",
+    "deadline": "2027-01-31",
+    "status": "active",
+    "raw_text": "2027届校园招聘，工作地点上海。负责NLP算法工程师研发，要求 Python、自然语言处理、PyTorch、大语言模型，掌握 检索增强生成、Docker 优先。"
+  },
+  {
+    "job_id": "job_030",
+    "company": "启明信息",
+    "title": "AI应用开发工程师（2027届校招）",
+    "location": "上海",
+    "employment_type": "校园招聘",
+    "graduation_window": "2026-09至2027-08",
+    "responsibilities": [
+      "负责AI应用开发相关系统研发",
+      "完成离线评测、性能优化和工程落地"
+    ],
+    "required_skills": [
+      "Python",
+      "FastAPI",
+      "大语言模型",
+      "Docker"
+    ],
+    "preferred_skills": [
+      "Streamlit",
+      "向量数据库"
+    ],
+    "education_requirement": "本科及以上",
+    "keywords": [
+      "Python",
+      "FastAPI",
+      "大语言模型",
+      "Docker",
+      "Streamlit",
+      "向量数据库"
+    ],
+    "source_url": "https://example.com/campus/30",
+    "published_at": "2026-08-01",
+    "deadline": "2027-01-31",
+    "status": "active",
+    "raw_text": "2027届校园招聘，工作地点上海。负责AI应用开发工程师研发，要求 Python、FastAPI、大语言模型、Docker，掌握 Streamlit、向量数据库 优先。"
+  },
+  {
+    "job_id": "job_031",
+    "company": "澜芯网络",
+    "title": "大模型应用工程师（2027届校招）",
+    "location": "上海",
+    "employment_type": "校园招聘",
+    "graduation_window": "2026-09至2027-08",
+    "responsibilities": [
+      "负责大模型应用相关系统研发",
+      "完成离线评测、性能优化和工程落地"
+    ],
+    "required_skills": [
+      "Python",
+      "大语言模型",
+      "检索增强生成",
+      "FAISS"
+    ],
+    "preferred_skills": [
+      "FastAPI",
+      "Docker"
+    ],
+    "education_requirement": "本科及以上",
+    "keywords": [
+      "Python",
+      "大语言模型",
+      "检索增强生成",
+      "FAISS",
+      "FastAPI",
+      "Docker"
+    ],
+    "source_url": "https://example.com/campus/31",
+    "published_at": "2026-08-01",
+    "deadline": "2027-01-31",
+    "status": "active",
+    "raw_text": "2027届校园招聘，工作地点上海。负责大模型应用工程师研发，要求 Python、大语言模型、检索增强生成、FAISS，掌握 FastAPI、Docker 优先。"
+  },
+  {
+    "job_id": "job_032",
+    "company": "澜芯网络",
+    "title": "机器学习算法工程师（2027届校招）",
+    "location": "上海",
+    "employment_type": "校园招聘",
+    "graduation_window": "2026-09至2027-08",
+    "responsibilities": [
+      "负责机器学习算法相关系统研发",
+      "完成离线评测、性能优化和工程落地"
+    ],
+    "required_skills": [
+      "Python",
+      "机器学习",
+      "PyTorch",
+      "深度学习"
+    ],
+    "preferred_skills": [
+      "SQL",
+      "Docker"
+    ],
+    "education_requirement": "本科及以上",
+    "keywords": [
+      "Python",
+      "机器学习",
+      "PyTorch",
+      "深度学习",
+      "SQL",
+      "Docker"
+    ],
+    "source_url": "https://example.com/campus/32",
+    "published_at": "2026-08-01",
+    "deadline": "2027-01-31",
+    "status": "active",
+    "raw_text": "2027届校园招聘，工作地点上海。负责机器学习算法工程师研发，要求 Python、机器学习、PyTorch、深度学习，掌握 SQL、Docker 优先。"
+  },
+  {
+    "job_id": "job_033",
+    "company": "澜芯网络",
+    "title": "数据挖掘工程师（2027届校招）",
+    "location": "上海",
+    "employment_type": "校园招聘",
+    "graduation_window": "2026-09至2027-08",
+    "responsibilities": [
+      "负责数据挖掘相关系统研发",
+      "完成离线评测、性能优化和工程落地"
+    ],
+    "required_skills": [
+      "Python",
+      "数据挖掘",
+      "机器学习",
+      "SQL"
+    ],
+    "preferred_skills": [
+      "推荐系统",
+      "PyTorch"
+    ],
+    "education_requirement": "硕士及以上",
+    "keywords": [
+      "Python",
+      "数据挖掘",
+      "机器学习",
+      "SQL",
+      "推荐系统",
+      "PyTorch"
+    ],
+    "source_url": "https://example.com/campus/33",
+    "published_at": "2026-08-01",
+    "deadline": "2027-01-31",
+    "status": "active",
+    "raw_text": "2027届校园招聘，工作地点上海。负责数据挖掘工程师研发，要求 Python、数据挖掘、机器学习、SQL，掌握 推荐系统、PyTorch 优先。"
+  },
+  {
+    "job_id": "job_034",
+    "company": "澜芯网络",
+    "title": "搜索推荐算法工程师（2027届校招）",
+    "location": "上海",
+    "employment_type": "校园招聘",
+    "graduation_window": "2026-09至2027-08",
+    "responsibilities": [
+      "负责搜索推荐算法相关系统研发",
+      "完成离线评测、性能优化和工程落地"
+    ],
+    "required_skills": [
+      "Python",
+      "推荐系统",
+      "机器学习",
+      "PyTorch"
+    ],
+    "preferred_skills": [
+      "大语言模型",
+      "SQL"
+    ],
+    "education_requirement": "本科及以上",
+    "keywords": [
+      "Python",
+      "推荐系统",
+      "机器学习",
+      "PyTorch",
+      "大语言模型",
+      "SQL"
+    ],
+    "source_url": "https://example.com/campus/34",
+    "published_at": "2026-08-01",
+    "deadline": "2027-01-31",
+    "status": "active",
+    "raw_text": "2027届校园招聘，工作地点上海。负责搜索推荐算法工程师研发，要求 Python、推荐系统、机器学习、PyTorch，掌握 大语言模型、SQL 优先。"
+  },
+  {
+    "job_id": "job_035",
+    "company": "澜芯网络",
+    "title": "NLP算法工程师（2027届校招）",
+    "location": "杭州",
+    "employment_type": "校园招聘",
+    "graduation_window": "2026-09至2027-08",
+    "responsibilities": [
+      "负责NLP算法相关系统研发",
+      "完成离线评测、性能优化和工程落地"
+    ],
+    "required_skills": [
+      "Python",
+      "自然语言处理",
+      "PyTorch",
+      "大语言模型"
+    ],
+    "preferred_skills": [
+      "检索增强生成",
+      "Docker"
+    ],
+    "education_requirement": "本科及以上",
+    "keywords": [
+      "Python",
+      "自然语言处理",
+      "PyTorch",
+      "大语言模型",
+      "检索增强生成",
+      "Docker"
+    ],
+    "source_url": "https://example.com/campus/35",
+    "published_at": "2026-08-01",
+    "deadline": "2027-01-31",
+    "status": "active",
+    "raw_text": "2027届校园招聘，工作地点上海。负责NLP算法工程师研发，要求 Python、自然语言处理、PyTorch、大语言模型，掌握 检索增强生成、Docker 优先。"
+  },
+  {
+    "job_id": "job_036",
+    "company": "澜芯网络",
+    "title": "AI应用开发工程师（2027届校招）",
+    "location": "上海",
+    "employment_type": "校园招聘",
+    "graduation_window": "2026-09至2027-08",
+    "responsibilities": [
+      "负责AI应用开发相关系统研发",
+      "完成离线评测、性能优化和工程落地"
+    ],
+    "required_skills": [
+      "Python",
+      "FastAPI",
+      "大语言模型",
+      "Docker"
+    ],
+    "preferred_skills": [
+      "Streamlit",
+      "向量数据库"
+    ],
+    "education_requirement": "本科及以上",
+    "keywords": [
+      "Python",
+      "FastAPI",
+      "大语言模型",
+      "Docker",
+      "Streamlit",
+      "向量数据库"
+    ],
+    "source_url": "https://example.com/campus/36",
+    "published_at": "2026-08-01",
+    "deadline": "2025-01-01",
+    "status": "expired",
+    "raw_text": "2027届校园招聘，工作地点上海。负责AI应用开发工程师研发，要求 Python、FastAPI、大语言模型、Docker，掌握 Streamlit、向量数据库 优先。"
+  }
+]

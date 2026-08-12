@@ -1,0 +1,11 @@
+weights:
+  required_skill: 0.30
+  preferred_skill: 0.10
+  project: 0.20
+  semantic: 0.20
+  education: 0.10
+  location: 0.10
+thresholds:
+  high: 85
+  medium: 70
+  low: 55

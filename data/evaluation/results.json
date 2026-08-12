@@ -1,0 +1,96 @@
+{
+  "dataset": {
+    "synthetic": true,
+    "resumes": 3,
+    "jobs": 36,
+    "relevance_threshold": 2
+  },
+  "runtime_seconds": 0.1705,
+  "extraction": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0
+  },
+  "ranking": {
+    "keyword": {
+      "recall@5": 0.2778,
+      "recall@10": 0.5556,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "ndcg@10": 0.9823
+    },
+    "semantic": {
+      "recall@5": 0.2778,
+      "recall@10": 0.463,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "ndcg@10": 0.9229
+    },
+    "keyword_semantic": {
+      "recall@5": 0.2778,
+      "recall@10": 0.5556,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "ndcg@10": 0.9823
+    },
+    "rule_fusion": {
+      "recall@5": 0.2778,
+      "recall@10": 0.5556,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "ndcg@10": 0.9823
+    },
+    "full": {
+      "recall@5": 0.2778,
+      "recall@10": 0.5556,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "ndcg@10": 0.9823
+    }
+  },
+  "parameters": {
+    "semantic_backend": "HashingVectorizer char 2-4 grams, 512 dimensions",
+    "methods": {
+      "keyword": {
+        "required_skill": 0.8,
+        "preferred_skill": 0.2,
+        "project": 0,
+        "semantic": 0,
+        "education": 0,
+        "location": 0
+      },
+      "semantic": {
+        "required_skill": 0,
+        "preferred_skill": 0,
+        "project": 0,
+        "semantic": 1,
+        "education": 0,
+        "location": 0
+      },
+      "keyword_semantic": {
+        "required_skill": 0.5,
+        "preferred_skill": 0,
+        "project": 0,
+        "semantic": 0.5,
+        "education": 0,
+        "location": 0
+      },
+      "rule_fusion": {
+        "required_skill": 0.35,
+        "preferred_skill": 0.1,
+        "project": 0.15,
+        "semantic": 0.2,
+        "education": 0.1,
+        "location": 0.1
+      },
+      "full": {
+        "required_skill": 0.3,
+        "preferred_skill": 0.1,
+        "project": 0.2,
+        "semantic": 0.2,
+        "education": 0.1,
+        "location": 0.1
+      }
+    }
+  }
+}

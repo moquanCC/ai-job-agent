@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">秋招雷达 AI 首页预览</title>
+  <desc id="desc">包含五页工作台、隐私提示和简历上传区域的应用界面示意图</desc>
+  <rect width="1200" height="675" fill="#ffffff"/>
+  <rect width="245" height="675" fill="#f2f4f8"/>
+  <g font-family="Arial, 'Microsoft YaHei', sans-serif" fill="#303744">
+    <text x="28" y="70" font-size="18">工作台</text>
+    <circle cx="30" cy="105" r="7" fill="#ff4b4b"/><text x="48" y="111" font-size="17">简历解析</text>
+    <circle cx="30" cy="142" r="7" fill="none" stroke="#9aa2ae"/><text x="48" y="148" font-size="17">岗位库</text>
+    <circle cx="30" cy="179" r="7" fill="none" stroke="#9aa2ae"/><text x="48" y="185" font-size="17">岗位推荐</text>
+    <circle cx="30" cy="216" r="7" fill="none" stroke="#9aa2ae"/><text x="48" y="222" font-size="17">简历优化</text>
+    <circle cx="30" cy="253" r="7" fill="none" stroke="#9aa2ae"/><text x="48" y="259" font-size="17">模拟面试</text>
+    <text x="28" y="310" font-size="14" fill="#737b88">离线规则 + 可解释混合评分</text>
+    <text x="320" y="125" font-size="48" font-weight="700">🎯 秋招雷达 AI</text>
+    <text x="320" y="165" font-size="16" fill="#7a828d">上海 AI / 算法 / 数据岗位的可解释匹配、真实简历优化与面试准备</text>
+    <rect x="320" y="195" width="820" height="62" rx="8" fill="#e8f3ff"/>
+    <text x="342" y="232" font-size="16" fill="#1565a9">🔒 隐私提示：默认仅在本机 SQLite 保存分析摘要；不记录完整简历。</text>
+    <text x="320" y="315" font-size="31" font-weight="700">1 · 简历解析</text>
+    <text x="320" y="360" font-size="16">上传 PDF、DOCX、TXT 或 Markdown 简历</text>
+    <rect x="320" y="382" width="820" height="88" rx="8" fill="#f1f3f7"/>
+    <text x="385" y="420" font-size="17">Drag and drop file here</text>
+    <text x="385" y="445" font-size="14" fill="#7a828d">Limit 200MB per file · PDF, DOCX, TXT, MD, MARKDOWN</text>
+    <rect x="1010" y="400" width="110" height="48" rx="8" fill="#fff" stroke="#d6dae0"/>
+    <text x="1030" y="431" font-size="15">Browse files</text>
+  </g>
+</svg>
