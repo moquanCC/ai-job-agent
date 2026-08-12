@@ -13,6 +13,9 @@ from src.parsers import parse_document, parse_job, parse_resume
 from src.repositories import AnalysisRepository, JobRepository
 
 
+ROOT = Path(__file__).resolve().parents[2]
+
+
 class AnalysisService:
     def __init__(self, settings: Settings | None = None, db_path: str | Path | None = None):
         self.settings = settings or Settings.from_env()
@@ -44,6 +47,26 @@ class AnalysisService:
             except Exception as exc:
                 errors.append(f"第 {index} 条：{exc}")
         return self.jobs.upsert_many(parsed), errors
+
+    def import_verified_jobs(self, dataset_path: str | Path | None = None) -> tuple[int, dict[str, int]]:
+        path = Path(dataset_path) if dataset_path is not None else ROOT / "data" / "real_jobs" / "jobs.json"
+        records = json.loads(path.read_text(encoding="utf-8"))
+        if not isinstance(records, list):
+            raise ValueError("官方岗位数据必须是 JSON 列表")
+
+        jobs = [JobProfile.model_validate(record) for record in records]
+        statuses = {
+            status: sum(job.status == status for job in jobs)
+            for status in ("active", "expired", "unknown")
+        }
+        return self.jobs.upsert_many(jobs), statuses
+
+    def load_real_evaluation(self, result_path: str | Path | None = None) -> dict:
+        path = Path(result_path) if result_path is not None else ROOT / "data" / "real_jobs" / "evaluation_results.json"
+        result = json.loads(path.read_text(encoding="utf-8"))
+        if not isinstance(result, dict) or result.get("dataset", {}).get("human_gold") is not False:
+            raise ValueError("评测披露字段缺失或不合法")
+        return result
 
     def add_pasted_job(self, text: str, title: str = "粘贴岗位", company: str = "用户导入") -> JobProfile:
         job = parse_job({"company": company, "title": title, "location": "上海" if "上海" in text else "", "description": text})

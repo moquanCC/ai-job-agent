@@ -17,7 +17,8 @@
 - 把建议分成“可直接修改”和“完成相关工作后才能加入”，防止编造经历。
 - 生成项目深挖、岗位知识、技能缺口、系统设计和行为面试题。
 - 导出完整 Markdown 分析报告，并支持删除个人分析记录。
-- 内置 36 条合成岗位、3 份合成简历、五组消融实验和排名/提取指标。
+- 内置 30 条企业官方公开 JD 快照，其中 27 条核验为在招；保留合成数据用于可复现的管线测试。
+- 提供真实 JD 实验看板，展示排序方法对比、双模型标注一致性、分歧规模和实验局限。
 
 ## 快速开始
 
@@ -27,12 +28,20 @@
 python -m venv .venv
 .venv\Scripts\Activate.ps1
 pip install -e ".[dev]"
-python scripts/generate_sample_data.py
-python scripts/import_jobs.py --input data/evaluation/jobs.json --db data/app.db
 streamlit run app.py
 ```
 
-浏览器打开 `http://localhost:8501`。可直接上传 `data/evaluation/demo_resume.md`，然后依次体验岗位推荐、简历优化与模拟面试。
+浏览器打开 `http://localhost:8501`，进入“岗位库”并点击“一键加载 30 条官方 JD”。状态看板应显示 30 条岗位，其中在招 27 条、过期 2 条、待确认 1 条；表格中的链接可回溯至官方职位页。随后上传合成文件 `data/evaluation/demo_resume.md`，依次体验 Top-5 推荐、证据约束下的简历优化、岗位面试题与实验看板。演示无需导入合成岗位。
+
+### UI 真实演示流程
+
+1. 在“岗位库”一键加载仓库内已核验的 30 条官方 JD，并检查 `30 / 27 / 2 / 1` 状态统计与官方来源链接。
+2. 在“简历解析”上传 `data/evaluation/demo_resume.md`；该候选人资料是合成数据，可安全用于公开演示。
+3. 在“岗位推荐”运行 Top-5，查看状态、核验日期、官方来源、六项评分、技能命中与证据。
+4. 选中一个岗位，在“简历优化”查看 grounded 建议，在“模拟面试”查看岗位定制题及关联依据。
+5. 在“实验看板”比较关键词与规则融合方法，并审计标注一致性、分歧和三项实验限制。
+
+演示的数据口径是：**真实官方公开 JD + 3 个合成候选人画像 + 双模型独立盲标与裁决形成的模型辅助评测基准**。`human_gold=false`，因此这些标签不能表述为真人专家标注或人类金标准。
 
 ## Docker 启动
 
@@ -45,7 +54,7 @@ docker compose up --build
 ## 项目结构
 
 ```text
-app.py                         Streamlit 五页工作台
+app.py                         Streamlit 六页工作台
 configs/                       技能别名、权重和运行配置
 src/parsers/                   四类文件解析与结构化提取
 src/matching/                  过滤、规则、语义、融合、排序
@@ -60,7 +69,7 @@ tests/                         单元测试与完整流程测试
 docs/                          架构、评测和演示材料
 ```
 
-详细设计见 [系统架构](docs/architecture.md)，实验解释见 [评测说明](docs/evaluation.md)。
+详细设计见 [系统架构](docs/architecture.md)，合成评测解释见 [评测说明](docs/evaluation.md)，真实 JD 实验口径见 [真实 JD 评测说明](docs/evaluation_real.md)。
 
 ## 岗位数据格式
 
@@ -106,6 +115,8 @@ GitHub Actions 会在每次推送和 Pull Request 时使用 Python 3.11 执行�
 
 最新仓库内结果由 `data/evaluation/results.json` 给出。合成集用于验证管线和指标实现，不应用于宣称真实招聘效果；真实验收应替换为脱敏简历、真实公开 JD 和人工多标注者相关性标签。
 
+“实验看板”读取 `data/real_jobs/evaluation_results.json` 与一致性报告，展示 30 条官方 JD（27 条在招）、3 个合成候选人画像、排序指标和双模型标注分歧。当前标签是双模型独立盲标后逐条裁决形成的模型辅助基准，`human_gold=false`；它适合黑客松中的可复现实验与流程审计，但不等同于真人专家评测，也不能用于宣称真实招聘效果。
+
 ## 隐私与安全
 
 - 完整简历只保存在当前 Streamlit 会话，不写入日志或 SQLite。
@@ -119,7 +130,7 @@ GitHub Actions 会在每次推送和 Pull Request 时使用 Python 3.11 执行�
 - 默认提取器是确定性规则，复杂版式、表格简历和模糊标题可能需要人工修正。
 - 扫描 PDF 未集成 OCR；请改用可复制 PDF 或 DOCX。
 - 离线字符向量不是 BGE-M3，语义泛化能力有限；生产化时应替换 Embedding 后重建索引。
-- 默认演示岗位和当前指标结果仍来自合成数据；真实 JD 已单独入库，但尚未形成多人复标评测结果。
+- 当前真实 JD 实验仍使用 3 个合成候选人画像，相关性标签来自双模型裁决而非真人专家；正式招聘效果仍需脱敏真实简历和多人独立人工复标验证。
 - 当前为单机 Demo，没有账户、权限、多租户和高并发能力。
 
 ## 后续计划
