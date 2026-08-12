@@ -6,8 +6,34 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE = ROOT / "docs" / "research" / "official-shanghai-ai-jobs.md"
+SOURCES = [
+    ROOT / "docs" / "research" / "official-shanghai-ai-jobs.md",
+    ROOT / "docs" / "research" / "official-multi-company-shanghai-ai-jobs.md",
+]
 OUT = ROOT / "data" / "real_jobs"
+OFFICIAL_HOSTS = {
+    "talent.baidu.com",
+    "jobs.bilibili.com",
+    "jobs.bytedance.com",
+    "join.qq.com",
+    "www.shlab.org.cn",
+    "career.huawei.com",
+    "campus.hr.xiaomi.com",
+    "xiaomi.jobs.f.mioffice.cn",
+    "zhaopin.meituan.com",
+    "careers.aliyun.com",
+}
+COMPANY_SLUGS = {
+    "百度": "baidu",
+    "哔哩哔哩": "bilibili",
+    "字节跳动": "bytedance",
+    "腾讯": "tencent",
+    "上海人工智能实验室": "shlab",
+    "华为": "huawei",
+    "小米": "xiaomi",
+    "美团": "meituan",
+    "阿里云": "aliyun",
+}
 
 FIELD_NAMES = {
     "company",
@@ -32,9 +58,9 @@ def split_items(value: str) -> list[str]:
     return [item.strip() for item in re.split(r"[；;]", value) if item.strip()]
 
 
-def parse_source() -> list[dict]:
-    text = SOURCE.read_text(encoding="utf-8")
-    sections = re.findall(r"^### (\d+)\. (.+?)\n(.*?)(?=^### \d+\.|^## 数据概览)", text, re.M | re.S)
+def parse_source(source: Path) -> list[dict]:
+    text = source.read_text(encoding="utf-8")
+    sections = re.findall(r"^### (\d+)\. (.+?)\n(.*?)(?=^### \d+\.|^## )", text, re.M | re.S)
     jobs: list[dict] = []
     for number, heading, body in sections:
         fields: dict[str, str] = {}
@@ -56,9 +82,10 @@ def parse_source() -> list[dict]:
         raw_text = "；".join(responsibilities + required + preferred)
         title = fields.get("title") or heading.split("｜", 1)[-1]
 
+        company_slug = COMPANY_SLUGS.get(fields["company"]) or re.sub(r"[^a-z0-9]+", "_", fields["company"].lower()).strip("_") or f"source_{SOURCES.index(source) + 1}"
         jobs.append(
             {
-                "job_id": f"real_baidu_{int(number):03d}",
+                "job_id": f"real_{company_slug}_{int(number):03d}",
                 "company": fields["company"],
                 "title": title,
                 "location": fields["location"],
@@ -78,6 +105,14 @@ def parse_source() -> list[dict]:
                 "raw_text": raw_text,
             }
         )
+    return jobs
+
+
+def parse_sources() -> list[dict]:
+    jobs: list[dict] = []
+    for source in SOURCES:
+        if source.exists():
+            jobs.extend(parse_source(source))
     return jobs
 
 
@@ -109,10 +144,12 @@ def build_labels(jobs: list[dict]) -> list[dict]:
 
 
 def validate(jobs: list[dict], labels: list[dict]) -> None:
-    assert len(jobs) == 15
+    assert len(jobs) >= 15
     assert len({job["job_id"] for job in jobs}) == len(jobs)
     assert len({job["source_url"] for job in jobs}) == len(jobs)
-    assert all(job["source_url"].startswith("https://talent.baidu.com/jobs/detail/") for job in jobs)
+    from urllib.parse import urlparse
+
+    assert all(urlparse(job["source_url"]).hostname in OFFICIAL_HOSTS for job in jobs)
     assert all("上海" in job["location"] for job in jobs)
     assert all(job["checked_at"] and job["source_evidence"] for job in jobs)
     assert {job["status"] for job in jobs} <= {"active", "expired", "unknown"}
@@ -121,7 +158,7 @@ def validate(jobs: list[dict], labels: list[dict]) -> None:
 
 
 def main() -> None:
-    jobs = parse_source()
+    jobs = parse_sources()
     labels = build_labels(jobs)
     validate(jobs, labels)
     OUT.mkdir(parents=True, exist_ok=True)

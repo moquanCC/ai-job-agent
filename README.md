@@ -72,7 +72,7 @@ job_id,company,title,location,description,source_url,published_at,deadline
 
 JSON 是相同字段对象组成的数组。推荐额外提供 `employment_type`、`required_skills`、`preferred_skills`、`education_requirement`、`responsibilities` 和 `status`。无法确认的状态应使用 `unknown`，不要标为正在招聘。
 
-首批真实数据位于 `data/real_jobs/jobs.json`：15 条均来自企业官方职位详情，包含来源证据和 2026-08-12 核验日期。`relevance_labels.json` 提供 3 类匿名候选人画像与这些岗位组成的 45 个 0～3 级规则辅助初标；它们还不是多人复标后的金标准。收集口径、证据及样本偏差见 `docs/research/official-shanghai-ai-jobs.md`。
+真实数据位于 `data/real_jobs/jobs.json`：30 条均来自企业官方职位详情，覆盖百度、上海人工智能实验室和哔哩哔哩，包含来源证据和 2026-08-12 核验日期。`relevance_labels.json` 提供 3 类匿名候选人画像与这些岗位组成的 90 个 0～3 级规则辅助初标；它们还不是多人复标后的金标准。收集口径、证据及样本偏差见 `docs/research/official-shanghai-ai-jobs.md` 和 `docs/research/official-multi-company-shanghai-ai-jobs.md`。
 
 研究文档更新后可重新生成并校验结构化数据：
 
@@ -125,7 +125,7 @@ GitHub Actions 会在每次推送和 Pull Request 时使用 Python 3.11 执行�
 
 1. 接入带 JSON Schema 的 OpenAI 兼容提取器，并保留证据与最多两次重试。
 2. 使用 BGE-M3 + FAISS 召回和 Cross-Encoder 精排。
-3. 将当前 15 条官方 JD 扩展至 30～50 条、多公司覆盖，并完成双人独立复标。
+3. 将当前 30 条官方 JD 扩展至 50 条和更多公司，并完成双人独立复标。
 4. 增加简历版本对比、回答反馈和岗位截止提醒。
 
 ## 演示与项目表达

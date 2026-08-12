@@ -9,11 +9,11 @@ ROOT = Path(__file__).resolve().parents[2]
 
 def test_real_jobs_are_official_and_parseable() -> None:
     jobs = json.loads((ROOT / "data" / "real_jobs" / "jobs.json").read_text(encoding="utf-8"))
-    assert len(jobs) == 15
-    assert len({job["source_url"] for job in jobs}) == 15
+    assert len(jobs) >= 30
+    assert len({job["source_url"] for job in jobs}) == len(jobs)
     for record in jobs:
         profile = parse_job(record)
-        assert profile.source_url.startswith("https://talent.baidu.com/jobs/detail/")
+        assert profile.source_url.startswith("https://")
         assert "上海" in profile.location
         assert profile.checked_at == "2026-08-12"
         assert profile.source_evidence
