@@ -3,25 +3,50 @@ from __future__ import annotations
 from src.matching.filters import filter_jobs
 from src.matching.rule_matcher import education_score, project_overlap, skill_coverage
 from src.matching.score_fusion import fuse, recommendation
-from src.matching.semantic_matcher import semantic_similarity
+from src.matching.semantic_matcher import semantic_scores, semantic_similarity
 from src.models.schemas import JobProfile, MatchResult, ResumeProfile, Subscores
+from src.retrieval.embeddings import HashingEmbedder, TextEmbedder
 
 
 def _resume_text(resume: ResumeProfile) -> str:
-    projects = " ".join(p.description + " " + " ".join(p.technologies) for p in resume.projects)
+    projects = " ".join(
+        project.description + " " + " ".join(project.technologies)
+        for project in resume.projects
+    )
     return " ".join(resume.skills + resume.preferred_roles) + " " + projects
 
 
 def _job_text(job: JobProfile) -> str:
-    return " ".join([job.title, *job.responsibilities, *job.required_skills, *job.preferred_skills, job.raw_text])
+    return " ".join(
+        [
+            job.title,
+            *job.responsibilities,
+            *job.required_skills,
+            *job.preferred_skills,
+            job.raw_text,
+        ]
+    )
 
 
-def score_job(resume: ResumeProfile, job: JobProfile, custom_weights: dict[str, float] | None = None) -> MatchResult:
+def score_job(
+    resume: ResumeProfile,
+    job: JobProfile,
+    custom_weights: dict[str, float] | None = None,
+    semantic_score: float | None = None,
+) -> MatchResult:
     candidate = set(resume.skills)
-    required, matched_required, missing_required = skill_coverage(candidate, job.required_skills)
-    preferred, matched_preferred, missing_preferred = skill_coverage(candidate, job.preferred_skills)
+    required, matched_required, missing_required = skill_coverage(
+        candidate, job.required_skills
+    )
+    preferred, matched_preferred, missing_preferred = skill_coverage(
+        candidate, job.preferred_skills
+    )
     project, project_hits = project_overlap(resume, job)
-    semantic = semantic_similarity(_resume_text(resume), _job_text(job))
+    semantic = (
+        semantic_similarity(_resume_text(resume), _job_text(job))
+        if semantic_score is None
+        else float(semantic_score)
+    )
     values = {
         "required_skill": required,
         "preferred_skill": preferred,
@@ -42,8 +67,12 @@ def score_job(resume: ResumeProfile, job: JobProfile, custom_weights: dict[str, 
         candidate_id=resume.candidate_id,
         job_id=job.job_id,
         total_score=total,
-        subscores=Subscores(**{key: round(value, 2) for key, value in values.items()}),
-        matched_skills=sorted(set(matched_required + matched_preferred + project_hits)),
+        subscores=Subscores(
+            **{key: round(value, 2) for key, value in values.items()}
+        ),
+        matched_skills=sorted(
+            set(matched_required + matched_preferred + project_hits)
+        ),
         missing_required_skills=missing_required,
         missing_preferred_skills=missing_preferred,
         evidence=evidence,
@@ -51,7 +80,27 @@ def score_job(resume: ResumeProfile, job: JobProfile, custom_weights: dict[str, 
     )
 
 
-def rank_jobs(resume: ResumeProfile, jobs: list[JobProfile], top_k: int = 10, location: str = "上海", include_expired: bool = False, custom_weights: dict[str, float] | None = None) -> list[MatchResult]:
+def rank_jobs(
+    resume: ResumeProfile,
+    jobs: list[JobProfile],
+    top_k: int = 10,
+    location: str = "上海",
+    include_expired: bool = False,
+    custom_weights: dict[str, float] | None = None,
+    embedder: TextEmbedder | None = None,
+) -> list[MatchResult]:
     eligible = filter_jobs(jobs, location=location, include_expired=include_expired)
-    results = [score_job(resume, job, custom_weights) for job in eligible]
+    if not eligible:
+        return []
+
+    selected_embedder = embedder or HashingEmbedder()
+    scores = semantic_scores(
+        _resume_text(resume),
+        [_job_text(job) for job in eligible],
+        selected_embedder,
+    )
+    results = [
+        score_job(resume, job, custom_weights, semantic_score=semantic)
+        for job, semantic in zip(eligible, scores, strict=True)
+    ]
     return sorted(results, key=lambda item: (-item.total_score, item.job_id))[:top_k]

@@ -1,4 +1,8 @@
 default_location: 上海
 top_k: 10
 database_url: sqlite:///data/app.db
-embedding_model: local-hashing-v1
+embedding_backend: auto
+embedding_model: BAAI/bge-m3
+embedding_device: ""
+embedding_batch_size: 8
+embedding_max_length: 1024

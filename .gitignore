@@ -17,3 +17,4 @@ data/real_resumes/
 reports/
 *.log
 .firecrawl/
+ai_job_agent.egg-info/

@@ -1,11 +1,77 @@
 from src.models.schemas import JobProfile
 from src.ui.demo_presenters import (
+    embedding_benchmark_rows,
+    embedding_status_rows,
     job_status_summary,
     job_table_rows,
     is_official_source,
     ranking_comparison_rows,
     source_badge,
 )
+
+
+def test_embedding_status_rows_discloses_unselected_auto_backend():
+    rows = embedding_status_rows(
+        {
+            "requested_backend": "auto",
+            "actual_backend": "auto",
+            "model": "auto",
+            "fallback_occurred": False,
+        },
+        requested_model="BAAI/bge-m3",
+    )
+
+    assert rows == {
+        "请求后端": "auto",
+        "实际后端": "尚未首次编码",
+        "模型": "BAAI/bge-m3（候选，尚未加载）",
+        "回退": "否",
+    }
+
+
+def test_embedding_status_rows_discloses_hashing_fallback():
+    rows = embedding_status_rows(
+        {
+            "requested_backend": "auto",
+            "actual_backend": "local-hashing-v1",
+            "model": "local-hashing-v1",
+            "fallback_occurred": True,
+        },
+        requested_model="BAAI/bge-m3",
+    )
+
+    assert rows["实际后端"] == "hashing"
+    assert rows["模型"] == "local-hashing-v1"
+    assert rows["回退"] == "是"
+
+
+def test_embedding_benchmark_rows_reports_measured_deltas_without_claiming_win():
+    hashing = {"ranking": {"full": {"recall@5": 0.49, "mrr": 0.78, "ndcg@10": 0.73}}}
+    bge = {
+        "ranking": {"full": {"recall@5": 0.49, "mrr": 0.78, "ndcg@10": 0.72}},
+        "parameters": {"embedding": {"actual_backend": "bge-m3", "model": "BAAI/bge-m3"}},
+    }
+
+    rows = embedding_benchmark_rows(hashing, bge)
+
+    assert rows[2] == {
+        "指标": "nDCG@10",
+        "hashing": 0.73,
+        "BGE-M3": 0.72,
+        "实测差值": -0.01,
+    }
+
+
+def test_embedding_benchmark_rows_rejects_non_bge_result():
+    invalid = {
+        "ranking": {"full": {"recall@5": 0.1, "mrr": 0.1, "ndcg@10": 0.1}},
+        "parameters": {"embedding": {"actual_backend": "hashing"}},
+    }
+
+    import pytest
+
+    with pytest.raises(ValueError, match="BGE-M3"):
+        embedding_benchmark_rows(invalid, invalid)
 
 
 def test_ranking_comparison_rows_marks_best_ndcg():

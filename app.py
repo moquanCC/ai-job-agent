@@ -10,6 +10,8 @@ import streamlit as st
 from src.models.schemas import ResumeProfile
 from src.services import AnalysisService
 from src.ui.demo_presenters import (
+    embedding_benchmark_rows,
+    embedding_status_rows,
     job_status_summary,
     job_table_rows,
     is_official_source,
@@ -138,6 +140,7 @@ def page_jobs(api: AnalysisService) -> None:
 
 def page_ranking(api: AnalysisService) -> None:
     st.subheader("3 · 岗位推荐")
+    render_embedding_status(api)
     if not st.session_state.resume:
         st.warning("请先在“简历解析”页上传并确认简历。")
         return
@@ -214,6 +217,7 @@ def page_interview(api: AnalysisService) -> None:
 def page_evaluation(api: AnalysisService) -> None:
     st.subheader("6 · 实验看板")
     st.info("双模型独立盲标与裁决形成的模型辅助评测基准")
+    render_embedding_status(api)
 
     try:
         result = api.load_real_evaluation()
@@ -253,6 +257,19 @@ def page_evaluation(api: AnalysisService) -> None:
             hide_index=True,
         )
 
+        st.markdown("#### Embedding 后端实测对比")
+        bge_path = ROOT / "data" / "real_jobs" / "evaluation_results_bge_m3.json"
+        try:
+            bge_result = json.loads(bge_path.read_text(encoding="utf-8"))
+            st.dataframe(
+                pd.DataFrame(embedding_benchmark_rows(result, bge_result)),
+                use_container_width=True,
+                hide_index=True,
+            )
+            st.caption("仅呈现当前数据集的实测差值；结果不代表 BGE-M3 在所有任务上全面提升。")
+        except (OSError, ValueError, KeyError, TypeError, json.JSONDecodeError) as exc:
+            st.caption(f"BGE-M3 对比结果暂不可用：{exc}")
+
         st.markdown("#### 局限性")
         limitations = result.get("limitations", [])
         if len(limitations) != 3:
@@ -261,6 +278,17 @@ def page_evaluation(api: AnalysisService) -> None:
             st.warning(limitation)
     except (KeyError, TypeError, ValueError) as exc:
         st.error(f"实验看板数据格式错误：{exc}")
+
+
+def render_embedding_status(api: AnalysisService) -> None:
+    """Disclose configured and actually selected embedding backend."""
+    rows = embedding_status_rows(api.embedding_status, api.settings.embedding_model)
+    with st.expander("Embedding 运行状态", expanded=False):
+        columns = st.columns(4)
+        for column, (label, value) in zip(columns, rows.items()):
+            column.metric(label, value)
+        if rows["回退"] == "是":
+            st.warning("BGE-M3 不可用，当前已回退到本地 hashing。")
 
 
 def main() -> None:

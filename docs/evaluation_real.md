@@ -40,7 +40,25 @@
 ```powershell
 python scripts/evaluate_annotation_agreement.py
 python scripts/adjudicate_relevance_labels.py
-python scripts/run_real_evaluation.py
+python scripts/run_real_evaluation.py --embedding-backend hashing
+python scripts/run_real_evaluation.py --embedding-backend bge-m3 --embedding-model BAAI/bge-m3 --output data/real_jobs/evaluation_results_bge_m3.json
 ```
 
 指标结果保存在 `data/real_jobs/evaluation_results.json`。由于候选人画像只有 3 个且为合成画像，结果应描述为“真实 JD 上的模型辅助裁决实验”，不能泛化为真实求职成功率。
+
+## BGE-M3 实测与对照
+
+可选依赖通过 `pip install -e ".[embedding]"` 安装。此次在 CPU 上显式运行官方模型 `BAAI/bge-m3`，耗时 64.7194 秒；实际后端为 `bge-m3`，无 fallback。输出为 1024 维、`float32`、L2 归一化的 dense 向量。BGE-M3 也支持 sparse 和 multi-vector 检索，但本实验未使用这两类能力。
+
+| 方法 / 指标 | hashing | BGE-M3 | 观察 |
+|---|---:|---:|---|
+| semantic Recall@5 | 0.1373 | 0.4314 | 短列表召回提高 |
+| semantic nDCG@5 | 0.5436 | 0.6451 | 短列表排序提高 |
+| semantic Recall@10 | 0.6275 | 0.5294 | 下降 |
+| full nDCG@5 | 0.6962 | 0.6940 | 基本持平，略降 |
+
+结果不支持“BGE-M3 全面优于 hashing”的结论。它改善了本小样本上的部分纯语义 Top-5 指标，但 Top-10 召回下降，完整融合的 nDCG@5 也没有提高；此外 CPU 运行时间显著更长。仓库保留 hashing 基线与 BGE 输出，评测 JSON 同时记录 requested/actual backend、模型、维度、批大小、最大长度和 fallback 状态，避免把 hashing 结果误称为 BGE 结果。
+
+首次运行会下载模型到 Hugging Face 缓存。Windows 未启用开发者模式或缺少 symlink 权限时可能出现缓存警告，通常不影响正确性但可能增加磁盘占用。GitHub Actions 始终显式使用 hashing，不触发 BGE 下载。
+
+最重要的效度限制不因换用 BGE-M3 而消失：3 个候选人画像仍为合成数据，相关性仍是双模型独立盲标与裁决形成的模型辅助基准，`human_gold=false`，并非真人金标准。

@@ -39,7 +39,7 @@ jobs:
         run: python scripts/generate_sample_data.py
 
       - name: Run reproducible evaluation
-        run: python scripts/run_evaluation.py
+        run: python scripts/run_evaluation.py --embedding-backend hashing
 
       - name: Verify annotation agreement and adjudication
         run: |
@@ -47,7 +47,7 @@ jobs:
           python scripts/adjudicate_relevance_labels.py
 
       - name: Run real-JD evaluation
-        run: python scripts/run_real_evaluation.py
+        run: python scripts/run_real_evaluation.py --embedding-backend hashing
 
       - name: Verify SQLite import
         run: python scripts/import_jobs.py --input data/evaluation/jobs.json --db data/ci.db

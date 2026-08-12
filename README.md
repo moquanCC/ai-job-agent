@@ -4,7 +4,7 @@
 
 面向上海地区 AI、算法、数据挖掘、推荐与数据科学岗位的可解释求职助手。上传简历并导入岗位后，应用会完成结构化解析、上海校招硬过滤、混合评分、技能缺口分析、真实经历约束下的简历建议、岗位定制面试题与 Markdown 报告导出。
 
-> 当前版本默认完全离线运行，不需要 API Key。它使用规则与字符 n-gram 向量作为可复现基线；配置文件预留了兼容模型参数，但本版本不会把简历发送到外部服务。
+> 当前版本不需要 API Key。语义后端支持 `BAAI/bge-m3`、自动回退和完全离线的 hashing 基线；模型下载完成后，推理在本机执行，不会把简历发送到外部推理服务。
 
 ![秋招雷达 AI 界面预览](docs/assets/app-preview.svg)
 
@@ -100,22 +100,41 @@ Score = 0.30 × 必需技能 + 0.10 × 加分技能 + 0.20 × 项目
 
 ## 配置
 
-复制 `.env.example` 为 `.env` 或设置同名环境变量。当前离线版实际使用 `DATABASE_URL`、`DEFAULT_LOCATION` 和 `TOP_K`；`LLM_*` 是后续接入 OpenAI 兼容接口的保留项，不会被当前代码调用。
+复制 `.env.example` 为 `.env` 或设置同名环境变量。`LLM_*` 是后续接入 OpenAI 兼容接口的保留项，不会被当前代码调用。
+
+### Embedding 后端
+
+安装可选的 BGE-M3 依赖：
+
+```powershell
+pip install -e ".[embedding]"
+```
+
+三种后端语义如下：
+
+- `EMBEDDING_BACKEND=bge-m3`：显式使用官方模型 `BAAI/bge-m3`；依赖或模型不可用时直接报错，不静默降级。
+- `EMBEDDING_BACKEND=auto`：优先使用 BGE-M3，加载失败时回退到 `local-hashing-v1`，UI 会披露实际后端和 fallback 状态。
+- `EMBEDDING_BACKEND=hashing`：固定使用 512 维字符 n-gram hashing，适合离线演示、测试和 CI，不下载模型。
+
+首次使用 BGE-M3 会从 Hugging Face 下载模型并写入本机缓存，耗时和磁盘占用取决于网络与环境。Windows 若未启用开发者模式或管理员权限，Hugging Face 可能提示缓存无法创建 symlink；通常仍可运行，但缓存会占用更多空间。可按需设置 `HF_HOME` 指向有足够空间的目录。`EMBEDDING_DEVICE` 可设为 `cpu` 或可用的加速设备；默认批大小为 8、最大长度为 1024。
 
 ## 测试与评测
 
 ```powershell
 pytest -q
-python scripts/run_evaluation.py
-python scripts/run_real_evaluation.py
-python scripts/build_index.py --db data/app.db --output data/faiss_index
+python scripts/run_evaluation.py --embedding-backend hashing
+python scripts/run_real_evaluation.py --embedding-backend hashing
+python scripts/run_real_evaluation.py --embedding-backend bge-m3 --embedding-model BAAI/bge-m3 --output data/real_jobs/evaluation_results_bge_m3.json
+python scripts/build_index.py --backend hashing --db data/app.db --output data/faiss_index
 ```
 
-GitHub Actions 会在每次推送和 Pull Request 时使用 Python 3.11 执行源码编译、测试、合成数据再生成、双模型一致性与裁决复现、真实 JD 评测和 SQLite 导入冒烟测试，并保留 14 天的评测结果 artifact。
+GitHub Actions 会在每次推送和 Pull Request 时使用 Python 3.11 执行源码编译、测试、合成数据再生成、双模型一致性与裁决复现、真实 JD 评测和 SQLite 导入冒烟测试，并保留 14 天的评测结果 artifact。CI 显式固定 `--embedding-backend hashing`，不会安装或下载 BGE-M3。
 
 最新仓库内结果由 `data/evaluation/results.json` 给出。合成集用于验证管线和指标实现，不应用于宣称真实招聘效果；真实验收应替换为脱敏简历、真实公开 JD 和人工多标注者相关性标签。
 
 “实验看板”读取 `data/real_jobs/evaluation_results.json` 与一致性报告，展示 30 条官方 JD（27 条在招）、3 个合成候选人画像、排序指标和双模型标注分歧。当前标签是双模型独立盲标后逐条裁决形成的模型辅助基准，`human_gold=false`；它适合黑客松中的可复现实验与流程审计，但不等同于真人专家评测，也不能用于宣称真实招聘效果。
+
+本机 CPU 实测中，`BAAI/bge-m3` 输出 1024 维、`float32`、L2 归一化稠密向量，完整真实 JD 评测耗时 64.7194 秒且没有 fallback。与 hashing 相比，纯语义方法的 Recall@5 从 0.1373 升至 0.4314、nDCG@5 从 0.5436 升至 0.6451，但 Recall@10 从 0.6275 降至 0.5294；完整融合方法的 nDCG@5 从 0.6962 变为 0.6940，基本持平且略降。因此当前结果只证明部分短列表语义指标改善，不代表所有指标或完整系统全面提升。
 
 ## 隐私与安全
 
@@ -129,14 +148,14 @@ GitHub Actions 会在每次推送和 Pull Request 时使用 Python 3.11 执行�
 
 - 默认提取器是确定性规则，复杂版式、表格简历和模糊标题可能需要人工修正。
 - 扫描 PDF 未集成 OCR；请改用可复制 PDF 或 DOCX。
-- 离线字符向量不是 BGE-M3，语义泛化能力有限；生产化时应替换 Embedding 后重建索引。
+- hashing 基线的语义泛化能力有限；BGE-M3 首次运行需要下载较大模型，CPU 延迟也显著高于 hashing，并且本次实测并非所有排名指标都提高。
 - 当前真实 JD 实验仍使用 3 个合成候选人画像，相关性标签来自双模型裁决而非真人专家；正式招聘效果仍需脱敏真实简历和多人独立人工复标验证。
 - 当前为单机 Demo，没有账户、权限、多租户和高并发能力。
 
 ## 后续计划
 
 1. 接入带 JSON Schema 的 OpenAI 兼容提取器，并保留证据与最多两次重试。
-2. 使用 BGE-M3 + FAISS 召回和 Cross-Encoder 精排。
+2. 在现有 BGE-M3 稠密向量接入基础上，评估 FAISS 召回和 Cross-Encoder 精排。
 3. 将当前 30 条官方 JD 扩展至 50 条和更多公司，并完成双人独立复标。
 4. 增加简历版本对比、回答反馈和岗位截止提醒。
 

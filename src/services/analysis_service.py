@@ -11,17 +11,41 @@ from src.matching.ranker import rank_jobs
 from src.models.schemas import JobProfile, ResumeProfile
 from src.parsers import parse_document, parse_job, parse_resume
 from src.repositories import AnalysisRepository, JobRepository
+from src.retrieval import TextEmbedder, create_embedder
 
 
 ROOT = Path(__file__).resolve().parents[2]
 
 
 class AnalysisService:
-    def __init__(self, settings: Settings | None = None, db_path: str | Path | None = None):
+    def __init__(
+        self,
+        settings: Settings | None = None,
+        db_path: str | Path | None = None,
+        embedder: TextEmbedder | None = None,
+    ):
         self.settings = settings or Settings.from_env()
+        self.embedder = embedder or create_embedder(
+            self.settings.embedding_backend,
+            model_name=self.settings.embedding_model,
+            device=self.settings.embedding_device or None,
+            batch_size=self.settings.embedding_batch_size,
+            max_length=self.settings.embedding_max_length,
+        )
         path = Path(db_path) if db_path else database_path(self.settings.database_url)
         self.jobs = JobRepository(path)
         self.analyses = AnalysisRepository(path)
+
+    @property
+    def embedding_status(self) -> dict[str, str | bool]:
+        """Return auditable requested/selected backend state without loading a model."""
+        actual = self.embedder.name
+        return {
+            "requested_backend": self.settings.embedding_backend,
+            "actual_backend": actual,
+            "model": actual,
+            "fallback_occurred": bool(getattr(self.embedder, "fallback_occurred", False)),
+        }
 
     def parse_resume_file(self, filename: str, content: bytes) -> ResumeProfile:
         document = parse_document(filename, content)
@@ -74,7 +98,14 @@ class AnalysisService:
         return job
 
     def rank(self, resume: ResumeProfile, top_k: int | None = None, include_expired: bool = False):
-        return rank_jobs(resume, self.jobs.list_jobs(), top_k=top_k or self.settings.top_k, location=self.settings.default_location, include_expired=include_expired)
+        return rank_jobs(
+            resume,
+            self.jobs.list_jobs(),
+            top_k=top_k or self.settings.top_k,
+            location=self.settings.default_location,
+            include_expired=include_expired,
+            embedder=self.embedder,
+        )
 
     def build_detail(self, resume: ResumeProfile, job_id: str, match, difficulty: str = "进阶") -> dict:
         job = self.jobs.get(job_id)

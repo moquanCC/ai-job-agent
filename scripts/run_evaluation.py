@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import argparse
 import json
 import sys
 import time
@@ -12,11 +13,49 @@ from src.evaluation import mrr, ndcg_at_k, precision_recall_f1, recall_at_k
 from src.matching.ranker import rank_jobs
 from src.models.schemas import JobProfile
 from src.parsers.resume_parser import parse_resume
+from src.retrieval import create_embedder
 
 DATA = ROOT / "data" / "evaluation"
 
 
-def main() -> None:
+def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
+    parser = argparse.ArgumentParser(
+        description="Run the synthetic evaluation with an auditable embedding backend."
+    )
+    parser.add_argument("--embedding-backend", choices=("hashing", "bge-m3", "auto"), default="hashing")
+    parser.add_argument("--embedding-model", default="BAAI/bge-m3")
+    parser.add_argument("--embedding-device", default="")
+    parser.add_argument("--batch-size", type=int, default=8)
+    parser.add_argument("--max-length", type=int, default=1024)
+    parser.add_argument("--output", type=Path, default=DATA / "results.json")
+    args = parser.parse_args(argv)
+    if args.batch_size <= 0 or args.max_length <= 0:
+        parser.error("--batch-size and --max-length must be positive")
+    return args
+
+
+def _embedding_metadata(embedder, args: argparse.Namespace) -> dict:
+    model = embedder.name
+    return {
+        "requested_backend": args.embedding_backend,
+        "actual_backend": "hashing" if model == "local-hashing-v1" else "bge-m3",
+        "model": model,
+        "dimensions": getattr(embedder, "dimensions", None),
+        "batch_size": args.batch_size,
+        "max_length": args.max_length,
+        "fallback_occurred": bool(getattr(embedder, "fallback_occurred", False)),
+    }
+
+
+def main(argv: list[str] | None = None) -> None:
+    args = parse_args(argv)
+    embedder = create_embedder(
+        args.embedding_backend,
+        model_name=args.embedding_model,
+        device=args.embedding_device or None,
+        batch_size=args.batch_size,
+        max_length=args.max_length,
+    )
     if not (DATA / "jobs.json").exists():
         from scripts.generate_sample_data import main as generate
         generate()
@@ -39,7 +78,7 @@ def main() -> None:
         grades = relevance[item["candidate_id"]]
         relevant = {job_id for job_id, grade in grades.items() if grade >= 2}
         for name, method_weights in methods.items():
-            ranked = rank_jobs(profile, jobs, top_k=10, custom_weights=method_weights)
+            ranked = rank_jobs(profile, jobs, top_k=10, custom_weights=method_weights, embedder=embedder)
             ids = [result.job_id for result in ranked]
             method_rows[name].append({"recall@5": recall_at_k(ids, relevant, 5), "recall@10": recall_at_k(ids, relevant, 10), "mrr": mrr(ids, relevant), "ndcg@5": ndcg_at_k(ids, grades, 5), "ndcg@10": ndcg_at_k(ids, grades, 10)})
     average = lambda rows, key: sum(row[key] for row in rows) / len(rows)
@@ -48,9 +87,10 @@ def main() -> None:
         "runtime_seconds": round(time.perf_counter() - started, 4),
         "extraction": {key: round(average(extraction, key), 4) for key in ("precision", "recall", "f1")},
         "ranking": {name: {key: round(average(rows, key), 4) for key in rows[0]} for name, rows in method_rows.items()},
-        "parameters": {"semantic_backend": "HashingVectorizer char 2-4 grams, 512 dimensions", "methods": methods},
+        "parameters": {"embedding": _embedding_metadata(embedder, args), "methods": methods},
     }
-    (DATA / "results.json").write_text(json.dumps(results, ensure_ascii=False, indent=2), encoding="utf-8")
+    args.output.parent.mkdir(parents=True, exist_ok=True)
+    args.output.write_text(json.dumps(results, ensure_ascii=False, indent=2), encoding="utf-8")
     print(json.dumps(results, ensure_ascii=False, indent=2))
 
 

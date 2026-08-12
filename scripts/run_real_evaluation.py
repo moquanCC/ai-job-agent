@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import argparse
 import json
 import sys
 import time
@@ -13,13 +14,54 @@ from src.evaluation import mrr, ndcg_at_k, recall_at_k
 from src.matching.ranker import rank_jobs
 from src.models.schemas import JobProfile
 from src.parsers.resume_parser import parse_resume
+from src.retrieval import create_embedder
 
 
 REAL = ROOT / "data" / "real_jobs"
 EVALUATION = ROOT / "data" / "evaluation"
 
 
-def main() -> None:
+def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
+    parser = argparse.ArgumentParser(
+        description=(
+            "Evaluate active official JDs with a selected embedding backend. "
+            "Manual BGE example: --embedding-backend bge-m3 --embedding-model BAAI/bge-m3"
+        )
+    )
+    parser.add_argument("--embedding-backend", choices=("hashing", "bge-m3", "auto"), default="hashing")
+    parser.add_argument("--embedding-model", default="BAAI/bge-m3")
+    parser.add_argument("--embedding-device", default="")
+    parser.add_argument("--batch-size", type=int, default=8)
+    parser.add_argument("--max-length", type=int, default=1024)
+    parser.add_argument("--output", type=Path, default=REAL / "evaluation_results.json")
+    args = parser.parse_args(argv)
+    if args.batch_size <= 0 or args.max_length <= 0:
+        parser.error("--batch-size and --max-length must be positive")
+    return args
+
+
+def _embedding_metadata(embedder, args: argparse.Namespace) -> dict:
+    model = embedder.name
+    return {
+        "requested_backend": args.embedding_backend,
+        "actual_backend": "hashing" if model == "local-hashing-v1" else "bge-m3",
+        "model": model,
+        "dimensions": getattr(embedder, "dimensions", None),
+        "batch_size": args.batch_size,
+        "max_length": args.max_length,
+        "fallback_occurred": bool(getattr(embedder, "fallback_occurred", False)),
+    }
+
+
+def main(argv: list[str] | None = None) -> None:
+    args = parse_args(argv)
+    embedder = create_embedder(
+        args.embedding_backend,
+        model_name=args.embedding_model,
+        device=args.embedding_device or None,
+        batch_size=args.batch_size,
+        max_length=args.max_length,
+    )
     jobs = [JobProfile.model_validate(item) for item in json.loads((REAL / "jobs.json").read_text(encoding="utf-8"))]
     jobs = [job for job in jobs if job.status == "active"]
     resumes = json.loads((EVALUATION / "resumes.json").read_text(encoding="utf-8"))
@@ -43,7 +85,7 @@ def main() -> None:
         grades = gold[profile.candidate_id]
         relevant = {job_id for job_id, grade in grades.items() if grade >= 2}
         for name, weights in methods.items():
-            ranked = rank_jobs(profile, jobs, top_k=len(jobs), custom_weights=weights)
+            ranked = rank_jobs(profile, jobs, top_k=len(jobs), custom_weights=weights, embedder=embedder)
             ids = [result.job_id for result in ranked]
             rows[name].append(
                 {
@@ -70,14 +112,15 @@ def main() -> None:
         },
         "runtime_seconds": round(time.perf_counter() - started, 4),
         "ranking": {name: {key: round(average(values, key), 4) for key in values[0]} for name, values in rows.items()},
-        "parameters": {"semantic_backend": "HashingVectorizer char 2-4 grams, 512 dimensions", "methods": methods},
+        "parameters": {"embedding": _embedding_metadata(embedder, args), "methods": methods},
         "limitations": [
             "Both independent labels and adjudication were model-assisted; human validation remains required for publication-grade claims.",
             "Only three synthetic candidate profiles are evaluated.",
             "Expired and unknown-status jobs are excluded from ranking evaluation.",
         ],
     }
-    (REAL / "evaluation_results.json").write_text(json.dumps(results, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    args.output.parent.mkdir(parents=True, exist_ok=True)
+    args.output.write_text(json.dumps(results, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(json.dumps(results, ensure_ascii=False, indent=2))
 
 

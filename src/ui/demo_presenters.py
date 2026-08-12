@@ -76,3 +76,42 @@ def ranking_comparison_rows(result: dict) -> list[dict]:
         }
         for name, values in ranking.items()
     ]
+
+
+def embedding_status_rows(status: dict, requested_model: str) -> dict[str, str]:
+    """Format runtime embedding state without causing first model encoding."""
+    requested = str(status.get("requested_backend", "unknown"))
+    actual = str(status.get("actual_backend", "unknown"))
+    fallback = bool(status.get("fallback_occurred", False))
+    if requested == "auto" and actual == "auto":
+        return {
+            "请求后端": requested,
+            "实际后端": "尚未首次编码",
+            "模型": f"{requested_model}（候选，尚未加载）",
+            "回退": "否",
+        }
+    actual_backend = "hashing" if actual == "local-hashing-v1" else actual
+    return {
+        "请求后端": requested,
+        "实际后端": actual_backend,
+        "模型": str(status.get("model", actual)),
+        "回退": "是" if fallback else "否",
+    }
+
+
+def embedding_benchmark_rows(hashing_result: dict, bge_result: dict) -> list[dict]:
+    """Return measured backend metrics and signed deltas, without winner claims."""
+    embedding = bge_result.get("parameters", {}).get("embedding", {})
+    if embedding.get("actual_backend") != "bge-m3":
+        raise ValueError("BGE-M3 评测文件未声明实际后端为 bge-m3")
+    hashing_metrics = hashing_result["ranking"]["full"]
+    bge_metrics = bge_result["ranking"]["full"]
+    return [
+        {
+            "指标": label,
+            "hashing": hashing_metrics[key],
+            "BGE-M3": bge_metrics[key],
+            "实测差值": round(bge_metrics[key] - hashing_metrics[key], 4),
+        }
+        for key, label in (("recall@5", "Recall@5"), ("mrr", "MRR"), ("ndcg@10", "nDCG@10"))
+    ]
