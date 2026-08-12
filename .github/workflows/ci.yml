@@ -41,6 +41,14 @@ jobs:
       - name: Run reproducible evaluation
         run: python scripts/run_evaluation.py
 
+      - name: Verify annotation agreement and adjudication
+        run: |
+          python scripts/evaluate_annotation_agreement.py
+          python scripts/adjudicate_relevance_labels.py
+
+      - name: Run real-JD evaluation
+        run: python scripts/run_real_evaluation.py
+
       - name: Verify SQLite import
         run: python scripts/import_jobs.py --input data/evaluation/jobs.json --db data/ci.db
 
@@ -48,5 +56,10 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: evaluation-results
-          path: data/evaluation/results.json
+          path: |
+            data/evaluation/results.json
+            data/real_jobs/annotation_agreement.json
+            data/real_jobs/annotation_disagreements.json
+            data/real_jobs/evaluation_results.json
+            data/real_jobs/relevance_gold.json
           retention-days: 14

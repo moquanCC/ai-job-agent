@@ -1,0 +1,81 @@
+{
+  "dataset": {
+    "jobs": 30,
+    "candidates": 3,
+    "pairs": 90,
+    "scale": [
+      0,
+      1,
+      2,
+      3
+    ]
+  },
+  "annotators": {
+    "first": "codex-rule-assisted-v1",
+    "second": "independent-expert-model-v1"
+  },
+  "overall": {
+    "pairs": 90,
+    "exact_agreement": 0.4778,
+    "within_one_agreement": 0.9111,
+    "mean_absolute_difference": 0.6222,
+    "linear_weighted_kappa": 0.3135,
+    "quadratic_weighted_kappa": 0.3751,
+    "spearman_rho": 0.4085,
+    "distance_distribution": {
+      "0": 43,
+      "1": 39,
+      "2": 7,
+      "3": 1
+    }
+  },
+  "by_candidate": {
+    "eval_llm": {
+      "pairs": 30,
+      "exact_agreement": 0.4333,
+      "within_one_agreement": 0.8667,
+      "mean_absolute_difference": 0.7,
+      "linear_weighted_kappa": -0.0032,
+      "quadratic_weighted_kappa": -0.0284,
+      "spearman_rho": -0.0024,
+      "distance_distribution": {
+        "0": 13,
+        "1": 13,
+        "2": 4
+      }
+    },
+    "eval_mining": {
+      "pairs": 30,
+      "exact_agreement": 0.3667,
+      "within_one_agreement": 1.0,
+      "mean_absolute_difference": 0.6333,
+      "linear_weighted_kappa": 0.0594,
+      "quadratic_weighted_kappa": 0.3198,
+      "spearman_rho": -0.0682,
+      "distance_distribution": {
+        "0": 11,
+        "1": 19
+      }
+    },
+    "eval_nlp": {
+      "pairs": 30,
+      "exact_agreement": 0.6333,
+      "within_one_agreement": 0.8667,
+      "mean_absolute_difference": 0.5333,
+      "linear_weighted_kappa": 0.2283,
+      "quadratic_weighted_kappa": -0.0145,
+      "spearman_rho": 0.1211,
+      "distance_distribution": {
+        "0": 19,
+        "1": 7,
+        "2": 3,
+        "3": 1
+      }
+    }
+  },
+  "disagreements": {
+    "count": 47,
+    "severe_count": 8
+  },
+  "interpretation_note": "Kappa measures agreement beyond chance; weighted variants respect the ordinal 0-3 scale. This is model-assisted annotation, not human inter-rater validation."
+}

@@ -21,4 +21,6 @@
 - `1`：岗位领域相邻，但核心要求明显不匹配；
 - `0`：不相关或存在地点/招聘类型硬冲突。
 
-初始标签为单人规则辅助标注，必须保留 `annotator`、`rationale` 和 `labeled_at`。正式实验前应由第二名标注者独立复标并计算一致性。
+`relevance_labels.json` 是规则辅助初标，`relevance_labels_second.json` 是未查看首标的独立复标，`relevance_gold.json` 是逐条分歧裁决结果。`annotation_agreement.json` 和 `annotation_disagreements.json` 保留一致性指标与分歧明细。
+
+当前裁决集属于双模型标注基准，并非真人专家金标准。正式论文或招聘决策前仍需两名以上真人标注者独立复标。

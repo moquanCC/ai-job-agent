@@ -1,0 +1,722 @@
+[
+  {
+    "candidate_id": "eval_llm",
+    "job_id": "real_baidu_001",
+    "grade": 1,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "硕士计算机背景，RAG、FAISS、FastAPI和Docker项目仅以Python、PyTorch与深度学习与计算机视觉检测/分割相邻，核心要求中的视觉模型与CV项目未在经历中体现。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_llm",
+    "job_id": "real_baidu_002",
+    "grade": 2,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "硕士计算机背景，RAG、FAISS、FastAPI和Docker项目与图文多模态算法相关，已具备LLM/NLP、Python与PyTorch；主要缺口是ViT、CLIP及跨模态训练，可在现有技术基础上补强。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_llm",
+    "job_id": "real_baidu_003",
+    "grade": 1,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "硕士计算机背景，RAG、FAISS、FastAPI和Docker项目仅以Python与PyTorch与大模型训推基础设施相邻，核心要求中的分布式并行、C++、量化及CUDA未在经历中体现。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_llm",
+    "job_id": "real_baidu_004",
+    "grade": 1,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "硕士计算机背景，RAG、FAISS、FastAPI和Docker项目仅以LLM、Python与深度学习框架与大模型分布式训练优化相邻，核心要求中的C++、通信库及DeepSpeed/Megatron未在经历中体现。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_llm",
+    "job_id": "real_baidu_005",
+    "grade": 2,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "硕士计算机背景，RAG、FAISS、FastAPI和Docker项目与搜索推荐与广告排序相关，已具备机器学习、Python及建模；主要缺口是工业排序模型、SQL/Hive/Spark，可在现有技术基础上补强。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_llm",
+    "job_id": "real_baidu_006",
+    "grade": 2,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "硕士计算机背景，RAG、FAISS、FastAPI和Docker项目与Agent Harness系统相关，已具备LLM与PyTorch；主要缺口是ReAct、LangChain/AutoGen及Harness落地，可在现有技术基础上补强。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_llm",
+    "job_id": "real_baidu_007",
+    "grade": 1,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "硕士计算机背景，RAG、FAISS、FastAPI和Docker项目仅以Python与PyTorch与强化学习训推平台相邻，核心要求中的RL、分布式训练、Ray/K8s及调度未在经历中体现。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_llm",
+    "job_id": "real_baidu_008",
+    "grade": 2,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "硕士计算机背景，RAG、FAISS、FastAPI和Docker项目与自动驾驶VLM/VLA相关，已具备LLM、PyTorch与模型训练；主要缺口是自动驾驶、视觉多模态及蒸馏，可在现有技术基础上补强。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_llm",
+    "job_id": "real_baidu_009",
+    "grade": 1,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "硕士计算机背景，RAG、FAISS、FastAPI和Docker项目仅以机器学习与Python与自动驾驶决策规划控制相邻，核心要求中的强化学习、控制理论、A*/RRT及自动驾驶未在经历中体现。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_llm",
+    "job_id": "real_baidu_010",
+    "grade": 2,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "硕士计算机背景，RAG、FAISS、FastAPI和Docker项目与LLM自动化测试评测相关，已具备LLM理解与Python；主要缺口是测试框架、质量保障及Benchmark建设，可在现有技术基础上补强。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_llm",
+    "job_id": "real_baidu_011",
+    "grade": 2,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "硕士计算机背景，RAG、FAISS、FastAPI和Docker项目与多模态理解与生成相关，已具备LLM/NLP、Python与PyTorch；主要缺口是CV、扩散模型及多模态训练，可在现有技术基础上补强。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_llm",
+    "job_id": "real_baidu_012",
+    "grade": 1,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "硕士计算机背景，RAG、FAISS、FastAPI和Docker项目仅以Python与AI框架与AI异构计算相邻，核心要求中的C++、体系结构、MPI及编译优化未在经历中体现。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_llm",
+    "job_id": "real_baidu_013",
+    "grade": 1,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "硕士计算机背景，RAG、FAISS、FastAPI和Docker项目仅以PyTorch与模型训练与视觉多模态生成相邻，核心要求中的视觉生成、扩散模型及图像视频项目未在经历中体现。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_llm",
+    "job_id": "real_baidu_014",
+    "grade": 1,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "硕士计算机背景，RAG、FAISS、FastAPI和Docker项目仅以Python与AI框架与异构计算引擎与算子相邻，核心要求中的C++、MPI、CUDA/OpenCL及算子优化未在经历中体现。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_llm",
+    "job_id": "real_baidu_015",
+    "grade": 1,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "硕士计算机背景，RAG、FAISS、FastAPI和Docker项目仅以Python与PyTorch与AI芯片高性能计算库相邻，核心要求中的C/C++、Linux计算库及芯片优化未在经历中体现。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_llm",
+    "job_id": "real_shlab_001",
+    "grade": 2,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "硕士计算机背景，RAG、FAISS、FastAPI和Docker项目与大模型与Agent评测相关，已具备LLM与Python；主要缺口是Benchmark、Agent评测及自动化平台，可在现有技术基础上补强。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_llm",
+    "job_id": "real_shlab_002",
+    "grade": 2,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "硕士计算机背景，RAG、FAISS、FastAPI和Docker项目与LLM数据、训练与评测相关，已具备机器学习、Python与PyTorch；主要缺口是SFT/RL、数据合成及预训练，可在现有技术基础上补强。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_llm",
+    "job_id": "real_shlab_003",
+    "grade": 3,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "硕士计算机背景，RAG、FAISS、FastAPI和Docker项目直接覆盖科学Agent、RAG与Tool Use的关键能力，已有LLM与模型研发实证；仅需补充Agent、RAG、Tool Use及科研系统中的少量工业化细节。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_llm",
+    "job_id": "real_shlab_004",
+    "grade": 2,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "硕士计算机背景，RAG、FAISS、FastAPI和Docker项目与医疗LLM评测系统相关，已具备Python、PyTorch与模型分析；主要缺口是医疗Benchmark、评测工具链及后端DevOps，可在现有技术基础上补强。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_llm",
+    "job_id": "real_shlab_005",
+    "grade": 2,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "硕士计算机背景，RAG、FAISS、FastAPI和Docker项目与物质科学多模态基座模型相关，已具备LLM、Python与PyTorch；主要缺口是扩散模型、GNN及物质科学，可在现有技术基础上补强。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_llm",
+    "job_id": "real_shlab_006",
+    "grade": 2,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "硕士计算机背景，RAG、FAISS、FastAPI和Docker项目与大模型智能体攻防仿真相关，已具备LLM、Python与PyTorch；主要缺口是Agent Memory、网络攻防及红蓝仿真，可在现有技术基础上补强。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_llm",
+    "job_id": "real_shlab_007",
+    "grade": 2,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "硕士计算机背景，RAG、FAISS、FastAPI和Docker项目与脑科学多模态基座模型相关，已具备LLM、Python与PyTorch；主要缺口是神经科学、扩散模型、GNN及分布式训练，可在现有技术基础上补强。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_llm",
+    "job_id": "real_shlab_008",
+    "grade": 2,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "硕士计算机背景，RAG、FAISS、FastAPI和Docker项目与LLM前沿风险与治理相关，已具备LLM与Python；主要缺口是安全对齐、风险量化、攻防及治理，可在现有技术基础上补强。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_llm",
+    "job_id": "real_shlab_009",
+    "grade": 1,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "硕士计算机背景，RAG、FAISS、FastAPI和Docker项目仅以PyTorch模型训练与大模型分布式训练框架相邻，核心要求中的DeepSpeed/FSDP/Megatron及GPU通信未在经历中体现。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_llm",
+    "job_id": "real_shlab_010",
+    "grade": 2,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "硕士计算机背景，RAG、FAISS、FastAPI和Docker项目与LLM前沿架构与训练相关，已具备LLM、Python与PyTorch；主要缺口是持续预训练、SFT/RL、MoE及分布式训练，可在现有技术基础上补强。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_llm",
+    "job_id": "real_bilibili_011",
+    "grade": 2,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "硕士计算机背景，RAG、FAISS、FastAPI和Docker项目与LLM持续预训练与RL相关，已具备LLM与PyTorch；主要缺口是MoE、CPT/SFT/RL及Megatron/DeepSpeed，可在现有技术基础上补强。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_llm",
+    "job_id": "real_bilibili_012",
+    "grade": 1,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "硕士计算机背景，RAG、FAISS、FastAPI和Docker项目仅以Python与PyTorch与AI训练推理基础设施相邻，核心要求中的C/C++、GPU架构、分布式并行及高速互联未在经历中体现。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_llm",
+    "job_id": "real_bilibili_013",
+    "grade": 1,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "硕士计算机背景，RAG、FAISS、FastAPI和Docker项目仅以PyTorch与深度学习与音视频多模态生成相邻，核心要求中的Diffusion、VAE、MoE及音视频生成未在经历中体现。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_llm",
+    "job_id": "real_bilibili_014",
+    "grade": 1,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "硕士计算机背景，RAG、FAISS、FastAPI和Docker项目仅以Python与机器学习与强化学习训练框架相邻，核心要求中的C++、VLM/DiT、GRPO/DAPO/verl及异步RL未在经历中体现。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_llm",
+    "job_id": "real_bilibili_015",
+    "grade": 3,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "硕士计算机背景，RAG、FAISS、FastAPI和Docker项目直接覆盖AI-Native后端与RAG服务的关键能力，已有Python与AI应用理解实证；仅需补充网络协议、数据库、中间件及服务工程中的少量工业化细节。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_mining",
+    "job_id": "real_baidu_001",
+    "grade": 1,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "本科数据科学背景，推荐系统、特征工程、Python和SQL项目仅以Python、PyTorch与深度学习与计算机视觉检测/分割相邻，核心要求中的视觉模型与CV项目未在经历中体现。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_mining",
+    "job_id": "real_baidu_002",
+    "grade": 1,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "本科数据科学背景，推荐系统、特征工程、Python和SQL项目仅以LLM/NLP、Python与PyTorch与图文多模态算法相邻，核心要求中的ViT、CLIP及跨模态训练未在经历中体现。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_mining",
+    "job_id": "real_baidu_003",
+    "grade": 1,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "本科数据科学背景，推荐系统、特征工程、Python和SQL项目仅以Python与PyTorch与大模型训推基础设施相邻，核心要求中的分布式并行、C++、量化及CUDA未在经历中体现。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_mining",
+    "job_id": "real_baidu_004",
+    "grade": 1,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "本科数据科学背景，推荐系统、特征工程、Python和SQL项目仅以LLM、Python与深度学习框架与大模型分布式训练优化相邻，核心要求中的C++、通信库及DeepSpeed/Megatron未在经历中体现。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_mining",
+    "job_id": "real_baidu_005",
+    "grade": 3,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "本科数据科学背景，推荐系统、特征工程、Python和SQL项目直接覆盖搜索推荐与广告排序的关键能力，已有机器学习、Python及建模实证；仅需补充工业排序模型、SQL/Hive/Spark中的少量工业化细节。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_mining",
+    "job_id": "real_baidu_006",
+    "grade": 1,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "本科数据科学背景，推荐系统、特征工程、Python和SQL项目仅以LLM与PyTorch与Agent Harness系统相邻，核心要求中的ReAct、LangChain/AutoGen及Harness落地未在经历中体现。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_mining",
+    "job_id": "real_baidu_007",
+    "grade": 1,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "本科数据科学背景，推荐系统、特征工程、Python和SQL项目仅以Python与PyTorch与强化学习训推平台相邻，核心要求中的RL、分布式训练、Ray/K8s及调度未在经历中体现。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_mining",
+    "job_id": "real_baidu_008",
+    "grade": 0,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "本科数据科学背景，推荐系统、特征工程、Python和SQL项目；但本科不满足该岗硕士及以上门槛，且未体现自动驾驶、视觉多模态及蒸馏。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_mining",
+    "job_id": "real_baidu_009",
+    "grade": 0,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "本科数据科学背景，推荐系统、特征工程、Python和SQL项目；但本科不满足该岗硕士及以上门槛，且未体现强化学习、控制理论、A*/RRT及自动驾驶。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_mining",
+    "job_id": "real_baidu_010",
+    "grade": 1,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "本科数据科学背景，推荐系统、特征工程、Python和SQL项目仅以LLM理解与Python与LLM自动化测试评测相邻，核心要求中的测试框架、质量保障及Benchmark建设未在经历中体现。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_mining",
+    "job_id": "real_baidu_011",
+    "grade": 0,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "本科数据科学背景，推荐系统、特征工程、Python和SQL项目；但本科不满足该岗硕士及以上门槛，且未体现CV、扩散模型及多模态训练。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_mining",
+    "job_id": "real_baidu_012",
+    "grade": 1,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "本科数据科学背景，推荐系统、特征工程、Python和SQL项目仅以Python与AI框架与AI异构计算相邻，核心要求中的C++、体系结构、MPI及编译优化未在经历中体现。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_mining",
+    "job_id": "real_baidu_013",
+    "grade": 0,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "本科数据科学背景，推荐系统、特征工程、Python和SQL项目；但本科不满足该岗硕士及以上门槛，且未体现视觉生成、扩散模型及图像视频项目。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_mining",
+    "job_id": "real_baidu_014",
+    "grade": 1,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "本科数据科学背景，推荐系统、特征工程、Python和SQL项目仅以Python与AI框架与异构计算引擎与算子相邻，核心要求中的C++、MPI、CUDA/OpenCL及算子优化未在经历中体现。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_mining",
+    "job_id": "real_baidu_015",
+    "grade": 1,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "本科数据科学背景，推荐系统、特征工程、Python和SQL项目仅以Python与PyTorch与AI芯片高性能计算库相邻，核心要求中的C/C++、Linux计算库及芯片优化未在经历中体现。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_mining",
+    "job_id": "real_shlab_001",
+    "grade": 0,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "本科数据科学背景，推荐系统、特征工程、Python和SQL项目；但本科不满足该岗硕士及以上门槛，且未体现Benchmark、Agent评测及自动化平台。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_mining",
+    "job_id": "real_shlab_002",
+    "grade": 1,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "本科数据科学背景，推荐系统、特征工程、Python和SQL项目仅以机器学习、Python与PyTorch与LLM数据、训练与评测相邻，核心要求中的SFT/RL、数据合成及预训练未在经历中体现。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_mining",
+    "job_id": "real_shlab_003",
+    "grade": 0,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "本科数据科学背景，推荐系统、特征工程、Python和SQL项目；但本科不满足该岗硕士及以上门槛，且未体现Agent、RAG、Tool Use及科研系统。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_mining",
+    "job_id": "real_shlab_004",
+    "grade": 0,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "本科数据科学背景，推荐系统、特征工程、Python和SQL项目；但本科不满足该岗硕士及以上门槛，且未体现医疗Benchmark、评测工具链及后端DevOps。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_mining",
+    "job_id": "real_shlab_005",
+    "grade": 0,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "本科数据科学背景，推荐系统、特征工程、Python和SQL项目；但本科不满足该岗硕士及以上门槛，且未体现扩散模型、GNN及物质科学。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_mining",
+    "job_id": "real_shlab_006",
+    "grade": 1,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "本科数据科学背景，推荐系统、特征工程、Python和SQL项目仅以LLM、Python与PyTorch与大模型智能体攻防仿真相邻，核心要求中的Agent Memory、网络攻防及红蓝仿真未在经历中体现。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_mining",
+    "job_id": "real_shlab_007",
+    "grade": 0,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "本科数据科学背景，推荐系统、特征工程、Python和SQL项目；但本科不满足该岗硕士及以上门槛，且未体现神经科学、扩散模型、GNN及分布式训练。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_mining",
+    "job_id": "real_shlab_008",
+    "grade": 0,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "本科数据科学背景，推荐系统、特征工程、Python和SQL项目；但本科不满足该岗硕士及以上门槛，且未体现安全对齐、风险量化、攻防及治理。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_mining",
+    "job_id": "real_shlab_009",
+    "grade": 1,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "本科数据科学背景，推荐系统、特征工程、Python和SQL项目仅以PyTorch模型训练与大模型分布式训练框架相邻，核心要求中的DeepSpeed/FSDP/Megatron及GPU通信未在经历中体现。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_mining",
+    "job_id": "real_shlab_010",
+    "grade": 1,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "本科数据科学背景，推荐系统、特征工程、Python和SQL项目仅以LLM、Python与PyTorch与LLM前沿架构与训练相邻，核心要求中的持续预训练、SFT/RL、MoE及分布式训练未在经历中体现。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_mining",
+    "job_id": "real_bilibili_011",
+    "grade": 1,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "本科数据科学背景，推荐系统、特征工程、Python和SQL项目仅以LLM与PyTorch与LLM持续预训练与RL相邻，核心要求中的MoE、CPT/SFT/RL及Megatron/DeepSpeed未在经历中体现。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_mining",
+    "job_id": "real_bilibili_012",
+    "grade": 1,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "本科数据科学背景，推荐系统、特征工程、Python和SQL项目仅以Python与PyTorch与AI训练推理基础设施相邻，核心要求中的C/C++、GPU架构、分布式并行及高速互联未在经历中体现。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_mining",
+    "job_id": "real_bilibili_013",
+    "grade": 1,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "本科数据科学背景，推荐系统、特征工程、Python和SQL项目仅以PyTorch与深度学习与音视频多模态生成相邻，核心要求中的Diffusion、VAE、MoE及音视频生成未在经历中体现。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_mining",
+    "job_id": "real_bilibili_014",
+    "grade": 1,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "本科数据科学背景，推荐系统、特征工程、Python和SQL项目仅以Python与机器学习与强化学习训练框架相邻，核心要求中的C++、VLM/DiT、GRPO/DAPO/verl及异步RL未在经历中体现。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_mining",
+    "job_id": "real_bilibili_015",
+    "grade": 1,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "本科数据科学背景，推荐系统、特征工程、Python和SQL项目仅以Python与AI应用理解与AI-Native后端与RAG服务相邻，核心要求中的网络协议、数据库、中间件及服务工程未在经历中体现。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_nlp",
+    "job_id": "real_baidu_001",
+    "grade": 1,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "硕士人工智能背景，NLP文本分类、LLM、深度学习和PyTorch项目仅以Python、PyTorch与深度学习与计算机视觉检测/分割相邻，核心要求中的视觉模型与CV项目未在经历中体现。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_nlp",
+    "job_id": "real_baidu_002",
+    "grade": 2,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "硕士人工智能背景，NLP文本分类、LLM、深度学习和PyTorch项目与图文多模态算法相关，已具备LLM/NLP、Python与PyTorch；主要缺口是ViT、CLIP及跨模态训练，可在现有技术基础上补强。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_nlp",
+    "job_id": "real_baidu_003",
+    "grade": 1,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "硕士人工智能背景，NLP文本分类、LLM、深度学习和PyTorch项目仅以Python与PyTorch与大模型训推基础设施相邻，核心要求中的分布式并行、C++、量化及CUDA未在经历中体现。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_nlp",
+    "job_id": "real_baidu_004",
+    "grade": 1,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "硕士人工智能背景，NLP文本分类、LLM、深度学习和PyTorch项目仅以LLM、Python与深度学习框架与大模型分布式训练优化相邻，核心要求中的C++、通信库及DeepSpeed/Megatron未在经历中体现。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_nlp",
+    "job_id": "real_baidu_005",
+    "grade": 2,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "硕士人工智能背景，NLP文本分类、LLM、深度学习和PyTorch项目与搜索推荐与广告排序相关，已具备机器学习、Python及建模；主要缺口是工业排序模型、SQL/Hive/Spark，可在现有技术基础上补强。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_nlp",
+    "job_id": "real_baidu_006",
+    "grade": 2,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "硕士人工智能背景，NLP文本分类、LLM、深度学习和PyTorch项目与Agent Harness系统相关，已具备LLM与PyTorch；主要缺口是ReAct、LangChain/AutoGen及Harness落地，可在现有技术基础上补强。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_nlp",
+    "job_id": "real_baidu_007",
+    "grade": 1,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "硕士人工智能背景，NLP文本分类、LLM、深度学习和PyTorch项目仅以Python与PyTorch与强化学习训推平台相邻，核心要求中的RL、分布式训练、Ray/K8s及调度未在经历中体现。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_nlp",
+    "job_id": "real_baidu_008",
+    "grade": 2,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "硕士人工智能背景，NLP文本分类、LLM、深度学习和PyTorch项目与自动驾驶VLM/VLA相关，已具备LLM、PyTorch与模型训练；主要缺口是自动驾驶、视觉多模态及蒸馏，可在现有技术基础上补强。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_nlp",
+    "job_id": "real_baidu_009",
+    "grade": 1,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "硕士人工智能背景，NLP文本分类、LLM、深度学习和PyTorch项目仅以机器学习与Python与自动驾驶决策规划控制相邻，核心要求中的强化学习、控制理论、A*/RRT及自动驾驶未在经历中体现。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_nlp",
+    "job_id": "real_baidu_010",
+    "grade": 2,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "硕士人工智能背景，NLP文本分类、LLM、深度学习和PyTorch项目与LLM自动化测试评测相关，已具备LLM理解与Python；主要缺口是测试框架、质量保障及Benchmark建设，可在现有技术基础上补强。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_nlp",
+    "job_id": "real_baidu_011",
+    "grade": 2,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "硕士人工智能背景，NLP文本分类、LLM、深度学习和PyTorch项目与多模态理解与生成相关，已具备LLM/NLP、Python与PyTorch；主要缺口是CV、扩散模型及多模态训练，可在现有技术基础上补强。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_nlp",
+    "job_id": "real_baidu_012",
+    "grade": 1,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "硕士人工智能背景，NLP文本分类、LLM、深度学习和PyTorch项目仅以Python与AI框架与AI异构计算相邻，核心要求中的C++、体系结构、MPI及编译优化未在经历中体现。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_nlp",
+    "job_id": "real_baidu_013",
+    "grade": 1,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "硕士人工智能背景，NLP文本分类、LLM、深度学习和PyTorch项目仅以PyTorch与模型训练与视觉多模态生成相邻，核心要求中的视觉生成、扩散模型及图像视频项目未在经历中体现。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_nlp",
+    "job_id": "real_baidu_014",
+    "grade": 1,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "硕士人工智能背景，NLP文本分类、LLM、深度学习和PyTorch项目仅以Python与AI框架与异构计算引擎与算子相邻，核心要求中的C++、MPI、CUDA/OpenCL及算子优化未在经历中体现。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_nlp",
+    "job_id": "real_baidu_015",
+    "grade": 1,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "硕士人工智能背景，NLP文本分类、LLM、深度学习和PyTorch项目仅以Python与PyTorch与AI芯片高性能计算库相邻，核心要求中的C/C++、Linux计算库及芯片优化未在经历中体现。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_nlp",
+    "job_id": "real_shlab_001",
+    "grade": 2,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "硕士人工智能背景，NLP文本分类、LLM、深度学习和PyTorch项目与大模型与Agent评测相关，已具备LLM与Python；主要缺口是Benchmark、Agent评测及自动化平台，可在现有技术基础上补强。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_nlp",
+    "job_id": "real_shlab_002",
+    "grade": 3,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "硕士人工智能背景，NLP文本分类、LLM、深度学习和PyTorch项目直接覆盖LLM数据、训练与评测的关键能力，已有机器学习、Python与PyTorch实证；仅需补充SFT/RL、数据合成及预训练中的少量工业化细节。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_nlp",
+    "job_id": "real_shlab_003",
+    "grade": 2,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "硕士人工智能背景，NLP文本分类、LLM、深度学习和PyTorch项目与科学Agent、RAG与Tool Use相关，已具备LLM与模型研发；主要缺口是Agent、RAG、Tool Use及科研系统，可在现有技术基础上补强。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_nlp",
+    "job_id": "real_shlab_004",
+    "grade": 2,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "硕士人工智能背景，NLP文本分类、LLM、深度学习和PyTorch项目与医疗LLM评测系统相关，已具备Python、PyTorch与模型分析；主要缺口是医疗Benchmark、评测工具链及后端DevOps，可在现有技术基础上补强。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_nlp",
+    "job_id": "real_shlab_005",
+    "grade": 2,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "硕士人工智能背景，NLP文本分类、LLM、深度学习和PyTorch项目与物质科学多模态基座模型相关，已具备LLM、Python与PyTorch；主要缺口是扩散模型、GNN及物质科学，可在现有技术基础上补强。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_nlp",
+    "job_id": "real_shlab_006",
+    "grade": 2,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "硕士人工智能背景，NLP文本分类、LLM、深度学习和PyTorch项目与大模型智能体攻防仿真相关，已具备LLM、Python与PyTorch；主要缺口是Agent Memory、网络攻防及红蓝仿真，可在现有技术基础上补强。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_nlp",
+    "job_id": "real_shlab_007",
+    "grade": 2,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "硕士人工智能背景，NLP文本分类、LLM、深度学习和PyTorch项目与脑科学多模态基座模型相关，已具备LLM、Python与PyTorch；主要缺口是神经科学、扩散模型、GNN及分布式训练，可在现有技术基础上补强。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_nlp",
+    "job_id": "real_shlab_008",
+    "grade": 2,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "硕士人工智能背景，NLP文本分类、LLM、深度学习和PyTorch项目与LLM前沿风险与治理相关，已具备LLM与Python；主要缺口是安全对齐、风险量化、攻防及治理，可在现有技术基础上补强。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_nlp",
+    "job_id": "real_shlab_009",
+    "grade": 1,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "硕士人工智能背景，NLP文本分类、LLM、深度学习和PyTorch项目仅以PyTorch模型训练与大模型分布式训练框架相邻，核心要求中的DeepSpeed/FSDP/Megatron及GPU通信未在经历中体现。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_nlp",
+    "job_id": "real_shlab_010",
+    "grade": 2,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "硕士人工智能背景，NLP文本分类、LLM、深度学习和PyTorch项目与LLM前沿架构与训练相关，已具备LLM、Python与PyTorch；主要缺口是持续预训练、SFT/RL、MoE及分布式训练，可在现有技术基础上补强。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_nlp",
+    "job_id": "real_bilibili_011",
+    "grade": 2,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "硕士人工智能背景，NLP文本分类、LLM、深度学习和PyTorch项目与LLM持续预训练与RL相关，已具备LLM与PyTorch；主要缺口是MoE、CPT/SFT/RL及Megatron/DeepSpeed，可在现有技术基础上补强。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_nlp",
+    "job_id": "real_bilibili_012",
+    "grade": 1,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "硕士人工智能背景，NLP文本分类、LLM、深度学习和PyTorch项目仅以Python与PyTorch与AI训练推理基础设施相邻，核心要求中的C/C++、GPU架构、分布式并行及高速互联未在经历中体现。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_nlp",
+    "job_id": "real_bilibili_013",
+    "grade": 1,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "硕士人工智能背景，NLP文本分类、LLM、深度学习和PyTorch项目仅以PyTorch与深度学习与音视频多模态生成相邻，核心要求中的Diffusion、VAE、MoE及音视频生成未在经历中体现。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_nlp",
+    "job_id": "real_bilibili_014",
+    "grade": 1,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "硕士人工智能背景，NLP文本分类、LLM、深度学习和PyTorch项目仅以Python与机器学习与强化学习训练框架相邻，核心要求中的C++、VLM/DiT、GRPO/DAPO/verl及异步RL未在经历中体现。",
+    "labeled_at": "2026-08-12"
+  },
+  {
+    "candidate_id": "eval_nlp",
+    "job_id": "real_bilibili_015",
+    "grade": 2,
+    "annotator": "independent-expert-model-v1",
+    "rationale": "硕士人工智能背景，NLP文本分类、LLM、深度学习和PyTorch项目与AI-Native后端与RAG服务相关，已具备Python与AI应用理解；主要缺口是网络协议、数据库、中间件及服务工程，可在现有技术基础上补强。",
+    "labeled_at": "2026-08-12"
+  }
+]

@@ -27,3 +27,15 @@ def test_real_job_labels_cover_each_candidate_job_pair() -> None:
     assert actual == expected
     assert all(0 <= label["grade"] <= 3 for label in labels)
     assert all(label["rationale"] for label in labels)
+
+
+def test_second_and_gold_labels_have_complete_traceable_coverage() -> None:
+    jobs = json.loads((ROOT / "data" / "real_jobs" / "jobs.json").read_text(encoding="utf-8"))
+    expected = {(candidate, job["job_id"]) for candidate in ("eval_llm", "eval_mining", "eval_nlp") for job in jobs}
+    for filename in ("relevance_labels_second.json", "relevance_gold.json"):
+        rows = json.loads((ROOT / "data" / "real_jobs" / filename).read_text(encoding="utf-8"))
+        assert {(row["candidate_id"], row["job_id"]) for row in rows} == expected
+        assert all(0 <= row["grade"] <= 3 and row["rationale"] for row in rows)
+    gold = json.loads((ROOT / "data" / "real_jobs" / "relevance_gold.json").read_text(encoding="utf-8"))
+    assert all(row["decision"] in {"agreement", "adopt_independent_review", "adjudicator_override"} for row in gold)
+    assert all("first_grade" in row and "second_grade" in row for row in gold)

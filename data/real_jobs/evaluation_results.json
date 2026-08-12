@@ -1,0 +1,84 @@
+{
+  "dataset": {
+    "synthetic": false,
+    "annotation": "adjudicated-model-panel-v1",
+    "human_gold": false,
+    "candidates": 3,
+    "active_jobs": 27,
+    "pairs": 81,
+    "relevance_threshold": 2
+  },
+  "runtime_seconds": 0.162,
+  "ranking": {
+    "keyword": {
+      "recall@5": 0.1569,
+      "recall@10": 0.5686,
+      "mrr": 0.7222,
+      "ndcg@5": 0.5339,
+      "ndcg@10": 0.6138
+    },
+    "semantic": {
+      "recall@5": 0.1373,
+      "recall@10": 0.6275,
+      "mrr": 0.7222,
+      "ndcg@5": 0.5436,
+      "ndcg@10": 0.6732
+    },
+    "rule_fusion": {
+      "recall@5": 0.4902,
+      "recall@10": 0.6471,
+      "mrr": 0.7778,
+      "ndcg@5": 0.7015,
+      "ndcg@10": 0.7294
+    },
+    "full": {
+      "recall@5": 0.4902,
+      "recall@10": 0.6471,
+      "mrr": 0.7778,
+      "ndcg@5": 0.6962,
+      "ndcg@10": 0.726
+    }
+  },
+  "parameters": {
+    "semantic_backend": "HashingVectorizer char 2-4 grams, 512 dimensions",
+    "methods": {
+      "keyword": {
+        "required_skill": 0.8,
+        "preferred_skill": 0.2,
+        "project": 0,
+        "semantic": 0,
+        "education": 0,
+        "location": 0
+      },
+      "semantic": {
+        "required_skill": 0,
+        "preferred_skill": 0,
+        "project": 0,
+        "semantic": 1,
+        "education": 0,
+        "location": 0
+      },
+      "rule_fusion": {
+        "required_skill": 0.35,
+        "preferred_skill": 0.1,
+        "project": 0.15,
+        "semantic": 0.2,
+        "education": 0.1,
+        "location": 0.1
+      },
+      "full": {
+        "required_skill": 0.3,
+        "preferred_skill": 0.1,
+        "project": 0.2,
+        "semantic": 0.2,
+        "education": 0.1,
+        "location": 0.1
+      }
+    }
+  },
+  "limitations": [
+    "Both independent labels and adjudication were model-assisted; human validation remains required for publication-grade claims.",
+    "Only three synthetic candidate profiles are evaluated.",
+    "Expired and unknown-status jobs are excluded from ranking evaluation."
+  ]
+}

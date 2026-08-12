@@ -72,7 +72,7 @@ job_id,company,title,location,description,source_url,published_at,deadline
 
 JSON 是相同字段对象组成的数组。推荐额外提供 `employment_type`、`required_skills`、`preferred_skills`、`education_requirement`、`responsibilities` 和 `status`。无法确认的状态应使用 `unknown`，不要标为正在招聘。
 
-真实数据位于 `data/real_jobs/jobs.json`：30 条均来自企业官方职位详情，覆盖百度、上海人工智能实验室和哔哩哔哩，包含来源证据和 2026-08-12 核验日期。`relevance_labels.json` 提供 3 类匿名候选人画像与这些岗位组成的 90 个 0～3 级规则辅助初标；它们还不是多人复标后的金标准。收集口径、证据及样本偏差见 `docs/research/official-shanghai-ai-jobs.md` 和 `docs/research/official-multi-company-shanghai-ai-jobs.md`。
+真实数据位于 `data/real_jobs/jobs.json`：30 条均来自企业官方职位详情，覆盖百度、上海人工智能实验室和哔哩哔哩，包含来源证据和 2026-08-12 核验日期。90 个候选人—岗位对已完成独立双模型复标、一致性评估和逐条裁决；它是可复现实验基准，但不是两位真人专家形成的人类金标准。完整口径见 `docs/evaluation_real.md`。
 
 研究文档更新后可重新生成并校验结构化数据：
 
@@ -98,10 +98,11 @@ Score = 0.30 × 必需技能 + 0.10 × 加分技能 + 0.20 × 项目
 ```powershell
 pytest -q
 python scripts/run_evaluation.py
+python scripts/run_real_evaluation.py
 python scripts/build_index.py --db data/app.db --output data/faiss_index
 ```
 
-GitHub Actions 会在每次推送和 Pull Request 时使用 Python 3.11 执行源码编译、测试、合成数据再生成、完整评测和 SQLite 导入冒烟测试，并保留 14 天的评测结果 artifact。
+GitHub Actions 会在每次推送和 Pull Request 时使用 Python 3.11 执行源码编译、测试、合成数据再生成、双模型一致性与裁决复现、真实 JD 评测和 SQLite 导入冒烟测试，并保留 14 天的评测结果 artifact。
 
 最新仓库内结果由 `data/evaluation/results.json` 给出。合成集用于验证管线和指标实现，不应用于宣称真实招聘效果；真实验收应替换为脱敏简历、真实公开 JD 和人工多标注者相关性标签。
 
