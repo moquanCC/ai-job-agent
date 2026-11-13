@@ -48,7 +48,7 @@ python scripts/run_real_evaluation.py --embedding-backend bge-m3 --embedding-mod
 
 ## BGE-M3 实测与对照
 
-可选依赖通过 `pip install -e ".[embedding]"` 安装。此次在 CPU 上显式运行官方模型 `BAAI/bge-m3`，耗时 64.7194 秒；实际后端为 `bge-m3`，无 fallback。输出为 1024 维、`float32`、L2 归一化的 dense 向量。BGE-M3 也支持 sparse 和 multi-vector 检索，但本实验未使用这两类能力。
+可选依赖通过 `pip install -e ".[embedding]"` 安装。2026-08-17 在 CPU 离线环境显式复跑官方模型 `BAAI/bge-m3`，耗时 72.9891 秒；实际后端为 `bge-m3`，无 fallback。输出为 1024 维、`float32`、L2 归一化的 dense 向量。BGE-M3 也支持 sparse 和 multi-vector 检索，但本实验未使用这两类能力。
 
 | 方法 / 指标 | hashing | BGE-M3 | 观察 |
 |---|---:|---:|---|

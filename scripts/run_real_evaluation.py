@@ -114,19 +114,24 @@ def main(argv: list[str] | None = None) -> None:
     all_jobs = [JobProfile.model_validate(item) for item in json.loads((REAL / "jobs.json").read_text(encoding="utf-8"))]
     active_jobs = [job for job in all_jobs if job.status == "active"]
     jobs = filter_jobs(active_jobs)
-    resumes = json.loads((EVALUATION / "resumes.json").read_text(encoding="utf-8"))
+    available_resumes = json.loads((EVALUATION / "resumes.json").read_text(encoding="utf-8"))
     gold_rows = json.loads((REAL / "relevance_gold.json").read_text(encoding="utf-8"))
     gold: dict[str, dict[str, int]] = {}
     active_ids = {job.job_id for job in jobs}
     for row in gold_rows:
         if row["job_id"] in active_ids:
             gold.setdefault(row["candidate_id"], {})[row["job_id"]] = int(row["grade"])
+    available_by_id = {item["candidate_id"]: item for item in available_resumes}
+    missing_profiles = sorted(set(gold) - set(available_by_id))
+    if missing_profiles:
+        raise ValueError(f"裁决标签缺少候选人画像：{missing_profiles}")
+    resumes = [available_by_id[candidate_id] for candidate_id in sorted(gold)]
 
     methods = {
         "keyword": {"required_skill": 0.8, "preferred_skill": 0.2, "project": 0, "semantic": 0, "education": 0, "location": 0},
         "semantic": {"required_skill": 0, "preferred_skill": 0, "project": 0, "semantic": 1, "education": 0, "location": 0},
-        "rule_fusion": {"required_skill": 0.35, "preferred_skill": 0.1, "project": 0.15, "semantic": 0.2, "education": 0.1, "location": 0.1},
-        "full": {"required_skill": 0.3, "preferred_skill": 0.1, "project": 0.2, "semantic": 0.2, "education": 0.1, "location": 0.1},
+        "rule_fusion": {"required_skill": 7 / 18, "preferred_skill": 1 / 9, "project": 1 / 6, "semantic": 2 / 9, "education": 1 / 9, "location": 0.0},
+        "full": {"required_skill": 1 / 3, "preferred_skill": 1 / 9, "project": 2 / 9, "semantic": 2 / 9, "education": 1 / 9, "location": 0.0},
     }
     if fusion_weights is not None:
         methods["full_baseline"] = dict(methods["full"])

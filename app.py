@@ -7,6 +7,7 @@ from urllib.parse import quote, urlparse
 import pandas as pd
 import streamlit as st
 
+from src.agents import JobAgentPreferences
 from src.models.schemas import ResumeProfile
 from src.services import AnalysisService
 from src.ui.demo_presenters import (
@@ -36,6 +37,7 @@ def initialize_state() -> None:
     st.session_state.setdefault("resume", None)
     st.session_state.setdefault("matches", [])
     st.session_state.setdefault("selected_job_id", None)
+    st.session_state.setdefault("job_agent_result", None)
 
 
 def _safe_source_url(source_url: str) -> str:
@@ -182,8 +184,85 @@ def _selected(api: AnalysisService):
     return next((m for m in st.session_state.matches if m.job_id == job_id), None)
 
 
+def page_job_agent(api: AnalysisService) -> None:
+    st.subheader("4 · 求职决策 Agent")
+    st.caption(
+        "受约束 Agent 根据状态选择岗位搜索、资格过滤、六维排序和匹配解释工具；"
+        "硬条件不会被自动放宽。"
+    )
+    render_embedding_status(api)
+    if not st.session_state.resume:
+        st.warning("请先在“简历解析”页上传并确认简历。")
+        return
+
+    left, right = st.columns(2)
+    location = left.text_input("目标城市", "上海", key="agent-location")
+    role_text = right.text_input(
+        "目标岗位方向（逗号分隔）",
+        "、".join(st.session_state.resume.preferred_roles),
+        key="agent-roles",
+    )
+    top_k = st.slider("返回岗位数", 1, 20, 5, key="agent-top-k")
+    explain = st.toggle("同时解释 Top-1 匹配依据", True, key="agent-explain")
+    if st.button("运行求职决策 Agent", type="primary", use_container_width=True):
+        roles = [
+            item.strip()
+            for item in role_text.replace("，", ",").replace("、", ",").split(",")
+            if item.strip()
+        ]
+        st.session_state.job_agent_result = api.run_job_agent(
+            st.session_state.resume,
+            JobAgentPreferences(
+                location=location,
+                target_roles=roles,
+                top_k=top_k,
+                explain_top_job=explain,
+            ),
+        )
+
+    result = st.session_state.job_agent_result
+    if result is None:
+        st.info("运行后可查看真实工具调用顺序、参数摘要、耗时和停止原因。")
+        return
+    if result.status == "completed":
+        st.success(result.message)
+    elif result.status == "needs_clarification":
+        st.warning(result.message)
+        for question in result.clarification_questions:
+            st.write(f"- {question}")
+    else:
+        st.error(result.message)
+
+    status_columns = st.columns(4)
+    status_columns[0].metric("停止原因", result.stop_reason)
+    status_columns[1].metric("工具调用", len(result.trace))
+    status_columns[2].metric("实际后端", result.actual_backend)
+    status_columns[3].metric("发生回退", "是" if result.fallback_occurred else "否")
+    if result.matches:
+        jobs = {job.job_id: job for job in api.jobs.list_jobs()}
+        rows = [
+            {
+                "公司": jobs[match.job_id].company,
+                "岗位": jobs[match.job_id].title,
+                "总分": match.total_score,
+                "建议": match.recommendation,
+            }
+            for match in result.matches
+            if match.job_id in jobs
+        ]
+        st.dataframe(pd.DataFrame(rows), use_container_width=True, hide_index=True)
+    if result.explanation:
+        st.info(result.explanation)
+    st.markdown("#### Tool Trace")
+    st.dataframe(
+        pd.DataFrame([step.model_dump() for step in result.trace]),
+        use_container_width=True,
+        hide_index=True,
+    )
+
+
 def page_advice(api: AnalysisService) -> None:
-    st.subheader("4 · 简历优化")
+    st.subheader("5 · 简历优化")
     match = _selected(api)
     if not match:
         st.warning("请先在“岗位推荐”页选择一个岗位。")
@@ -200,7 +279,7 @@ def page_advice(api: AnalysisService) -> None:
 
 
 def page_interview(api: AnalysisService) -> None:
-    st.subheader("5 · 模拟面试")
+    st.subheader("6 · 模拟面试")
     match = _selected(api)
     if not match:
         st.warning("请先在“岗位推荐”页选择一个岗位。")
@@ -217,7 +296,7 @@ def page_interview(api: AnalysisService) -> None:
 
 
 def page_evaluation(api: AnalysisService) -> None:
-    st.subheader("6 · 实验看板")
+    st.subheader("7 · 实验看板")
     st.info("双模型独立盲标与裁决形成的模型辅助评测基准")
     render_embedding_status(api)
 
@@ -316,12 +395,23 @@ def main() -> None:
     initialize_state()
     render_header()
     api = service()
-    page = st.sidebar.radio("工作台", ["简历解析", "岗位库", "岗位推荐", "简历优化", "模拟面试", "实验看板"])
-    st.sidebar.caption("离线规则 + 可解释混合评分")
+    page = st.sidebar.radio(
+        "工作台",
+        ["简历解析", "岗位库", "岗位推荐", "求职决策 Agent", "简历优化", "模拟面试", "实验看板"],
+    )
+    st.sidebar.caption("受约束 Agent + 确定性资格过滤与可解释混合评分")
     if st.session_state.resume and st.sidebar.button("删除我的分析记录"):
         count = api.delete_candidate_data(st.session_state.resume.candidate_id)
         st.sidebar.success(f"已删除 {count} 条本地分析记录。")
-    {"简历解析": page_resume, "岗位库": page_jobs, "岗位推荐": page_ranking, "简历优化": page_advice, "模拟面试": page_interview, "实验看板": page_evaluation}[page](api)
+    {
+        "简历解析": page_resume,
+        "岗位库": page_jobs,
+        "岗位推荐": page_ranking,
+        "求职决策 Agent": page_job_agent,
+        "简历优化": page_advice,
+        "模拟面试": page_interview,
+        "实验看板": page_evaluation,
+    }[page](api)
 
 
 if __name__ == "__main__":

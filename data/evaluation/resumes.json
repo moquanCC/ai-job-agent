@@ -33,5 +33,109 @@
       "深度学习",
       "大语言模型"
     ]
+  },
+  {
+    "candidate_id": "eval_ml",
+    "text": "硕士 计算机专业 上海求职\n技能：Python、PyTorch、机器学习、深度学习、SQL、Docker\n项目经历\n图像分类与模型压缩\n完成模型训练、消融实验和容器化推理，准确率达到89%。",
+    "expected_skills": [
+      "Python",
+      "PyTorch",
+      "机器学习",
+      "深度学习",
+      "SQL",
+      "Docker"
+    ]
+  },
+  {
+    "candidate_id": "eval_recommendation",
+    "text": "本科 软件工程专业 上海\n技能：Python、SQL、推荐系统、机器学习、PyTorch\n项目经历\n短视频推荐实验\n实现召回、特征工程与排序模型，离线nDCG提升6%。",
+    "expected_skills": [
+      "Python",
+      "SQL",
+      "推荐系统",
+      "机器学习",
+      "PyTorch"
+    ]
+  },
+  {
+    "candidate_id": "eval_ai_app",
+    "text": "本科 计算机专业 上海求职\n技能：Python、FastAPI、LLM、Docker、Streamlit、向量数据库\n项目经历\n企业知识库助手\n实现接口服务、向量检索、可视化页面和Docker部署。",
+    "expected_skills": [
+      "Python",
+      "FastAPI",
+      "大语言模型",
+      "Docker",
+      "Streamlit",
+      "向量数据库"
+    ]
+  },
+  {
+    "candidate_id": "eval_rag_backend",
+    "text": "硕士 软件工程专业 上海\n技能：Python、RAG、FAISS、FastAPI、Docker、LLM\n项目经历\n检索服务后端\n使用FAISS与FastAPI构建混合检索接口，完成离线召回评测和容器化部署。",
+    "expected_skills": [
+      "Python",
+      "检索增强生成",
+      "FAISS",
+      "FastAPI",
+      "Docker",
+      "大语言模型"
+    ]
+  },
+  {
+    "candidate_id": "eval_nlp_engineering",
+    "text": "硕士 人工智能专业 上海求职\n技能：Python、PyTorch、NLP、Transformer、FastAPI、Docker\n项目经历\n文本审核服务\n训练Transformer分类器并封装推理接口，宏平均F1达到88%。",
+    "expected_skills": [
+      "Python",
+      "PyTorch",
+      "自然语言处理",
+      "Transformer",
+      "FastAPI",
+      "Docker"
+    ]
+  },
+  {
+    "candidate_id": "eval_cv_transfer",
+    "text": "本科 自动化专业 上海\n技能：Python、PyTorch、深度学习、OpenCV、目标检测\n项目经历\n工业缺陷检测\n训练目标检测模型并完成数据增强和误差分析。",
+    "expected_skills": [
+      "Python",
+      "PyTorch",
+      "深度学习",
+      "OpenCV",
+      "目标检测"
+    ]
+  },
+  {
+    "candidate_id": "eval_data_analyst",
+    "text": "本科 统计学专业 上海求职\n技能：Python、SQL、机器学习、数据挖掘、XGBoost\n项目经历\n用户流失预测\n完成数据清洗、特征工程、XGBoost建模和误差分析。",
+    "expected_skills": [
+      "Python",
+      "SQL",
+      "机器学习",
+      "数据挖掘",
+      "XGBoost"
+    ]
+  },
+  {
+    "candidate_id": "eval_mlops",
+    "text": "硕士 计算机专业 上海\n技能：Python、Docker、Linux、FastAPI、机器学习、模型部署\n项目经历\n模型推理平台\n实现模型版本管理、批量推理接口和容器化部署。",
+    "expected_skills": [
+      "Python",
+      "Docker",
+      "Linux",
+      "FastAPI",
+      "机器学习",
+      "模型部署"
+    ]
+  },
+  {
+    "candidate_id": "eval_search_ads",
+    "text": "硕士 数据科学专业 上海求职\n技能：Python、SQL、机器学习、推荐系统、Learning to Rank\n项目经历\n搜索排序实验\n构建点击率特征与排序模型，完成离线MRR和nDCG评测。",
+    "expected_skills": [
+      "Python",
+      "SQL",
+      "机器学习",
+      "推荐系统",
+      "Learning to Rank"
+    ]
   }
 ]

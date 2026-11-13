@@ -1,55 +1,65 @@
 {
   "dataset": {
     "synthetic": true,
-    "resumes": 3,
+    "resumes": 12,
     "jobs": 36,
+    "pairs": 432,
+    "relevant_pairs": 174,
     "relevance_threshold": 2
   },
-  "runtime_seconds": 0.1705,
+  "runtime_seconds": 0.3824,
   "extraction": {
     "precision": 1.0,
-    "recall": 1.0,
-    "f1": 1.0
+    "recall": 0.8917,
+    "f1": 0.9364
   },
   "ranking": {
     "keyword": {
-      "recall@5": 0.2778,
-      "recall@10": 0.5556,
+      "recall@5": 0.3819,
+      "recall@10": 0.6944,
       "mrr": 1.0,
-      "ndcg@5": 1.0,
-      "ndcg@10": 0.9823
+      "ndcg@5": 0.9695,
+      "ndcg@10": 0.9652
     },
     "semantic": {
-      "recall@5": 0.2778,
-      "recall@10": 0.463,
-      "mrr": 1.0,
-      "ndcg@5": 1.0,
-      "ndcg@10": 0.9229
+      "recall@5": 0.3472,
+      "recall@10": 0.6019,
+      "mrr": 0.9286,
+      "ndcg@5": 0.9167,
+      "ndcg@10": 0.8849
     },
     "keyword_semantic": {
-      "recall@5": 0.2778,
-      "recall@10": 0.5556,
+      "recall@5": 0.3819,
+      "recall@10": 0.7083,
       "mrr": 1.0,
       "ndcg@5": 1.0,
-      "ndcg@10": 0.9823
+      "ndcg@10": 0.9867
     },
     "rule_fusion": {
-      "recall@5": 0.2778,
-      "recall@10": 0.5556,
+      "recall@5": 0.3819,
+      "recall@10": 0.6875,
       "mrr": 1.0,
       "ndcg@5": 1.0,
-      "ndcg@10": 0.9823
+      "ndcg@10": 0.9785
     },
     "full": {
-      "recall@5": 0.2778,
-      "recall@10": 0.5556,
+      "recall@5": 0.3819,
+      "recall@10": 0.6875,
       "mrr": 1.0,
       "ndcg@5": 1.0,
-      "ndcg@10": 0.9823
+      "ndcg@10": 0.9785
     }
   },
   "parameters": {
-    "semantic_backend": "HashingVectorizer char 2-4 grams, 512 dimensions",
+    "embedding": {
+      "requested_backend": "hashing",
+      "actual_backend": "hashing",
+      "model": "local-hashing-v1",
+      "dimensions": 512,
+      "batch_size": 8,
+      "max_length": 1024,
+      "fallback_occurred": false
+    },
     "methods": {
       "keyword": {
         "required_skill": 0.8,
@@ -76,20 +86,550 @@
         "location": 0
       },
       "rule_fusion": {
-        "required_skill": 0.35,
-        "preferred_skill": 0.1,
-        "project": 0.15,
-        "semantic": 0.2,
-        "education": 0.1,
-        "location": 0.1
+        "required_skill": 0.3888888888888889,
+        "preferred_skill": 0.1111111111111111,
+        "project": 0.16666666666666666,
+        "semantic": 0.2222222222222222,
+        "education": 0.1111111111111111,
+        "location": 0.0
       },
       "full": {
-        "required_skill": 0.3,
-        "preferred_skill": 0.1,
-        "project": 0.2,
-        "semantic": 0.2,
-        "education": 0.1,
-        "location": 0.1
+        "required_skill": 0.3333333333333333,
+        "preferred_skill": 0.1111111111111111,
+        "project": 0.2222222222222222,
+        "semantic": 0.2222222222222222,
+        "education": 0.1111111111111111,
+        "location": 0.0
+      }
+    }
+  },
+  "per_candidate": {
+    "eval_llm": {
+      "extraction": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "ranking": {
+        "keyword": {
+          "recall@5": 0.2778,
+          "recall@10": 0.5556,
+          "mrr": 1.0,
+          "ndcg@5": 1.0,
+          "ndcg@10": 1.0
+        },
+        "semantic": {
+          "recall@5": 0.2778,
+          "recall@10": 0.5556,
+          "mrr": 1.0,
+          "ndcg@5": 1.0,
+          "ndcg@10": 1.0
+        },
+        "keyword_semantic": {
+          "recall@5": 0.2778,
+          "recall@10": 0.5556,
+          "mrr": 1.0,
+          "ndcg@5": 1.0,
+          "ndcg@10": 1.0
+        },
+        "rule_fusion": {
+          "recall@5": 0.2778,
+          "recall@10": 0.5556,
+          "mrr": 1.0,
+          "ndcg@5": 1.0,
+          "ndcg@10": 1.0
+        },
+        "full": {
+          "recall@5": 0.2778,
+          "recall@10": 0.5556,
+          "mrr": 1.0,
+          "ndcg@5": 1.0,
+          "ndcg@10": 1.0
+        }
+      }
+    },
+    "eval_mining": {
+      "extraction": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "ranking": {
+        "keyword": {
+          "recall@5": 0.2778,
+          "recall@10": 0.5556,
+          "mrr": 1.0,
+          "ndcg@5": 1.0,
+          "ndcg@10": 1.0
+        },
+        "semantic": {
+          "recall@5": 0.2778,
+          "recall@10": 0.5556,
+          "mrr": 1.0,
+          "ndcg@5": 1.0,
+          "ndcg@10": 1.0
+        },
+        "keyword_semantic": {
+          "recall@5": 0.2778,
+          "recall@10": 0.5556,
+          "mrr": 1.0,
+          "ndcg@5": 1.0,
+          "ndcg@10": 1.0
+        },
+        "rule_fusion": {
+          "recall@5": 0.2778,
+          "recall@10": 0.5556,
+          "mrr": 1.0,
+          "ndcg@5": 1.0,
+          "ndcg@10": 1.0
+        },
+        "full": {
+          "recall@5": 0.2778,
+          "recall@10": 0.5556,
+          "mrr": 1.0,
+          "ndcg@5": 1.0,
+          "ndcg@10": 1.0
+        }
+      }
+    },
+    "eval_nlp": {
+      "extraction": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "ranking": {
+        "keyword": {
+          "recall@5": 0.2778,
+          "recall@10": 0.5556,
+          "mrr": 1.0,
+          "ndcg@5": 1.0,
+          "ndcg@10": 0.9469
+        },
+        "semantic": {
+          "recall@5": 0.2778,
+          "recall@10": 0.2778,
+          "mrr": 1.0,
+          "ndcg@5": 1.0,
+          "ndcg@10": 0.7687
+        },
+        "keyword_semantic": {
+          "recall@5": 0.2778,
+          "recall@10": 0.5556,
+          "mrr": 1.0,
+          "ndcg@5": 1.0,
+          "ndcg@10": 0.9469
+        },
+        "rule_fusion": {
+          "recall@5": 0.2778,
+          "recall@10": 0.5556,
+          "mrr": 1.0,
+          "ndcg@5": 1.0,
+          "ndcg@10": 0.9469
+        },
+        "full": {
+          "recall@5": 0.2778,
+          "recall@10": 0.5556,
+          "mrr": 1.0,
+          "ndcg@5": 1.0,
+          "ndcg@10": 0.9469
+        }
+      }
+    },
+    "eval_ml": {
+      "extraction": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "ranking": {
+        "keyword": {
+          "recall@5": 0.2778,
+          "recall@10": 0.5556,
+          "mrr": 1.0,
+          "ndcg@5": 1.0,
+          "ndcg@10": 1.0
+        },
+        "semantic": {
+          "recall@5": 0.2778,
+          "recall@10": 0.3333,
+          "mrr": 1.0,
+          "ndcg@5": 1.0,
+          "ndcg@10": 0.8616
+        },
+        "keyword_semantic": {
+          "recall@5": 0.2778,
+          "recall@10": 0.5556,
+          "mrr": 1.0,
+          "ndcg@5": 1.0,
+          "ndcg@10": 1.0
+        },
+        "rule_fusion": {
+          "recall@5": 0.2778,
+          "recall@10": 0.5556,
+          "mrr": 1.0,
+          "ndcg@5": 1.0,
+          "ndcg@10": 1.0
+        },
+        "full": {
+          "recall@5": 0.2778,
+          "recall@10": 0.5556,
+          "mrr": 1.0,
+          "ndcg@5": 1.0,
+          "ndcg@10": 1.0
+        }
+      }
+    },
+    "eval_recommendation": {
+      "extraction": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "ranking": {
+        "keyword": {
+          "recall@5": 0.4167,
+          "recall@10": 0.8333,
+          "mrr": 1.0,
+          "ndcg@5": 1.0,
+          "ndcg@10": 1.0
+        },
+        "semantic": {
+          "recall@5": 0.4167,
+          "recall@10": 0.8333,
+          "mrr": 1.0,
+          "ndcg@5": 1.0,
+          "ndcg@10": 1.0
+        },
+        "keyword_semantic": {
+          "recall@5": 0.4167,
+          "recall@10": 0.8333,
+          "mrr": 1.0,
+          "ndcg@5": 1.0,
+          "ndcg@10": 1.0
+        },
+        "rule_fusion": {
+          "recall@5": 0.4167,
+          "recall@10": 0.75,
+          "mrr": 1.0,
+          "ndcg@5": 1.0,
+          "ndcg@10": 0.9677
+        },
+        "full": {
+          "recall@5": 0.4167,
+          "recall@10": 0.75,
+          "mrr": 1.0,
+          "ndcg@5": 1.0,
+          "ndcg@10": 0.9677
+        }
+      }
+    },
+    "eval_ai_app": {
+      "extraction": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "ranking": {
+        "keyword": {
+          "recall@5": 0.4167,
+          "recall@10": 0.8333,
+          "mrr": 1.0,
+          "ndcg@5": 1.0,
+          "ndcg@10": 0.9469
+        },
+        "semantic": {
+          "recall@5": 0.4167,
+          "recall@10": 0.8333,
+          "mrr": 1.0,
+          "ndcg@5": 1.0,
+          "ndcg@10": 0.9469
+        },
+        "keyword_semantic": {
+          "recall@5": 0.4167,
+          "recall@10": 0.8333,
+          "mrr": 1.0,
+          "ndcg@5": 1.0,
+          "ndcg@10": 0.9469
+        },
+        "rule_fusion": {
+          "recall@5": 0.4167,
+          "recall@10": 0.6667,
+          "mrr": 1.0,
+          "ndcg@5": 1.0,
+          "ndcg@10": 0.881
+        },
+        "full": {
+          "recall@5": 0.4167,
+          "recall@10": 0.6667,
+          "mrr": 1.0,
+          "ndcg@5": 1.0,
+          "ndcg@10": 0.881
+        }
+      }
+    },
+    "eval_rag_backend": {
+      "extraction": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "ranking": {
+        "keyword": {
+          "recall@5": 0.4167,
+          "recall@10": 0.8333,
+          "mrr": 1.0,
+          "ndcg@5": 1.0,
+          "ndcg@10": 1.0
+        },
+        "semantic": {
+          "recall@5": 0.4167,
+          "recall@10": 0.8333,
+          "mrr": 1.0,
+          "ndcg@5": 1.0,
+          "ndcg@10": 1.0
+        },
+        "keyword_semantic": {
+          "recall@5": 0.4167,
+          "recall@10": 0.8333,
+          "mrr": 1.0,
+          "ndcg@5": 1.0,
+          "ndcg@10": 1.0
+        },
+        "rule_fusion": {
+          "recall@5": 0.4167,
+          "recall@10": 0.8333,
+          "mrr": 1.0,
+          "ndcg@5": 1.0,
+          "ndcg@10": 1.0
+        },
+        "full": {
+          "recall@5": 0.4167,
+          "recall@10": 0.8333,
+          "mrr": 1.0,
+          "ndcg@5": 1.0,
+          "ndcg@10": 1.0
+        }
+      }
+    },
+    "eval_nlp_engineering": {
+      "extraction": {
+        "precision": 1.0,
+        "recall": 0.8333333333333334,
+        "f1": 0.9090909090909091
+      },
+      "ranking": {
+        "keyword": {
+          "recall@5": 0.2778,
+          "recall@10": 0.5556,
+          "mrr": 1.0,
+          "ndcg@5": 1.0,
+          "ndcg@10": 0.9469
+        },
+        "semantic": {
+          "recall@5": 0.2778,
+          "recall@10": 0.2778,
+          "mrr": 1.0,
+          "ndcg@5": 1.0,
+          "ndcg@10": 0.7687
+        },
+        "keyword_semantic": {
+          "recall@5": 0.2778,
+          "recall@10": 0.5556,
+          "mrr": 1.0,
+          "ndcg@5": 1.0,
+          "ndcg@10": 0.9469
+        },
+        "rule_fusion": {
+          "recall@5": 0.2778,
+          "recall@10": 0.5556,
+          "mrr": 1.0,
+          "ndcg@5": 1.0,
+          "ndcg@10": 0.9469
+        },
+        "full": {
+          "recall@5": 0.2778,
+          "recall@10": 0.5556,
+          "mrr": 1.0,
+          "ndcg@5": 1.0,
+          "ndcg@10": 0.9469
+        }
+      }
+    },
+    "eval_cv_transfer": {
+      "extraction": {
+        "precision": 1.0,
+        "recall": 0.6,
+        "f1": 0.7499999999999999
+      },
+      "ranking": {
+        "keyword": {
+          "recall@5": 0.8333,
+          "recall@10": 1.0,
+          "mrr": 1.0,
+          "ndcg@5": 1.0,
+          "ndcg@10": 1.0
+        },
+        "semantic": {
+          "recall@5": 0.8333,
+          "recall@10": 1.0,
+          "mrr": 1.0,
+          "ndcg@5": 1.0,
+          "ndcg@10": 1.0
+        },
+        "keyword_semantic": {
+          "recall@5": 0.8333,
+          "recall@10": 1.0,
+          "mrr": 1.0,
+          "ndcg@5": 1.0,
+          "ndcg@10": 1.0
+        },
+        "rule_fusion": {
+          "recall@5": 0.8333,
+          "recall@10": 1.0,
+          "mrr": 1.0,
+          "ndcg@5": 1.0,
+          "ndcg@10": 1.0
+        },
+        "full": {
+          "recall@5": 0.8333,
+          "recall@10": 1.0,
+          "mrr": 1.0,
+          "ndcg@5": 1.0,
+          "ndcg@10": 1.0
+        }
+      }
+    },
+    "eval_data_analyst": {
+      "extraction": {
+        "precision": 1.0,
+        "recall": 0.8,
+        "f1": 0.888888888888889
+      },
+      "ranking": {
+        "keyword": {
+          "recall@5": 0.4167,
+          "recall@10": 0.6667,
+          "mrr": 1.0,
+          "ndcg@5": 1.0,
+          "ndcg@10": 0.9325
+        },
+        "semantic": {
+          "recall@5": 0.4167,
+          "recall@10": 0.8333,
+          "mrr": 1.0,
+          "ndcg@5": 1.0,
+          "ndcg@10": 1.0
+        },
+        "keyword_semantic": {
+          "recall@5": 0.4167,
+          "recall@10": 0.8333,
+          "mrr": 1.0,
+          "ndcg@5": 1.0,
+          "ndcg@10": 1.0
+        },
+        "rule_fusion": {
+          "recall@5": 0.4167,
+          "recall@10": 0.8333,
+          "mrr": 1.0,
+          "ndcg@5": 1.0,
+          "ndcg@10": 1.0
+        },
+        "full": {
+          "recall@5": 0.4167,
+          "recall@10": 0.8333,
+          "mrr": 1.0,
+          "ndcg@5": 1.0,
+          "ndcg@10": 1.0
+        }
+      }
+    },
+    "eval_mlops": {
+      "extraction": {
+        "precision": 1.0,
+        "recall": 0.6666666666666666,
+        "f1": 0.8
+      },
+      "ranking": {
+        "keyword": {
+          "recall@5": 0.4167,
+          "recall@10": 0.8333,
+          "mrr": 1.0,
+          "ndcg@5": 1.0,
+          "ndcg@10": 1.0
+        },
+        "semantic": {
+          "recall@5": 0.0,
+          "recall@10": 0.3333,
+          "mrr": 0.1429,
+          "ndcg@5": 0.0,
+          "ndcg@10": 0.2727
+        },
+        "keyword_semantic": {
+          "recall@5": 0.4167,
+          "recall@10": 0.8333,
+          "mrr": 1.0,
+          "ndcg@5": 1.0,
+          "ndcg@10": 1.0
+        },
+        "rule_fusion": {
+          "recall@5": 0.4167,
+          "recall@10": 0.8333,
+          "mrr": 1.0,
+          "ndcg@5": 1.0,
+          "ndcg@10": 1.0
+        },
+        "full": {
+          "recall@5": 0.4167,
+          "recall@10": 0.8333,
+          "mrr": 1.0,
+          "ndcg@5": 1.0,
+          "ndcg@10": 1.0
+        }
+      }
+    },
+    "eval_search_ads": {
+      "extraction": {
+        "precision": 1.0,
+        "recall": 0.8,
+        "f1": 0.888888888888889
+      },
+      "ranking": {
+        "keyword": {
+          "recall@5": 0.2778,
+          "recall@10": 0.5556,
+          "mrr": 1.0,
+          "ndcg@5": 0.6343,
+          "ndcg@10": 0.809
+        },
+        "semantic": {
+          "recall@5": 0.2778,
+          "recall@10": 0.5556,
+          "mrr": 1.0,
+          "ndcg@5": 1.0,
+          "ndcg@10": 1.0
+        },
+        "keyword_semantic": {
+          "recall@5": 0.2778,
+          "recall@10": 0.5556,
+          "mrr": 1.0,
+          "ndcg@5": 1.0,
+          "ndcg@10": 1.0
+        },
+        "rule_fusion": {
+          "recall@5": 0.2778,
+          "recall@10": 0.5556,
+          "mrr": 1.0,
+          "ndcg@5": 1.0,
+          "ndcg@10": 1.0
+        },
+        "full": {
+          "recall@5": 0.2778,
+          "recall@10": 0.5556,
+          "mrr": 1.0,
+          "ndcg@5": 1.0,
+          "ndcg@10": 1.0
+        }
       }
     }
   }

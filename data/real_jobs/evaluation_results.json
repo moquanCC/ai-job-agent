@@ -5,10 +5,11 @@
     "human_gold": false,
     "candidates": 3,
     "active_jobs": 27,
-    "pairs": 81,
+    "eligible_jobs": 26,
+    "pairs": 78,
     "relevance_threshold": 2
   },
-  "runtime_seconds": 0.162,
+  "runtime_seconds": 0.1164,
   "ranking": {
     "keyword": {
       "recall@5": 0.1569,
@@ -40,7 +41,15 @@
     }
   },
   "parameters": {
-    "semantic_backend": "HashingVectorizer char 2-4 grams, 512 dimensions",
+    "embedding": {
+      "requested_backend": "hashing",
+      "actual_backend": "hashing",
+      "model": "local-hashing-v1",
+      "dimensions": 512,
+      "batch_size": 8,
+      "max_length": 1024,
+      "fallback_occurred": false
+    },
     "methods": {
       "keyword": {
         "required_skill": 0.8,
@@ -59,20 +68,20 @@
         "location": 0
       },
       "rule_fusion": {
-        "required_skill": 0.35,
-        "preferred_skill": 0.1,
-        "project": 0.15,
-        "semantic": 0.2,
-        "education": 0.1,
-        "location": 0.1
+        "required_skill": 0.3888888888888889,
+        "preferred_skill": 0.1111111111111111,
+        "project": 0.16666666666666666,
+        "semantic": 0.2222222222222222,
+        "education": 0.1111111111111111,
+        "location": 0.0
       },
       "full": {
-        "required_skill": 0.3,
-        "preferred_skill": 0.1,
-        "project": 0.2,
-        "semantic": 0.2,
-        "education": 0.1,
-        "location": 0.1
+        "required_skill": 0.3333333333333333,
+        "preferred_skill": 0.1111111111111111,
+        "project": 0.2222222222222222,
+        "semantic": 0.2222222222222222,
+        "education": 0.1111111111111111,
+        "location": 0.0
       }
     }
   },

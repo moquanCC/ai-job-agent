@@ -48,6 +48,19 @@ def test_bge_adapter_reuses_injected_model_and_tracks_dimensions() -> None:
     assert model.calls == [model.calls[0]]
 
 
+def test_bge_adapter_rejects_nonfinite_vectors() -> None:
+    model = FakeModel()
+
+    def encode_with_nan(texts: list[str], **kwargs: object) -> np.ndarray:
+        return np.array([[np.nan, 1.0]], dtype="float32")
+
+    model.encode = encode_with_nan
+    embedder = BgeM3Embedder(model=model)
+
+    with pytest.raises(ValueError, match="非有限向量"):
+        embedder.encode(["中文简历"])
+
+
 def test_bge_empty_input_requires_known_dimensions() -> None:
     with pytest.raises(ValueError, match="空文本批次"):
         BgeM3Embedder(model=FakeModel()).encode([])

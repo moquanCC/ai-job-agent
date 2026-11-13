@@ -47,9 +47,13 @@ def extract_cached_rows(embedder: Any) -> tuple[list[dict], dict]:
     ]
     active_jobs = [job for job in all_jobs if job.status == "active"]
     jobs = filter_jobs(active_jobs)
-    resumes = json.loads((EVALUATION / "resumes.json").read_text(encoding="utf-8"))
+    available_resumes = json.loads((EVALUATION / "resumes.json").read_text(encoding="utf-8"))
     labels = json.loads((REAL / "relevance_gold.json").read_text(encoding="utf-8"))
     grades = {(row["candidate_id"], row["job_id"]): int(row["grade"]) for row in labels}
+    labeled_candidate_ids = {row["candidate_id"] for row in labels}
+    resumes = [
+        item for item in available_resumes if item["candidate_id"] in labeled_candidate_ids
+    ]
     cached_rows: list[dict] = []
     for item in resumes:
         profile = parse_resume(item["text"], item["candidate_id"])

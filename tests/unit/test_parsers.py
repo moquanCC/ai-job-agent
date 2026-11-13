@@ -23,6 +23,24 @@ def test_resume_extracts_skills_education_and_project():
     assert profile.projects
 
 
+def test_resume_stops_project_section_at_job_preference_heading():
+    text = """## 项目经历
+### 企业知识库 RAG 问答系统项目
+使用 Python 和 FAISS 构建检索增强生成流程。
+
+## 求职方向
+大模型算法、AI 应用、数据挖掘
+"""
+
+    profile = parse_resume(text, "candidate_boundary")
+
+    assert len(profile.projects) == 1
+    assert profile.projects[0].name == "### 企业知识库 RAG 问答系统项目"
+    assert "求职方向" not in profile.projects[0].description
+    assert "数据挖掘" not in profile.projects[0].technologies
+    assert "大模型算法" in profile.preferred_roles
+
+
 def test_job_extracts_shanghai_and_expiry():
     job = parse_job({"job_id": "j1", "title": "大模型算法工程师", "description": "2027届校招，上海，要求 Python、LLM", "deadline": "2020-01-01"})
     assert job.location == "上海"

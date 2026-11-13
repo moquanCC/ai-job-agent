@@ -1,0 +1,20 @@
+[
+  {"id":"rank_llm","candidate_id":"eval_llm","location":"上海","target_roles":["大模型"],"explain_top_job":false,"expected_status":"completed","expected_tools":["search_jobs","filter_eligibility","rank_jobs"]},
+  {"id":"rank_mining","candidate_id":"eval_mining","location":"上海","target_roles":["数据挖掘"],"explain_top_job":false,"expected_status":"completed","expected_tools":["search_jobs","filter_eligibility","rank_jobs"]},
+  {"id":"rank_nlp","candidate_id":"eval_nlp","location":"上海","target_roles":["NLP"],"explain_top_job":false,"expected_status":"completed","expected_tools":["search_jobs","filter_eligibility","rank_jobs"]},
+  {"id":"rank_ml","candidate_id":"eval_ml","location":"上海","target_roles":["机器学习"],"explain_top_job":false,"expected_status":"completed","expected_tools":["search_jobs","filter_eligibility","rank_jobs"]},
+  {"id":"rank_recommendation","candidate_id":"eval_recommendation","location":"上海","target_roles":["推荐"],"explain_top_job":false,"expected_status":"completed","expected_tools":["search_jobs","filter_eligibility","rank_jobs"]},
+  {"id":"rank_ai_app","candidate_id":"eval_ai_app","location":"上海","target_roles":["AI应用"],"explain_top_job":false,"expected_status":"completed","expected_tools":["search_jobs","filter_eligibility","rank_jobs"]},
+  {"id":"rank_rag_backend","candidate_id":"eval_rag_backend","location":"上海","target_roles":["大模型"],"explain_top_job":false,"expected_status":"completed","expected_tools":["search_jobs","filter_eligibility","rank_jobs"]},
+  {"id":"rank_nlp_engineering","candidate_id":"eval_nlp_engineering","location":"上海","target_roles":["NLP"],"explain_top_job":false,"expected_status":"completed","expected_tools":["search_jobs","filter_eligibility","rank_jobs"]},
+  {"id":"rank_cv_transfer","candidate_id":"eval_cv_transfer","location":"上海","target_roles":["机器学习"],"explain_top_job":false,"expected_status":"completed","expected_tools":["search_jobs","filter_eligibility","rank_jobs"]},
+  {"id":"rank_data_analyst","candidate_id":"eval_data_analyst","location":"上海","target_roles":["数据挖掘"],"explain_top_job":false,"expected_status":"completed","expected_tools":["search_jobs","filter_eligibility","rank_jobs"]},
+  {"id":"rank_mlops","candidate_id":"eval_mlops","location":"上海","target_roles":["AI应用"],"explain_top_job":false,"expected_status":"completed","expected_tools":["search_jobs","filter_eligibility","rank_jobs"]},
+  {"id":"rank_search_ads","candidate_id":"eval_search_ads","location":"上海","target_roles":["搜索"],"explain_top_job":false,"expected_status":"completed","expected_tools":["search_jobs","filter_eligibility","rank_jobs"]},
+  {"id":"clarify_location","candidate_id":"eval_llm","location":"","target_roles":["大模型"],"explain_top_job":false,"expected_status":"needs_clarification","expected_tools":["clarify_preferences"]},
+  {"id":"clarify_role","candidate_id":"eval_nlp","location":"上海","target_roles":[],"explain_top_job":false,"expected_status":"needs_clarification","expected_tools":["clarify_preferences"]},
+  {"id":"clarify_both","candidate_id":"eval_ml","location":"","target_roles":[],"explain_top_job":false,"expected_status":"needs_clarification","expected_tools":["clarify_preferences"]},
+  {"id":"explain_llm","candidate_id":"eval_llm","location":"上海","target_roles":["大模型"],"explain_top_job":true,"expected_status":"completed","expected_tools":["search_jobs","filter_eligibility","rank_jobs","explain_match"]},
+  {"id":"explain_mining","candidate_id":"eval_mining","location":"上海","target_roles":["数据挖掘"],"explain_top_job":true,"expected_status":"completed","expected_tools":["search_jobs","filter_eligibility","rank_jobs","explain_match"]},
+  {"id":"explain_nlp","candidate_id":"eval_nlp","location":"上海","target_roles":["NLP"],"explain_top_job":true,"expected_status":"completed","expected_tools":["search_jobs","filter_eligibility","rank_jobs","explain_match"]}
+]

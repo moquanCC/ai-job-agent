@@ -16,6 +16,17 @@ flowchart LR
     I --> K[岗位定制面试题]
     J --> L[Markdown 报告]
     K --> L
+    M[用户目标与偏好] --> N[JobDecisionAgent State]
+    N --> O{下一工具}
+    O --> P[clarify_preferences]
+    O --> Q[search_jobs]
+    O --> R[filter_eligibility]
+    O --> S[rank_jobs]
+    O --> T[explain_match]
+    Q --> N
+    R --> N
+    S --> N
+    T --> N
 ```
 
 ## 边界与职责
@@ -26,12 +37,18 @@ flowchart LR
 | `matching` | 简历与岗位 | `MatchResult` | 先硬过滤、再稳定评分、分项可解释 |
 | `retrieval` | 文本数组 | 归一化向量与 Top-K | hashing / BGE-M3 可切换、模型元数据可审计 |
 | `repositories` | Pydantic 模型 | SQLite 记录 | 参数化 SQL、岗位去重、不存完整简历 |
-| `agents` | 简历、岗位、评分 | 建议、问题、报告 | 缺失经历只标学习项，直接修改必须有证据 |
-| `evaluation` | 排序与人工标签 | F1/Recall/MRR/nDCG | 空集合定义明确，可单元测试 |
+| `agents` | 用户偏好、简历、岗位、评分 | 工具调用、Trace、建议、问题、报告 | Pydantic 参数校验、最多 6 步、重复调用保护、岗位白名单 |
+| `evaluation` | Agent 场景、排序与标签 | 任务成功率/工具准确率/F1/Recall/MRR/nDCG | 行为评测与排序质量分开披露 |
 
 ## 为什么不是“大模型直接打分”
 
 岗位地点、毕业窗口、学历和硬技能属于可验证约束，应由稳定规则处理；语义相似只描述文本接近程度，不能替代资格判断。当前版本因此使用确定性融合，BGE-M3 仅替换语义分项，不拥有最终总分决策权。
+
+## Agent 工具调用与停止策略
+
+`JobDecisionAgent` 是可复现的受约束状态机，不是开放式自主规划器。State 分别保存用户偏好、搜索候选、资格合格岗位、排名、解释和 Tool Trace；Agent 根据哪些字段已存在选择下一项工具。每个工具使用独立 Pydantic Schema，领域计算仍由既有确定性函数完成。
+
+缺少城市或目标岗位时只调用 `clarify_preferences` 并停止；搜索、过滤或排序无结果时返回明确原因。Agent 不会自动放宽地点、校招资格、过期状态等硬条件。每次运行最多 6 个工具调用，同一工具与相同参数不得重复，所有返回岗位必须来自当前工具白名单，Trace 不保存完整简历或联系方式。
 
 ## Embedding 生命周期
 

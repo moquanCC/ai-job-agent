@@ -1,4 +1,7 @@
+import pytest
+
 from src.matching.ranker import rank_jobs, score_job
+from src.matching.rule_matcher import project_overlap, skill_coverage
 from src.matching.score_fusion import fuse
 from src.models.schemas import Education, Experience, JobProfile, ResumeProfile
 
@@ -12,7 +15,33 @@ def fixtures():
 
 def test_fusion_arithmetic():
     values = {"required_skill": 100, "preferred_skill": 0, "project": 100, "semantic": 50, "education": 100, "location": 100}
-    assert fuse(values) == 80
+    without_location = {**values, "location": 0}
+    assert fuse(values) == 77.78
+    assert fuse(values) == fuse(without_location)
+
+
+def test_skill_aliases_match_while_preserving_job_labels():
+    score, matched, missing = skill_coverage(
+        {"LLM", "scikit-learn"},
+        ["大语言模型", "sklearn", "PyTorch"],
+    )
+
+    assert score == pytest.approx(200 / 3)
+    assert matched == ["大语言模型", "sklearn"]
+    assert missing == ["PyTorch"]
+
+
+def test_project_overlap_uses_the_same_skill_aliases():
+    resume = ResumeProfile(
+        candidate_id="alias",
+        projects=[Experience(name="模型", technologies=["LLM"])],
+    )
+    job = JobProfile(job_id="alias-job", title="大模型算法工程师", required_skills=["大语言模型"])
+
+    score, hits = project_overlap(resume, job)
+
+    assert score == 100.0
+    assert hits == ["大语言模型"]
 
 
 def test_scoring_explains_missing_skill_and_bounds():

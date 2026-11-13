@@ -2,7 +2,21 @@ from __future__ import annotations
 
 from src.models.schemas import JobProfile
 
-ROLE_TERMS = ("AI", "人工智能", "算法", "大模型", "机器学习", "数据挖掘", "数据科学", "推荐", "搜索", "NLP", "自然语言")
+ROLE_TERMS = (
+    "AI",
+    "人工智能",
+    "算法",
+    "大模型",
+    "机器学习",
+    "数据挖掘",
+    "数据科学",
+    "推荐",
+    "搜索",
+    "NLP",
+    "自然语言",
+    "RAG",
+    "检索增强生成",
+)
 CAMPUS_TERMS = ("校园招聘", "校招", "应届", "毕业生", "2027")
 
 

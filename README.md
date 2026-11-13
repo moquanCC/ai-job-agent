@@ -4,6 +4,8 @@
 
 面向上海地区 AI、算法、数据挖掘、推荐与数据科学岗位的可解释求职助手。上传简历并导入岗位后，应用会完成结构化解析、上海校招硬过滤、混合评分、技能缺口分析、真实经历约束下的简历建议、岗位定制面试题与 Markdown 报告导出。
 
+当前版本同时提供一个**受约束求职决策 Agent**：它根据会话状态选择并执行 `clarify_preferences`、`search_jobs`、`filter_eligibility`、`rank_jobs` 和 `explain_match` 五类结构化工具。Agent 最多执行 6 步，禁止重复调用同一工具与参数，不会自动放宽地点、校招资格和岗位状态等硬条件；每一步都记录参数摘要、结果数量、耗时、后端和停止原因。
+
 > 当前版本不需要 API Key。语义后端支持 `BAAI/bge-m3`、自动回退和完全离线的 hashing 基线；模型下载完成后，推理在本机执行，不会把简历发送到外部推理服务。
 
 ![秋招雷达 AI 界面预览](docs/assets/app-preview.svg)
@@ -13,12 +15,14 @@
 - 解析 PDF、DOCX、TXT、Markdown 简历；扫描 PDF 会给出明确提示。
 - 导入 CSV/JSON 岗位或粘贴单条 JD，SQLite 自动去重。
 - 默认硬过滤上海、校招/应届、AI/算法/数据方向及未截止岗位。
-- 按必需技能、加分技能、项目、语义、学历、地点六项评分并给出证据。
+- 输出必需技能、加分技能、项目、语义、学历、地点六个可审计分项；上海单城配置已将地点作为硬过滤条件，默认排序只融合其余五项，地点权重为 0。
+- 规则匹配统一处理 LLM/大语言模型、scikit-learn/sklearn、NLP/自然语言处理、RAG/检索增强生成等常见别名，同时在解释中保留 JD 原始技能名称。
 - 把建议分成“可直接修改”和“完成相关工作后才能加入”，防止编造经历。
 - 生成项目深挖、岗位知识、技能缺口、系统设计和行为面试题。
 - 导出完整 Markdown 分析报告，并支持删除个人分析记录。
 - 内置 30 条企业官方公开 JD 快照，其中 27 条核验为在招；保留合成数据用于可复现的管线测试。
 - 提供真实 JD 实验看板，展示排序方法对比、双模型标注一致性、分歧规模和实验局限。
+- 提供“求职决策 Agent”工作台，展示真实 Tool Trace、后端披露、偏好追问、安全停止和证据约束下的 Top-1 解释。
 
 ## 快速开始
 
@@ -38,10 +42,11 @@ streamlit run app.py
 1. 在“岗位库”一键加载仓库内已核验的 30 条官方 JD，并检查 `30 / 27 / 2 / 1` 状态统计与官方来源链接。
 2. 在“简历解析”上传 `data/evaluation/demo_resume.md`；该候选人资料是合成数据，可安全用于公开演示。
 3. 在“岗位推荐”运行 Top-5，查看状态、核验日期、官方来源、六项评分、技能命中与证据。
-4. 选中一个岗位，在“简历优化”查看 grounded 建议，在“模拟面试”查看岗位定制题及关联依据。
-5. 在“实验看板”比较关键词与规则融合方法，并审计标注一致性、分歧和三项实验限制。
+4. 在“求职决策 Agent”输入城市和目标方向，查看 `search → filter → rank → explain` 工具链、参数摘要和停止原因；删除目标方向可以演示 Agent 先追问而不是擅自搜索。
+5. 选中一个岗位，在“简历优化”查看 grounded 建议，在“模拟面试”查看岗位定制题及关联依据。
+6. 在“实验看板”比较关键词与规则融合方法，并审计标注一致性、分歧和三项实验限制。
 
-演示的数据口径是：**真实官方公开 JD + 3 个合成候选人画像 + 双模型独立盲标与裁决形成的模型辅助评测基准**。`human_gold=false`，因此这些标签不能表述为真人专家标注或人类金标准。
+演示看板的数据口径是：**真实官方公开 JD + 3 个合成候选人画像 + 双模型独立盲标与裁决形成的模型辅助评测基准**。此外，仓库提供 12 个合成候选人和 36 条合成岗位组成的 432 对管线压力实验。两套实验均为 `human_gold=false`，不能表述为真人专家标注或人类金标准。
 
 ## Docker 启动
 
@@ -54,14 +59,14 @@ docker compose up --build
 ## 项目结构
 
 ```text
-app.py                         Streamlit 六页工作台
+app.py                         Streamlit 七页工作台
 configs/                       技能别名、权重和运行配置
 src/parsers/                   四类文件解析与结构化提取
 src/matching/                  过滤、规则、语义、融合、排序
 src/retrieval/                 离线向量与可持久化索引
 src/repositories/              SQLite 岗位和分析记录
-src/agents/                    简历建议、面试题、报告
-src/evaluation/                F1、Recall、MRR、nDCG
+src/agents/                    求职决策 Agent、工具 Schema、简历建议、面试题、报告
+src/evaluation/                Agent 行为指标、F1、Recall、MRR、nDCG
 scripts/                       样本、导入、索引和实验脚本
 data/evaluation/               明确标注为合成的评测数据与结果
 data/real_jobs/                官方公开 JD 与规则辅助相关性初标
@@ -131,18 +136,29 @@ pip install -e ".[embedding]"
 ```powershell
 pytest -q
 python scripts/run_evaluation.py --embedding-backend hashing
+python scripts/run_agent_evaluation.py --embedding-backend hashing
 python scripts/run_real_evaluation.py --embedding-backend hashing
 python scripts/run_real_evaluation.py --embedding-backend bge-m3 --embedding-model BAAI/bge-m3 --output data/real_jobs/evaluation_results_bge_m3.json
 python scripts/build_index.py --backend hashing --db data/app.db --output data/faiss_index
 ```
 
+2026-08-23 本地完整回归结果为 `154 passed`。新增覆盖工具参数 Schema、状态驱动路由、偏好缺失追问、岗位白名单、可选解释、最大步数、服务端到端调用和 Agent 行为指标；原有排序、解析、BGE 故障注入和评测测试继续通过。
+
 GitHub Actions 会在每次推送和 Pull Request 时使用 Python 3.11 执行源码编译、测试、合成数据再生成、双模型一致性与裁决复现、真实 JD 评测和 SQLite 导入冒烟测试，并保留 14 天的评测结果 artifact。CI 显式固定 `--embedding-backend hashing`，不会安装或下载 BGE-M3。
+
+### Agent 行为对照实验
+
+`data/evaluation/agent_scenarios.json` 包含 18 个合成任务：12 个完整排序请求、3 个缺失城市/岗位方向的追问请求和 3 个需要 Top-1 解释的请求。Hashing 离线实跑中，固定 Workflow 的单请求任务成功率为 `0.6667`；受约束 Agent 的任务成功率、工具序列准确率和工具参数有效率均为 `1.0000`，平均工具调用数为 `2.8333`，不必要调用率为 `0.0000`。结果保存在 `data/evaluation/agent_results.json`。
+
+这组实验只验证 Agent 能否根据状态正确调用工具、追问和停止。它使用合成画像与合成任务，明确标记 `synthetic=true`、`human_gold=false`，不验证真实招聘效果，也不能替代下文两套排序实验。
 
 最新仓库内结果由 `data/evaluation/results.json` 给出。合成集用于验证管线和指标实现，不应用于宣称真实招聘效果；真实验收应替换为脱敏简历、真实公开 JD 和人工多标注者相关性标签。
 
+扩展合成实验包含 12 个候选人、36 条岗位和 432 个候选人—岗位对，并保存逐候选人指标。Hashing 完整融合的 Recall@5 / Recall@10 / nDCG@5 为 `0.3819 / 0.6875 / 1.0000`。BGE-M3 在 CPU 上运行 151.7369 秒，实际输出 1024 维向量且无 fallback；其纯语义 Recall@5 和 nDCG@5 反而降至 `0.2546 / 0.7024`，完整融合 Recall@10 小幅升至 `0.7014`。这说明新增的困难画像会改变结论，也说明模板化合成标签不适合证明真实效果。
+
 “实验看板”读取 `data/real_jobs/evaluation_results.json` 与一致性报告，展示 30 条官方 JD（27 条在招）、3 个合成候选人画像、排序指标和双模型标注分歧。当前标签是双模型独立盲标后逐条裁决形成的模型辅助基准，`human_gold=false`；它适合黑客松中的可复现实验与流程审计，但不等同于真人专家评测，也不能用于宣称真实招聘效果。
 
-本机 CPU 实测中，`BAAI/bge-m3` 输出 1024 维、`float32`、L2 归一化稠密向量，完整真实 JD 评测耗时 64.7194 秒且没有 fallback。与 hashing 相比，纯语义方法的 Recall@5 从 0.1373 升至 0.4314、nDCG@5 从 0.5436 升至 0.6451，但 Recall@10 从 0.6275 降至 0.5294；完整融合方法的 nDCG@5 从 0.6962 变为 0.6940，基本持平且略降。因此当前结果只证明部分短列表语义指标改善，不代表所有指标或完整系统全面提升。
+2026-08-17 本机 CPU 离线复测中，`BAAI/bge-m3` 输出 1024 维、`float32`、L2 归一化稠密向量，完整真实 JD 评测耗时 72.9891 秒且没有 fallback。与 hashing 相比，纯语义方法的 Recall@5 从 0.1373 升至 0.4314、nDCG@5 从 0.5436 升至 0.6451，但 Recall@10 从 0.6275 降至 0.5294；完整融合方法的 nDCG@5 从 0.6962 变为 0.6940，基本持平且略降。因此当前结果只证明部分短列表语义指标改善，不代表所有指标或完整系统全面提升。
 
 ### 探索性融合权重搜索
 
@@ -162,7 +178,7 @@ GitHub Actions 会在每次推送和 Pull Request 时使用 Python 3.11 执行�
 
 ## 已知限制
 
-- 默认提取器是确定性规则，复杂版式、表格简历和模糊标题可能需要人工修正。
+- 默认提取器是确定性规则，已识别常见 Markdown 章节标题及“求职方向 / 求职意向 / 目标岗位”等项目区段边界；复杂版式、表格简历和非常规标题仍可能需要人工修正。
 - 扫描 PDF 未集成 OCR；请改用可复制 PDF 或 DOCX。
 - hashing 基线的语义泛化能力有限；BGE-M3 首次运行需要下载较大模型，CPU 延迟也显著高于 hashing，并且本次实测并非所有排名指标都提高。
 - 当前真实 JD 实验仍使用 3 个合成候选人画像，相关性标签来自双模型裁决而非真人专家；正式招聘效果仍需脱敏真实简历和多人独立人工复标验证。

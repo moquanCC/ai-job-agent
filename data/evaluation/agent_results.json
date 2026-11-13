@@ -1,0 +1,978 @@
+{
+  "dataset": {
+    "synthetic": true,
+    "human_gold": false,
+    "purpose": "agent_behavior_and_tool_orchestration",
+    "cases": 18
+  },
+  "embedding": {
+    "requested_backend": "hashing",
+    "actual_backend": "local-hashing-v1",
+    "fallback_occurred": false
+  },
+  "fixed_workflow": {
+    "summary": {
+      "case_count": 18,
+      "task_success_rate": 0.6666666666666666,
+      "tool_selection_accuracy": 0.0,
+      "tool_argument_validity": 1.0,
+      "average_tool_calls": 2.0,
+      "unnecessary_call_rate": 0.058823529411764705,
+      "stop_reasons": {
+        "fixed_workflow_cannot_orchestrate_request": 6,
+        "fixed_workflow_complete": 12
+      }
+    },
+    "cases": [
+      {
+        "id": "rank_llm",
+        "status": "completed",
+        "task_success": true,
+        "actual_tools": [
+          "filter_eligibility",
+          "rank_jobs"
+        ],
+        "expected_tools": [
+          "search_jobs",
+          "filter_eligibility",
+          "rank_jobs"
+        ],
+        "tool_sequence_correct": false,
+        "tool_steps_ok": [
+          true,
+          true
+        ],
+        "stop_reason": "fixed_workflow_complete"
+      },
+      {
+        "id": "rank_mining",
+        "status": "completed",
+        "task_success": true,
+        "actual_tools": [
+          "filter_eligibility",
+          "rank_jobs"
+        ],
+        "expected_tools": [
+          "search_jobs",
+          "filter_eligibility",
+          "rank_jobs"
+        ],
+        "tool_sequence_correct": false,
+        "tool_steps_ok": [
+          true,
+          true
+        ],
+        "stop_reason": "fixed_workflow_complete"
+      },
+      {
+        "id": "rank_nlp",
+        "status": "completed",
+        "task_success": true,
+        "actual_tools": [
+          "filter_eligibility",
+          "rank_jobs"
+        ],
+        "expected_tools": [
+          "search_jobs",
+          "filter_eligibility",
+          "rank_jobs"
+        ],
+        "tool_sequence_correct": false,
+        "tool_steps_ok": [
+          true,
+          true
+        ],
+        "stop_reason": "fixed_workflow_complete"
+      },
+      {
+        "id": "rank_ml",
+        "status": "completed",
+        "task_success": true,
+        "actual_tools": [
+          "filter_eligibility",
+          "rank_jobs"
+        ],
+        "expected_tools": [
+          "search_jobs",
+          "filter_eligibility",
+          "rank_jobs"
+        ],
+        "tool_sequence_correct": false,
+        "tool_steps_ok": [
+          true,
+          true
+        ],
+        "stop_reason": "fixed_workflow_complete"
+      },
+      {
+        "id": "rank_recommendation",
+        "status": "completed",
+        "task_success": true,
+        "actual_tools": [
+          "filter_eligibility",
+          "rank_jobs"
+        ],
+        "expected_tools": [
+          "search_jobs",
+          "filter_eligibility",
+          "rank_jobs"
+        ],
+        "tool_sequence_correct": false,
+        "tool_steps_ok": [
+          true,
+          true
+        ],
+        "stop_reason": "fixed_workflow_complete"
+      },
+      {
+        "id": "rank_ai_app",
+        "status": "completed",
+        "task_success": true,
+        "actual_tools": [
+          "filter_eligibility",
+          "rank_jobs"
+        ],
+        "expected_tools": [
+          "search_jobs",
+          "filter_eligibility",
+          "rank_jobs"
+        ],
+        "tool_sequence_correct": false,
+        "tool_steps_ok": [
+          true,
+          true
+        ],
+        "stop_reason": "fixed_workflow_complete"
+      },
+      {
+        "id": "rank_rag_backend",
+        "status": "completed",
+        "task_success": true,
+        "actual_tools": [
+          "filter_eligibility",
+          "rank_jobs"
+        ],
+        "expected_tools": [
+          "search_jobs",
+          "filter_eligibility",
+          "rank_jobs"
+        ],
+        "tool_sequence_correct": false,
+        "tool_steps_ok": [
+          true,
+          true
+        ],
+        "stop_reason": "fixed_workflow_complete"
+      },
+      {
+        "id": "rank_nlp_engineering",
+        "status": "completed",
+        "task_success": true,
+        "actual_tools": [
+          "filter_eligibility",
+          "rank_jobs"
+        ],
+        "expected_tools": [
+          "search_jobs",
+          "filter_eligibility",
+          "rank_jobs"
+        ],
+        "tool_sequence_correct": false,
+        "tool_steps_ok": [
+          true,
+          true
+        ],
+        "stop_reason": "fixed_workflow_complete"
+      },
+      {
+        "id": "rank_cv_transfer",
+        "status": "completed",
+        "task_success": true,
+        "actual_tools": [
+          "filter_eligibility",
+          "rank_jobs"
+        ],
+        "expected_tools": [
+          "search_jobs",
+          "filter_eligibility",
+          "rank_jobs"
+        ],
+        "tool_sequence_correct": false,
+        "tool_steps_ok": [
+          true,
+          true
+        ],
+        "stop_reason": "fixed_workflow_complete"
+      },
+      {
+        "id": "rank_data_analyst",
+        "status": "completed",
+        "task_success": true,
+        "actual_tools": [
+          "filter_eligibility",
+          "rank_jobs"
+        ],
+        "expected_tools": [
+          "search_jobs",
+          "filter_eligibility",
+          "rank_jobs"
+        ],
+        "tool_sequence_correct": false,
+        "tool_steps_ok": [
+          true,
+          true
+        ],
+        "stop_reason": "fixed_workflow_complete"
+      },
+      {
+        "id": "rank_mlops",
+        "status": "completed",
+        "task_success": true,
+        "actual_tools": [
+          "filter_eligibility",
+          "rank_jobs"
+        ],
+        "expected_tools": [
+          "search_jobs",
+          "filter_eligibility",
+          "rank_jobs"
+        ],
+        "tool_sequence_correct": false,
+        "tool_steps_ok": [
+          true,
+          true
+        ],
+        "stop_reason": "fixed_workflow_complete"
+      },
+      {
+        "id": "rank_search_ads",
+        "status": "completed",
+        "task_success": true,
+        "actual_tools": [
+          "filter_eligibility",
+          "rank_jobs"
+        ],
+        "expected_tools": [
+          "search_jobs",
+          "filter_eligibility",
+          "rank_jobs"
+        ],
+        "tool_sequence_correct": false,
+        "tool_steps_ok": [
+          true,
+          true
+        ],
+        "stop_reason": "fixed_workflow_complete"
+      },
+      {
+        "id": "clarify_location",
+        "status": "completed",
+        "task_success": false,
+        "actual_tools": [
+          "filter_eligibility",
+          "rank_jobs"
+        ],
+        "expected_tools": [
+          "clarify_preferences"
+        ],
+        "tool_sequence_correct": false,
+        "tool_steps_ok": [
+          true,
+          true
+        ],
+        "stop_reason": "fixed_workflow_cannot_orchestrate_request"
+      },
+      {
+        "id": "clarify_role",
+        "status": "completed",
+        "task_success": false,
+        "actual_tools": [
+          "filter_eligibility",
+          "rank_jobs"
+        ],
+        "expected_tools": [
+          "clarify_preferences"
+        ],
+        "tool_sequence_correct": false,
+        "tool_steps_ok": [
+          true,
+          true
+        ],
+        "stop_reason": "fixed_workflow_cannot_orchestrate_request"
+      },
+      {
+        "id": "clarify_both",
+        "status": "completed",
+        "task_success": false,
+        "actual_tools": [
+          "filter_eligibility",
+          "rank_jobs"
+        ],
+        "expected_tools": [
+          "clarify_preferences"
+        ],
+        "tool_sequence_correct": false,
+        "tool_steps_ok": [
+          true,
+          true
+        ],
+        "stop_reason": "fixed_workflow_cannot_orchestrate_request"
+      },
+      {
+        "id": "explain_llm",
+        "status": "completed",
+        "task_success": false,
+        "actual_tools": [
+          "filter_eligibility",
+          "rank_jobs"
+        ],
+        "expected_tools": [
+          "search_jobs",
+          "filter_eligibility",
+          "rank_jobs",
+          "explain_match"
+        ],
+        "tool_sequence_correct": false,
+        "tool_steps_ok": [
+          true,
+          true
+        ],
+        "stop_reason": "fixed_workflow_cannot_orchestrate_request"
+      },
+      {
+        "id": "explain_mining",
+        "status": "completed",
+        "task_success": false,
+        "actual_tools": [
+          "filter_eligibility",
+          "rank_jobs"
+        ],
+        "expected_tools": [
+          "search_jobs",
+          "filter_eligibility",
+          "rank_jobs",
+          "explain_match"
+        ],
+        "tool_sequence_correct": false,
+        "tool_steps_ok": [
+          true,
+          true
+        ],
+        "stop_reason": "fixed_workflow_cannot_orchestrate_request"
+      },
+      {
+        "id": "explain_nlp",
+        "status": "completed",
+        "task_success": false,
+        "actual_tools": [
+          "filter_eligibility",
+          "rank_jobs"
+        ],
+        "expected_tools": [
+          "search_jobs",
+          "filter_eligibility",
+          "rank_jobs",
+          "explain_match"
+        ],
+        "tool_sequence_correct": false,
+        "tool_steps_ok": [
+          true,
+          true
+        ],
+        "stop_reason": "fixed_workflow_cannot_orchestrate_request"
+      }
+    ]
+  },
+  "agent": {
+    "summary": {
+      "case_count": 18,
+      "task_success_rate": 1.0,
+      "tool_selection_accuracy": 1.0,
+      "tool_argument_validity": 1.0,
+      "average_tool_calls": 2.8333333333333335,
+      "unnecessary_call_rate": 0.0,
+      "stop_reasons": {
+        "missing_required_preferences": 3,
+        "task_completed": 15
+      }
+    },
+    "cases": [
+      {
+        "id": "rank_llm",
+        "candidate_id": "eval_llm",
+        "status": "completed",
+        "expected_status": "completed",
+        "task_success": true,
+        "actual_tools": [
+          "search_jobs",
+          "filter_eligibility",
+          "rank_jobs"
+        ],
+        "expected_tools": [
+          "search_jobs",
+          "filter_eligibility",
+          "rank_jobs"
+        ],
+        "tool_sequence_correct": true,
+        "tool_steps_ok": [
+          true,
+          true,
+          true
+        ],
+        "stop_reason": "task_completed",
+        "returned_job_ids": [
+          "job_001",
+          "job_007",
+          "job_013",
+          "job_019",
+          "job_025"
+        ],
+        "actual_backend": "local-hashing-v1",
+        "fallback_occurred": false
+      },
+      {
+        "id": "rank_mining",
+        "candidate_id": "eval_mining",
+        "status": "completed",
+        "expected_status": "completed",
+        "task_success": true,
+        "actual_tools": [
+          "search_jobs",
+          "filter_eligibility",
+          "rank_jobs"
+        ],
+        "expected_tools": [
+          "search_jobs",
+          "filter_eligibility",
+          "rank_jobs"
+        ],
+        "tool_sequence_correct": true,
+        "tool_steps_ok": [
+          true,
+          true,
+          true
+        ],
+        "stop_reason": "task_completed",
+        "returned_job_ids": [
+          "job_003",
+          "job_015",
+          "job_027",
+          "job_009",
+          "job_021"
+        ],
+        "actual_backend": "local-hashing-v1",
+        "fallback_occurred": false
+      },
+      {
+        "id": "rank_nlp",
+        "candidate_id": "eval_nlp",
+        "status": "completed",
+        "expected_status": "completed",
+        "task_success": true,
+        "actual_tools": [
+          "search_jobs",
+          "filter_eligibility",
+          "rank_jobs"
+        ],
+        "expected_tools": [
+          "search_jobs",
+          "filter_eligibility",
+          "rank_jobs"
+        ],
+        "tool_sequence_correct": true,
+        "tool_steps_ok": [
+          true,
+          true,
+          true
+        ],
+        "stop_reason": "task_completed",
+        "returned_job_ids": [
+          "job_005",
+          "job_011",
+          "job_017",
+          "job_023",
+          "job_029"
+        ],
+        "actual_backend": "local-hashing-v1",
+        "fallback_occurred": false
+      },
+      {
+        "id": "rank_ml",
+        "candidate_id": "eval_ml",
+        "status": "completed",
+        "expected_status": "completed",
+        "task_success": true,
+        "actual_tools": [
+          "search_jobs",
+          "filter_eligibility",
+          "rank_jobs"
+        ],
+        "expected_tools": [
+          "search_jobs",
+          "filter_eligibility",
+          "rank_jobs"
+        ],
+        "tool_sequence_correct": true,
+        "tool_steps_ok": [
+          true,
+          true,
+          true
+        ],
+        "stop_reason": "task_completed",
+        "returned_job_ids": [
+          "job_002",
+          "job_008",
+          "job_014",
+          "job_020",
+          "job_026"
+        ],
+        "actual_backend": "local-hashing-v1",
+        "fallback_occurred": false
+      },
+      {
+        "id": "rank_recommendation",
+        "candidate_id": "eval_recommendation",
+        "status": "completed",
+        "expected_status": "completed",
+        "task_success": true,
+        "actual_tools": [
+          "search_jobs",
+          "filter_eligibility",
+          "rank_jobs"
+        ],
+        "expected_tools": [
+          "search_jobs",
+          "filter_eligibility",
+          "rank_jobs"
+        ],
+        "tool_sequence_correct": true,
+        "tool_steps_ok": [
+          true,
+          true,
+          true
+        ],
+        "stop_reason": "task_completed",
+        "returned_job_ids": [
+          "job_004",
+          "job_010",
+          "job_016",
+          "job_022",
+          "job_028"
+        ],
+        "actual_backend": "local-hashing-v1",
+        "fallback_occurred": false
+      },
+      {
+        "id": "rank_ai_app",
+        "candidate_id": "eval_ai_app",
+        "status": "completed",
+        "expected_status": "completed",
+        "task_success": true,
+        "actual_tools": [
+          "search_jobs",
+          "filter_eligibility",
+          "rank_jobs"
+        ],
+        "expected_tools": [
+          "search_jobs",
+          "filter_eligibility",
+          "rank_jobs"
+        ],
+        "tool_sequence_correct": true,
+        "tool_steps_ok": [
+          true,
+          true,
+          true
+        ],
+        "stop_reason": "task_completed",
+        "returned_job_ids": [
+          "job_006",
+          "job_012",
+          "job_018",
+          "job_024",
+          "job_030"
+        ],
+        "actual_backend": "local-hashing-v1",
+        "fallback_occurred": false
+      },
+      {
+        "id": "rank_rag_backend",
+        "candidate_id": "eval_rag_backend",
+        "status": "completed",
+        "expected_status": "completed",
+        "task_success": true,
+        "actual_tools": [
+          "search_jobs",
+          "filter_eligibility",
+          "rank_jobs"
+        ],
+        "expected_tools": [
+          "search_jobs",
+          "filter_eligibility",
+          "rank_jobs"
+        ],
+        "tool_sequence_correct": true,
+        "tool_steps_ok": [
+          true,
+          true,
+          true
+        ],
+        "stop_reason": "task_completed",
+        "returned_job_ids": [
+          "job_001",
+          "job_007",
+          "job_013",
+          "job_019",
+          "job_025"
+        ],
+        "actual_backend": "local-hashing-v1",
+        "fallback_occurred": false
+      },
+      {
+        "id": "rank_nlp_engineering",
+        "candidate_id": "eval_nlp_engineering",
+        "status": "completed",
+        "expected_status": "completed",
+        "task_success": true,
+        "actual_tools": [
+          "search_jobs",
+          "filter_eligibility",
+          "rank_jobs"
+        ],
+        "expected_tools": [
+          "search_jobs",
+          "filter_eligibility",
+          "rank_jobs"
+        ],
+        "tool_sequence_correct": true,
+        "tool_steps_ok": [
+          true,
+          true,
+          true
+        ],
+        "stop_reason": "task_completed",
+        "returned_job_ids": [
+          "job_005",
+          "job_011",
+          "job_017",
+          "job_023",
+          "job_029"
+        ],
+        "actual_backend": "local-hashing-v1",
+        "fallback_occurred": false
+      },
+      {
+        "id": "rank_cv_transfer",
+        "candidate_id": "eval_cv_transfer",
+        "status": "completed",
+        "expected_status": "completed",
+        "task_success": true,
+        "actual_tools": [
+          "search_jobs",
+          "filter_eligibility",
+          "rank_jobs"
+        ],
+        "expected_tools": [
+          "search_jobs",
+          "filter_eligibility",
+          "rank_jobs"
+        ],
+        "tool_sequence_correct": true,
+        "tool_steps_ok": [
+          true,
+          true,
+          true
+        ],
+        "stop_reason": "task_completed",
+        "returned_job_ids": [
+          "job_002",
+          "job_008",
+          "job_014",
+          "job_020",
+          "job_026"
+        ],
+        "actual_backend": "local-hashing-v1",
+        "fallback_occurred": false
+      },
+      {
+        "id": "rank_data_analyst",
+        "candidate_id": "eval_data_analyst",
+        "status": "completed",
+        "expected_status": "completed",
+        "task_success": true,
+        "actual_tools": [
+          "search_jobs",
+          "filter_eligibility",
+          "rank_jobs"
+        ],
+        "expected_tools": [
+          "search_jobs",
+          "filter_eligibility",
+          "rank_jobs"
+        ],
+        "tool_sequence_correct": true,
+        "tool_steps_ok": [
+          true,
+          true,
+          true
+        ],
+        "stop_reason": "task_completed",
+        "returned_job_ids": [
+          "job_003",
+          "job_015",
+          "job_027",
+          "job_009",
+          "job_021"
+        ],
+        "actual_backend": "local-hashing-v1",
+        "fallback_occurred": false
+      },
+      {
+        "id": "rank_mlops",
+        "candidate_id": "eval_mlops",
+        "status": "completed",
+        "expected_status": "completed",
+        "task_success": true,
+        "actual_tools": [
+          "search_jobs",
+          "filter_eligibility",
+          "rank_jobs"
+        ],
+        "expected_tools": [
+          "search_jobs",
+          "filter_eligibility",
+          "rank_jobs"
+        ],
+        "tool_sequence_correct": true,
+        "tool_steps_ok": [
+          true,
+          true,
+          true
+        ],
+        "stop_reason": "task_completed",
+        "returned_job_ids": [
+          "job_006",
+          "job_012",
+          "job_018",
+          "job_024",
+          "job_030"
+        ],
+        "actual_backend": "local-hashing-v1",
+        "fallback_occurred": false
+      },
+      {
+        "id": "rank_search_ads",
+        "candidate_id": "eval_search_ads",
+        "status": "completed",
+        "expected_status": "completed",
+        "task_success": true,
+        "actual_tools": [
+          "search_jobs",
+          "filter_eligibility",
+          "rank_jobs"
+        ],
+        "expected_tools": [
+          "search_jobs",
+          "filter_eligibility",
+          "rank_jobs"
+        ],
+        "tool_sequence_correct": true,
+        "tool_steps_ok": [
+          true,
+          true,
+          true
+        ],
+        "stop_reason": "task_completed",
+        "returned_job_ids": [
+          "job_004",
+          "job_010",
+          "job_016",
+          "job_022",
+          "job_028"
+        ],
+        "actual_backend": "local-hashing-v1",
+        "fallback_occurred": false
+      },
+      {
+        "id": "clarify_location",
+        "candidate_id": "eval_llm",
+        "status": "needs_clarification",
+        "expected_status": "needs_clarification",
+        "task_success": true,
+        "actual_tools": [
+          "clarify_preferences"
+        ],
+        "expected_tools": [
+          "clarify_preferences"
+        ],
+        "tool_sequence_correct": true,
+        "tool_steps_ok": [
+          true
+        ],
+        "stop_reason": "missing_required_preferences",
+        "returned_job_ids": [],
+        "actual_backend": "local-hashing-v1",
+        "fallback_occurred": false
+      },
+      {
+        "id": "clarify_role",
+        "candidate_id": "eval_nlp",
+        "status": "needs_clarification",
+        "expected_status": "needs_clarification",
+        "task_success": true,
+        "actual_tools": [
+          "clarify_preferences"
+        ],
+        "expected_tools": [
+          "clarify_preferences"
+        ],
+        "tool_sequence_correct": true,
+        "tool_steps_ok": [
+          true
+        ],
+        "stop_reason": "missing_required_preferences",
+        "returned_job_ids": [],
+        "actual_backend": "local-hashing-v1",
+        "fallback_occurred": false
+      },
+      {
+        "id": "clarify_both",
+        "candidate_id": "eval_ml",
+        "status": "needs_clarification",
+        "expected_status": "needs_clarification",
+        "task_success": true,
+        "actual_tools": [
+          "clarify_preferences"
+        ],
+        "expected_tools": [
+          "clarify_preferences"
+        ],
+        "tool_sequence_correct": true,
+        "tool_steps_ok": [
+          true
+        ],
+        "stop_reason": "missing_required_preferences",
+        "returned_job_ids": [],
+        "actual_backend": "local-hashing-v1",
+        "fallback_occurred": false
+      },
+      {
+        "id": "explain_llm",
+        "candidate_id": "eval_llm",
+        "status": "completed",
+        "expected_status": "completed",
+        "task_success": true,
+        "actual_tools": [
+          "search_jobs",
+          "filter_eligibility",
+          "rank_jobs",
+          "explain_match"
+        ],
+        "expected_tools": [
+          "search_jobs",
+          "filter_eligibility",
+          "rank_jobs",
+          "explain_match"
+        ],
+        "tool_sequence_correct": true,
+        "tool_steps_ok": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "stop_reason": "task_completed",
+        "returned_job_ids": [
+          "job_001",
+          "job_007",
+          "job_013",
+          "job_019",
+          "job_025"
+        ],
+        "actual_backend": "local-hashing-v1",
+        "fallback_occurred": false
+      },
+      {
+        "id": "explain_mining",
+        "candidate_id": "eval_mining",
+        "status": "completed",
+        "expected_status": "completed",
+        "task_success": true,
+        "actual_tools": [
+          "search_jobs",
+          "filter_eligibility",
+          "rank_jobs",
+          "explain_match"
+        ],
+        "expected_tools": [
+          "search_jobs",
+          "filter_eligibility",
+          "rank_jobs",
+          "explain_match"
+        ],
+        "tool_sequence_correct": true,
+        "tool_steps_ok": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "stop_reason": "task_completed",
+        "returned_job_ids": [
+          "job_003",
+          "job_015",
+          "job_027",
+          "job_009",
+          "job_021"
+        ],
+        "actual_backend": "local-hashing-v1",
+        "fallback_occurred": false
+      },
+      {
+        "id": "explain_nlp",
+        "candidate_id": "eval_nlp",
+        "status": "completed",
+        "expected_status": "completed",
+        "task_success": true,
+        "actual_tools": [
+          "search_jobs",
+          "filter_eligibility",
+          "rank_jobs",
+          "explain_match"
+        ],
+        "expected_tools": [
+          "search_jobs",
+          "filter_eligibility",
+          "rank_jobs",
+          "explain_match"
+        ],
+        "tool_sequence_correct": true,
+        "tool_steps_ok": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "stop_reason": "task_completed",
+        "returned_job_ids": [
+          "job_005",
+          "job_011",
+          "job_017",
+          "job_023",
+          "job_029"
+        ],
+        "actual_backend": "local-hashing-v1",
+        "fallback_occurred": false
+      }
+    ]
+  },
+  "deltas": {
+    "task_success_rate": 0.33333333333333337,
+    "average_tool_calls": 0.8333333333333335
+  },
+  "limitations": [
+    "All scenarios and candidate profiles are synthetic; this benchmark is not human gold.",
+    "Task success validates tool orchestration, not real recruitment or ranking quality.",
+    "The planner is a bounded deterministic policy, not an open-ended autonomous agent."
+  ]
+}

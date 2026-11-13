@@ -41,6 +41,9 @@ jobs:
       - name: Run reproducible evaluation
         run: python scripts/run_evaluation.py --embedding-backend hashing
 
+      - name: Run bounded-Agent behavior evaluation
+        run: python scripts/run_agent_evaluation.py --embedding-backend hashing
+
       - name: Verify annotation agreement and adjudication
         run: |
           python scripts/evaluate_annotation_agreement.py
@@ -58,6 +61,7 @@ jobs:
           name: evaluation-results
           path: |
             data/evaluation/results.json
+            data/evaluation/agent_results.json
             data/real_jobs/annotation_agreement.json
             data/real_jobs/annotation_disagreements.json
             data/real_jobs/evaluation_results.json

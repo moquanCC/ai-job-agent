@@ -14,8 +14,35 @@ def _section(text: str, markers: tuple[str, ...]) -> str:
     start = next((i for i, line in enumerate(lines) if any(m in line for m in markers)), None)
     if start is None:
         return ""
-    end_markers = ("教育经历", "技能清单", "专业技能", "实习经历", "证书", "个人信息", "获奖经历", "科研经历")
-    end = next((i for i in range(start + 1, len(lines)) if any(m == lines[i].strip() or lines[i].strip().startswith(m + "：") for m in end_markers)), len(lines))
+    end_markers = (
+        "教育经历",
+        "技能清单",
+        "专业技能",
+        "实习经历",
+        "证书",
+        "个人信息",
+        "获奖经历",
+        "科研经历",
+        "求职方向",
+        "求职意向",
+        "目标岗位",
+    )
+
+    def heading_text(line: str) -> str:
+        return re.sub(r"^#{1,6}\s*", "", line.strip())
+
+    end = next(
+        (
+            i
+            for i in range(start + 1, len(lines))
+            if any(
+                marker == heading_text(lines[i])
+                or heading_text(lines[i]).startswith(marker + "：")
+                for marker in end_markers
+            )
+        ),
+        len(lines),
+    )
     return "\n".join(lines[start + 1:end]).strip()
 
 

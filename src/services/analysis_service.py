@@ -5,7 +5,13 @@ import io
 import json
 from pathlib import Path
 
-from src.agents import generate_advice, generate_questions, render_markdown_report
+from src.agents import (
+    JobAgentPreferences,
+    JobDecisionAgent,
+    generate_advice,
+    generate_questions,
+    render_markdown_report,
+)
 from src.config import Settings, database_path
 from src.matching.ranker import rank_jobs
 from src.models.schemas import JobProfile, ResumeProfile
@@ -106,6 +112,18 @@ class AnalysisService:
             include_expired=include_expired,
             embedder=self.embedder,
         )
+
+    def run_job_agent(
+        self,
+        resume: ResumeProfile,
+        preferences: JobAgentPreferences,
+    ):
+        agent = JobDecisionAgent(
+            self.jobs.list_jobs(),
+            self.embedder,
+            requested_backend=self.settings.embedding_backend,
+        )
+        return agent.run(resume, preferences)
 
     def build_detail(self, resume: ResumeProfile, job_id: str, match, difficulty: str = "进阶") -> dict:
         job = self.jobs.get(job_id)
